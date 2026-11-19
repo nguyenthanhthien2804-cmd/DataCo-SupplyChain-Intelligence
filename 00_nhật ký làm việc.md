@@ -21,34 +21,60 @@ Tệp này tự động lưu vết các phiên làm việc giữa Người dùng
 
 ---
 
-## [2026-11-19 06:46] - Xây Dựng & Tối Ưu Toàn Diện Dashboard Tương Tác Giám Sát Chuỗi Cung Ứng (dashboard.html)
-- **Môi trường:** HTML5 | Modern CSS3 (Grid & Flexbox) | Vanilla JavaScript | Vector SVG Charts | Standalone Architecture
-- **Mục tiêu phiên:** Thiết kế một Dashboard trực quan hóa dữ liệu hiện đại, chuyên nghiệp, tự động hóa toàn bộ việc trình diễn kết quả nghiên cứu đề tài PRJ-13 (*DataCo Supply Chain Delivery Delay Intelligence*), phục vụ báo cáo thuyết trình và đánh giá học thuật.
-- **Nội dung & Cấu trúc Dashboard (4 Khối Accordion Chuyên Sâu):**
-  1. **Khối 1 - Báo cáo độ dơ (Dirty Data Audit):**
-     - Tổng quan hiện trạng dữ liệu gốc $180,519$ dòng $\times$ $53$ cột thô.
-     - Thống kê tỷ lệ khuyết thiếu của 10 thuộc tính tiêu biểu (`Product Description` $83.46\%$, `Order Zipcode` $79.30\%$,...).
-     - Phân loại và nhận diện các mẫu ký hiệu nhiễu/dơ (`?`, `-`, `-1`, `9999`, lỗi font UTF-8 `chÆ°a rÃµ`, đơn vị tiền tệ/khối lượng dính vào nhãn mục tiêu `1 VND`, `1 USD`, `1 kg`, `1 %`).
-     - Tích hợp biểu đồ Vector SVG trực quan hóa tỷ lệ khuyết & tỷ lệ dơ Before-cleaning.
-  2. **Khối 2 - Quy trình làm sạch dữ liệu (Data Cleaning Pipeline):**
-     - Trình bày 7 bước tiền xử lý đạt chuẩn Zero Data Loss (bảo toàn trọn vẹn $100\%$ bản ghi $180,519$ dòng).
-     - Quy trình bảo mật GDPR: loại bỏ 2 trường PII (`Customer Email`, `Customer Password`).
-     - Chuẩn hóa địa lý 8 cột chuyên sâu (City Normalization & Geography Pipeline): Gom `Order Region` từ 115 nhóm về đúng 23 vùng chuẩn (giảm $80.0\%$), gom `Market` từ 26 nhóm về 5 thị trường lớn.
-     - Tối ưu hóa bộ nhớ RAM: Giảm từ $104.54\text{ MB}$ xuống $66.47\text{ MB}$ (tiết kiệm $36.42\%$).
-     - Tích hợp biểu đồ Vector SVG so sánh số lượng danh mục trước và sau khi chuẩn hóa (Before vs After).
-  3. **Khối 3 - Phân tích khám phá & Phát hiện nghiệp vụ (EDA Insights & SLA Paradox):**
-     - Đánh giá phân phối biến mục tiêu $54.84\%$ trễ vs $45.16\%$ đúng hạn qua biểu đồ Donut SVG tương tác (chứng minh tính cân bằng tự nhiên $1.21 : 1$, không cần can thiệp SMOTE).
-     - Khám phá Nghịch lý SLA First Class: Biểu đồ cột kép SVG thể hiện tỷ lệ giao trễ lên tới $95.76\%$ của First Class (SLA cam kết 1 ngày phi thực tế) so với $38.01\%$ của Standard Class; kiểm định $\chi^2 = 34,863.00, p < 10^{-16}$, Cramér's V = $0.4473$.
-     - Biểu đồ thanh ngang SVG Top 10 khu vực có tỷ lệ trễ hạn cao nhất (Central Africa $57.83\%$, East Africa $56.78\%$,...).
-     - Ma trận tương quan đa biến (Multivariate Heatmap SVG) giữa 4 gói vận chuyển và 5 thị trường quốc tế, chứng minh tính đồng nhất của nghịch lý vận tải trên quy mô toàn cầu.
-  4. **Khối 4 - Đánh giá mô hình học máy & Khuyến nghị thực thi SCM:**
-     - Bảng đánh giá và biểu đồ cột SVG so sánh hiệu năng Baseline Models: Random Forest (Recall $62.05\%$, ROC-AUC $0.7310$, PR-AUC $0.7952$) vs Logistic Regression (Recall $55.78\%$, ROC-AUC $0.7285$, PR-AUC $0.7932$).
-     - Rào chắn chống rò rỉ dữ liệu (*Data Leakage Shield*): Cách ly hoàn toàn các trường hậu giao hàng (`Days for shipping (real)`, `Delivery Status`, `shipping date`).
-     - Bộ khuyến nghị quản trị chuỗi cung ứng thực tế: Tái cấu trúc cam kết SLA First Class từ 1 ngày lên 2-3 ngày, thiết lập bộ lọc cảnh báo trễ hạn tại hệ thống OMS/ERP trước giờ chốt sổ, và tối ưu định tuyến 3PL chặng cuối.
-- **Tối ưu hóa UI/UX & Khả năng hiển thị:**
-  - Hệ màu High Contrast đạt chuẩn WCAG AAA: Chữ sẫm màu rõ ràng (`#0f172a`), thẻ nền trắng sáng (`#ffffff`) trên nền trang (`#f1f5f9`), triệt tiêu hoàn toàn hiện tượng chữ mờ hoặc chữ tệp vào nền.
-  - Tích hợp nút chuyển đổi giao diện Sáng / Tối (Light / Dark Mode Toggle) linh hoạt.
-  - Kiến trúc Standalone độc lập hoàn toàn: Toàn bộ CSS, JavaScript và biểu đồ SVG được nhúng trực tiếp trong 1 tệp duy nhất [dashboard.html](file:///d:/Ti%E1%BB%83u%20lu%E1%BA%ADn%20Python/.agents%20(1)/dashboard.html), có thể mở và sử dụng offline trên bất kỳ trình duyệt nào mà không cần kết nối mạng.
+## [2026-11-19 06:46] - Nâng Cấp Hệ Thống 7 Đồ Thị Minh Họa Vector SVG Cho Dashboard
+- **Môi trường:** HTML5 | Inline Scalable Vector Graphics (SVG) | JavaScript DOM
+- **Mục tiêu phiên:** Bổ sung hệ thống đồ thị trực quan hóa dữ liệu trực tiếp vào Dashboard theo yêu cầu người dùng, đảm bảo hiển thị sắc nét ở mọi độ phân giải, tải nhanh và không phụ thuộc thư viện đồ họa ngoài (như Chart.js, D3.js hay Plotly).
+- **Chi tiết 7 biểu đồ vector SVG được tích hợp:**
+  1. **Biểu đồ Cột Ghép (Grouped Column Chart) - Nghịch lý SLA First Class:** So sánh tỷ lệ giao trễ thực tế ($95.76\%$) so với Standard Class ($38.01\%$), làm bật lên lỗ hổng cam kết thời gian giao hàng 1 ngày.
+  2. **Biểu đồ Donut Tương Tác - Phân Bố Biến Mục Tiêu:** Thể hiện trực quan tỷ lệ $54.84\%$ đơn trễ vs $45.16\%$ đơn đúng hạn (tỷ lệ cân bằng tự nhiên $1.21 : 1$, cơ sở chứng minh không cần lạm dụng SMOTE).
+  3. **Biểu đồ Thanh Ngang (Horizontal Bar Chart) - Top 10 Khu Vực Trễ Hạn:** Trực quan hóa tỷ lệ trễ hạn cao nhất theo địa lý (Central Africa $57.83\%$, East Africa $56.78\%$, South Asia $56.60\%$,...).
+  4. **Ma Trận Nhiệt Đa Biến (Multivariate Heatmap Matrix):** Phân tích tương tác giữa 4 hình thức vận chuyển (`Shipping Mode`) và 5 đại thị trường (`Market`), chứng minh tỷ lệ trễ của First Class vượt $>95\%$ trên toàn cầu.
+  5. **Biểu đồ Thanh (Bar Chart) - Thống Kê Độ Dơ & Tỷ Lệ Khuyết Dữ Liệu Gốc:** Trực quan hóa Top 10 cột có tỷ lệ khuyết thiếu cao nhất (`Product Description` $83.46\%$, `Order Zipcode` $79.30\%$) và các trường dính ký hiệu nhiễu.
+  6. **Biểu đồ Cột So Sánh Before vs After - Khử Phân Mảnh Địa Danh:** Minh họa hiệu quả pipeline chuẩn hóa: `Order Region` giảm $80.0\%$ từ 115 về 23 vùng chuẩn; `Market` gom từ 26 về đúng 5 thị trường.
+  7. **Biểu đồ So Sánh Hiệu Năng Học Máy (Machine Learning Evaluation):** So sánh các chỉ số ROC-AUC ($0.7310$ vs $0.7285$), PR-AUC ($0.7952$ vs $0.7932$), và Recall ($62.05\%$ vs $55.78\%$) giữa Random Forest và Logistic Regression.
+- **Tình trạng:** Đồng bộ trực tiếp vào [dashboard.html](file:///d:/Ti%E1%BB%83u%20lu%E1%BA%ADn%20Python/.agents%20(1)/dashboard.html) và tệp Artifact.
+
+---
+
+## [2026-11-17 19:47] - Tối Ưu Bảng Màu Tương Phản Cao (High Contrast WCAG AAA) & Chuyển Đổi Dark/Light Mode
+- **Môi trường:** CSS3 Custom Properties (Variables) | Accessibility (a11y)
+- **Hiện tượng & Yêu cầu:** Người dùng phản hồi chữ khó đọc do tệp màu với nền khi mở tệp HTML trên trình duyệt bên ngoài (hiện tượng chữ sáng màu trên canvas trắng mặc định).
+- **Giải pháp kỹ thuật thực hiện:**
+  1. **Tái thiết kế hệ màu High Contrast:**
+     - Chế độ Sáng (Light Mode): Nền trang xám nhạt cao cấp (`--bg-page: #f1f5f9`), thẻ nền trắng tuyết (`--bg-card: #ffffff`), màu chữ than sẫm siêu nét (`--text-main: #0f172a`), chữ phụ xám đậm (`--text-sub: #475569`).
+     - Tỷ lệ tương phản màu chữ đạt chuẩn WCAG AAA ($> 7:1$), triệt tiêu hoàn toàn tình trạng chữ mờ, khó đọc.
+  2. **Bổ sung nút chuyển đổi Theme (Light / Dark Mode Toggle):**
+     - Thiết kế nút bấm chuyển đổi nhanh ở góc trên Dashboard kèm biểu tượng trực quan.
+     - Tự động lưu cấu hình lựa chọn hiển thị của người dùng vào `localStorage`.
+- **Kết quả:** Giao diện hiển thị rõ nét, chuyên nghiệp, dịu mắt và tương thích hoàn hảo trên mọi màn hình máy tính và thiết bị di động.
+
+---
+
+## [2026-11-17 19:27] - Khởi Tạo Kiến Trúc Interactive Dashboard Giám Sát Chuỗi Cung Ứng (dashboard.html)
+- **Môi trường:** HTML5 | Modern CSS3 (Grid & Flexbox) | Vanilla JavaScript | Standalone Architecture
+- **Mục tiêu phiên:** Xây dựng một Dashboard quản trị chuỗi cung ứng hiện đại, tinh gọn theo yêu cầu người dùng, cho phép tương tác trực tiếp qua các đề mục co giãn (Accordion) để theo dõi toàn diện quy trình xử lý dữ liệu của đề tài PRJ-13:
+  - Báo cáo độ dơ dữ liệu
+  - Quy trình làm sạch dữ liệu
+  - Phân tích khám phá (EDA) & Nghịch lý logistics
+  - Đánh giá mô hình học máy & Khuyến nghị quản trị
+- **Cấu trúc 4 Phân hệ Accordion Đã Hoàn Thiện:**
+  1. **Khối 1: Báo cáo độ dơ (Data Quality & Dirty Data Audit):**
+     - Đánh giá hiện trạng tập dữ liệu thô $180,519$ dòng $\times$ $53$ cột.
+     - Nhận diện 5 nhóm lỗi dơ: Khuyết thiếu cực cao, ký hiệu mã hóa lỗi (`?`, `-`, `-1`, `9999`), lỗi font ký tự UTF-8 (`chÆ°a rÃµ`), nhãn mục tiêu bị dính đơn vị tiền tệ (`1 VND`, `1 USD`, `1 kg`), và vi phạm quyền riêng tư PII (`Customer Email`, `Customer Password`).
+  2. **Khối 2: Quy trình làm sạch dữ liệu (Data Cleaning Pipeline):**
+     - 7 bước tiền xử lý chuẩn Zero Data Loss bảo toàn $100\%$ dữ liệu.
+     - Pipeline chuẩn hóa địa lý 8 cột chuyên sâu (City Normalization & Geography Mapping).
+     - Quy tắc Nghiệp vụ Vàng SCM tái tạo nhãn mục tiêu `Late_delivery_risk` đạt độ nhất quán tuyệt đối.
+     - Tối ưu bộ nhớ RAM tiết kiệm $36.42\%$ (từ $104.54\text{ MB}$ xuống $66.47\text{ MB}$).
+  3. **Khối 3: Phân tích khám phá & Phát hiện nghiệp vụ (EDA Insights):**
+     - Khám phá nghịch lý SLA First Class: tỷ lệ trễ hạn $95.76\%$ so với Standard Class $38.01\%$ ($\chi^2 = 34,863.00, p < 10^{-16}$).
+     - Đánh giá phân phối biến mục tiêu cân bằng tự nhiên ($54.84\%$ vs $45.16\%$).
+     - Phân tích không gian địa lý và hiện tượng siêu tập trung tại đô thị Caguas ($29.02\%$ toàn hệ thống).
+  4. **Khối 4: Đánh giá mô hình học máy & Khuyến nghị SCM:**
+     - Đánh giá Baseline Models: Random Forest (Recall $62.05\%$) và Logistic Regression (Recall $55.78\%$).
+     - Thiết lập cơ chế chống rò rỉ dữ liệu (Data Leakage Shield).
+     - 3 khuyến nghị can thiệp chuỗi cung ứng: Cân chỉnh lại cam kết SLA, phân luồng đơn hàng ưu tiên và lọc cảnh báo sớm qua OMS/ERP.
+- **Tập tin tạo thành:** [dashboard.html](file:///d:/Ti%E1%BB%83u%20lu%E1%BA%ADn%20Python/.agents%20(1)/dashboard.html) và đồng bộ trong thư mục Artifacts của Antigravity IDE.
 
 ---
 
