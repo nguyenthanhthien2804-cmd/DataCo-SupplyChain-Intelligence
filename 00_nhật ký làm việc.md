@@ -4,6 +4,54 @@ Tệp này tự động lưu vết các phiên làm việc giữa Người dùng
 *Tác giả cấu hình:* N.Lê.Nhật.Hạ  
 
 
+## [2026-11-19 07:25] - Thiết Lập Git, Xác Thực GitHub CLI & Khởi Tạo Repository Đám Mây
+- **Môi trường:** Windows | PowerShell | GitHub CLI 2.105.0 | Git 2.56.1 (MinGit)
+- **Mục tiêu phiên:**
+  1. Tự động hóa quá trình cài đặt hệ thống quản lý mã nguồn Git và GitHub CLI trực tiếp vào máy tính trong phạm vi tài khoản người dùng (`--scope user`), xử lý triệt để xung đột quyền quản trị Administrator/UAC prompt.
+  2. Kết nối và ủy quyền an toàn tài khoản GitHub cá nhân `nguyenthanhthien2804-cmd` thông qua giao thức OAuth Device Web Flow và lưu trữ bảo mật trong Windows Credential Keyring.
+  3. Khởi tạo Git repository cục bộ (`git init`) tại không gian làm việc `d:\Tiểu luận Python\.agents (1)`, cấu hình tác giả commit, phân nhánh mặc định `main`.
+  4. Thiết lập tệp [.gitignore](file:///d:/Ti%E1%BB%83u%20lu%E1%BA%ADn%20Python/.agents%20(1)/.gitignore) chuẩn hóa cho môi trường Python/Jupyter Notebook và hệ điều hành, bảo vệ tính toàn vẹn của mã nguồn.
+  5. Đóng gói commit khởi đầu gồm 75 tệp nguồn, toàn bộ dữ liệu kiểm toán, notebooks, báo cáo và dashboard tương tác.
+  6. Khởi tạo repository công khai [DataCo-SupplyChain-Intelligence](https://github.com/nguyenthanhthien2804-cmd/DataCo-SupplyChain-Intelligence) trên GitHub cá nhân và đồng bộ dữ liệu.
+- **Kết quả đạt được:**
+  - Cài đặt thành công `MinGit 2.56.1` và `GitHub CLI 2.105.0`.
+  - Xác thực thành công: `gh auth status` xác nhận đăng nhập tài khoản `nguyenthanhthien2804-cmd`, phạm vi quyền `repo`, `read:org`, `gist`.
+  - Hoàn tất cấu hình Git Credential Helper qua HTTPS.
+  - Tạo mới và liên kết remote repository `origin` trỏ về `https://github.com/nguyenthanhthien2804-cmd/DataCo-SupplyChain-Intelligence.git`.
+
+---
+
+## [2026-11-19 06:46] - Xây Dựng & Tối Ưu Toàn Diện Dashboard Tương Tác Giám Sát Chuỗi Cung Ứng (dashboard.html)
+- **Môi trường:** HTML5 | Modern CSS3 (Grid & Flexbox) | Vanilla JavaScript | Vector SVG Charts | Standalone Architecture
+- **Mục tiêu phiên:** Thiết kế một Dashboard trực quan hóa dữ liệu hiện đại, chuyên nghiệp, tự động hóa toàn bộ việc trình diễn kết quả nghiên cứu đề tài PRJ-13 (*DataCo Supply Chain Delivery Delay Intelligence*), phục vụ báo cáo thuyết trình và đánh giá học thuật.
+- **Nội dung & Cấu trúc Dashboard (4 Khối Accordion Chuyên Sâu):**
+  1. **Khối 1 - Báo cáo độ dơ (Dirty Data Audit):**
+     - Tổng quan hiện trạng dữ liệu gốc $180,519$ dòng $\times$ $53$ cột thô.
+     - Thống kê tỷ lệ khuyết thiếu của 10 thuộc tính tiêu biểu (`Product Description` $83.46\%$, `Order Zipcode` $79.30\%$,...).
+     - Phân loại và nhận diện các mẫu ký hiệu nhiễu/dơ (`?`, `-`, `-1`, `9999`, lỗi font UTF-8 `chÆ°a rÃµ`, đơn vị tiền tệ/khối lượng dính vào nhãn mục tiêu `1 VND`, `1 USD`, `1 kg`, `1 %`).
+     - Tích hợp biểu đồ Vector SVG trực quan hóa tỷ lệ khuyết & tỷ lệ dơ Before-cleaning.
+  2. **Khối 2 - Quy trình làm sạch dữ liệu (Data Cleaning Pipeline):**
+     - Trình bày 7 bước tiền xử lý đạt chuẩn Zero Data Loss (bảo toàn trọn vẹn $100\%$ bản ghi $180,519$ dòng).
+     - Quy trình bảo mật GDPR: loại bỏ 2 trường PII (`Customer Email`, `Customer Password`).
+     - Chuẩn hóa địa lý 8 cột chuyên sâu (City Normalization & Geography Pipeline): Gom `Order Region` từ 115 nhóm về đúng 23 vùng chuẩn (giảm $80.0\%$), gom `Market` từ 26 nhóm về 5 thị trường lớn.
+     - Tối ưu hóa bộ nhớ RAM: Giảm từ $104.54\text{ MB}$ xuống $66.47\text{ MB}$ (tiết kiệm $36.42\%$).
+     - Tích hợp biểu đồ Vector SVG so sánh số lượng danh mục trước và sau khi chuẩn hóa (Before vs After).
+  3. **Khối 3 - Phân tích khám phá & Phát hiện nghiệp vụ (EDA Insights & SLA Paradox):**
+     - Đánh giá phân phối biến mục tiêu $54.84\%$ trễ vs $45.16\%$ đúng hạn qua biểu đồ Donut SVG tương tác (chứng minh tính cân bằng tự nhiên $1.21 : 1$, không cần can thiệp SMOTE).
+     - Khám phá Nghịch lý SLA First Class: Biểu đồ cột kép SVG thể hiện tỷ lệ giao trễ lên tới $95.76\%$ của First Class (SLA cam kết 1 ngày phi thực tế) so với $38.01\%$ của Standard Class; kiểm định $\chi^2 = 34,863.00, p < 10^{-16}$, Cramér's V = $0.4473$.
+     - Biểu đồ thanh ngang SVG Top 10 khu vực có tỷ lệ trễ hạn cao nhất (Central Africa $57.83\%$, East Africa $56.78\%$,...).
+     - Ma trận tương quan đa biến (Multivariate Heatmap SVG) giữa 4 gói vận chuyển và 5 thị trường quốc tế, chứng minh tính đồng nhất của nghịch lý vận tải trên quy mô toàn cầu.
+  4. **Khối 4 - Đánh giá mô hình học máy & Khuyến nghị thực thi SCM:**
+     - Bảng đánh giá và biểu đồ cột SVG so sánh hiệu năng Baseline Models: Random Forest (Recall $62.05\%$, ROC-AUC $0.7310$, PR-AUC $0.7952$) vs Logistic Regression (Recall $55.78\%$, ROC-AUC $0.7285$, PR-AUC $0.7932$).
+     - Rào chắn chống rò rỉ dữ liệu (*Data Leakage Shield*): Cách ly hoàn toàn các trường hậu giao hàng (`Days for shipping (real)`, `Delivery Status`, `shipping date`).
+     - Bộ khuyến nghị quản trị chuỗi cung ứng thực tế: Tái cấu trúc cam kết SLA First Class từ 1 ngày lên 2-3 ngày, thiết lập bộ lọc cảnh báo trễ hạn tại hệ thống OMS/ERP trước giờ chốt sổ, và tối ưu định tuyến 3PL chặng cuối.
+- **Tối ưu hóa UI/UX & Khả năng hiển thị:**
+  - Hệ màu High Contrast đạt chuẩn WCAG AAA: Chữ sẫm màu rõ ràng (`#0f172a`), thẻ nền trắng sáng (`#ffffff`) trên nền trang (`#f1f5f9`), triệt tiêu hoàn toàn hiện tượng chữ mờ hoặc chữ tệp vào nền.
+  - Tích hợp nút chuyển đổi giao diện Sáng / Tối (Light / Dark Mode Toggle) linh hoạt.
+  - Kiến trúc Standalone độc lập hoàn toàn: Toàn bộ CSS, JavaScript và biểu đồ SVG được nhúng trực tiếp trong 1 tệp duy nhất [dashboard.html](file:///d:/Ti%E1%BB%83u%20lu%E1%BA%ADn%20Python/.agents%20(1)/dashboard.html), có thể mở và sử dụng offline trên bất kỳ trình duyệt nào mà không cần kết nối mạng.
+
+---
+
 ## [2026-10-28 13:16] - Khôi Phục Lại Bản Gốc Chương 3 Theo Yêu Cầu Của Người Dùng
 - **Mục tiêu phiên:** Hoàn trả (revert) nguyên trạng bản thảo gốc của Chương 3 trong [PRJ13_Bao_Cao_Tieu_Luan.qmd](file:///c:/Users/nhath/Downloads/.agents/PRJ13_Bao_Cao_Tieu_Luan.qmd) (từ dòng 405 đến dòng 527) theo yêu cầu người dùng, đảm bảo giữ nguyên bản thảo trước khi viết mở rộng.
 - **Tình trạng tệp:** Tệp `PRJ13_Bao_Cao_Tieu_Luan.qmd` đã được đưa về đúng cấu trúc ban đầu gồm 796 dòng, Chương 4 bắt đầu từ dòng 529.
