@@ -1,0 +1,29 @@
+﻿,count,unique,top,freq
+Type,120997,10,DEBIT,39913
+Delivery Status,107931,4,Late delivery,63356
+Category Name,180519,156,Unknown,70933
+Customer City,180519,567,Caguas,52382
+Customer Country,157378,2,EE. UU.,96939
+Customer Fname,171095,1762,Mary,53965
+Customer Lname,153675,3171,Smith,42830
+Customer Segment,180519,4,Consumer,85415
+Customer State,180519,45,PR,52006
+Customer Street,119554,18616,9126 Wishing Expressway,65
+Customer Zipcode,180516,995,725,66770
+Department Name,180519,35,Fan Shop,55378
+Latitude,157740,27235,9999,3808
+Longitude,165721,14551,-66.3706131,3031
+Market,180519,6,LATAM,43687
+Order City,180519,3557,Unknown,66962
+Order Country,180519,165,Unknown,64780
+Order Region,180519,24,Unknown,41964
+Order State,180519,1080,Unknown,71848
+Order Status,156614,21,COMPLETE,49547
+Order Zipcode,24840,609,10035,648
+Product Description,24885,11,nan %,3685
+Product Image,145759,344,http://images.acmesports.sports/Perfect+Fitness+Perfect+Rip+Deck,17595
+Product Name,160929,375,Perfect Fitness Perfect Rip Deck,14845
+Product Status,169682,10,0,147884
+Shipping Mode,180519,5,Standard Class,100630
+Customer_City_Top5_Group,180519,7,Other,79469
+Order_City_Top5_Group,180519,7,Other,107448

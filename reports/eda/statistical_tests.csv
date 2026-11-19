@@ -1,0 +1,5 @@
+﻿Thuộc Tính Kiểm Định,Cỡ Mẫu (N),Chi-Square (Chi2),p-value,Cramérs V,Độ Lớn Ảnh Hưởng,Ý Nghĩa Thống Kê
+Shipping Mode,163761,34852.65,0.0000e+00,0.4613,Rất mạnh (Strong),Có ý nghĩa (p < 0.001)
+Order Region,133684,62.52,9.3960e-06,0.0216,Yếu (Weak),Có ý nghĩa (p < 0.001)
+Market,147091,5.05,0.2826,0.0059,Không đáng kể,Không có ý nghĩa (p > 0.05)
+Customer Segment,158184,0.4,0.8201,0.0016,Không đáng kể,Không có ý nghĩa (p > 0.05)

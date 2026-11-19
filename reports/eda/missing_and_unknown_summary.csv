@@ -1,0 +1,54 @@
+﻿Tên Cột,Số Lượng Null,Tỷ Lệ Null (%),Số Lượng Unknown,Tổng Điểm Thiếu,Tỷ Lệ Thiếu Tổng (%)
+Order Zipcode,155679,86.24,0,155679,86.24
+Product Description,155634,86.21,0,155634,86.21
+Delivery Status,72588,40.21,0,72588,40.21
+Order State,0,0.0,71848,71848,39.8
+Category Name,0,0.0,70933,70933,39.29
+Order City,0,0.0,66962,66962,37.09
+Order_City_Top5_Group,0,0.0,66962,66962,37.09
+Order Country,0,0.0,64780,64780,35.89
+Customer Street,60965,33.77,0,60965,33.77
+Type,59522,32.97,0,59522,32.97
+Order Item Profit Ratio,51351,28.45,0,51351,28.45
+Customer State,0,0.0,44037,44037,24.39
+Department Id,43722,24.22,0,43722,24.22
+Order Region,0,0.0,41964,41964,23.25
+Order Item Discount Rate,40301,22.33,0,40301,22.33
+Customer_City_Top5_Group,0,0.0,38854,38854,21.52
+Customer City,0,0.0,38854,38854,21.52
+Product Image,34760,19.26,0,34760,19.26
+Product Card Id,32218,17.85,0,32218,17.85
+Customer Id,30740,17.03,0,30740,17.03
+Market,0,0.0,29902,29902,16.56
+shipping date (DateOrders),26863,14.88,0,26863,14.88
+Customer Lname,26844,14.87,0,26844,14.87
+Order Customer Id,24389,13.51,0,24389,13.51
+Order Status,23905,13.24,0,23905,13.24
+Customer Country,23141,12.82,0,23141,12.82
+Latitude,22779,12.62,0,22779,12.62
+Order Id,22605,12.52,0,22605,12.52
+order date (DateOrders),21160,11.72,0,21160,11.72
+Product Name,19590,10.85,0,19590,10.85
+Customer Segment,0,0.0,16588,16588,9.19
+Category Id,15448,8.56,0,15448,8.56
+Longitude,14798,8.2,0,14798,8.2
+Order Item Id,13963,7.73,0,13963,7.73
+Order Item Quantity,12557,6.96,0,12557,6.96
+Shipping Mode,0,0.0,10865,10865,6.02
+Product Status,10837,6.0,0,10837,6.0
+Department Name,0,0.0,10009,10009,5.54
+Product Category Id,9709,5.38,0,9709,5.38
+Customer Fname,9424,5.22,0,9424,5.22
+Order Item Cardprod Id,8582,4.75,0,8582,4.75
+Late_delivery_risk,6302,3.49,0,6302,3.49
+Days for shipping (real),0,0.0,0,0,0.0
+Benefit per order,0,0.0,0,0,0.0
+Sales per customer,0,0.0,0,0,0.0
+Customer Zipcode,3,0.0,0,3,0.0
+Days for shipment (scheduled),0,0.0,0,0,0.0
+Order Item Discount,0,0.0,0,0,0.0
+Order Item Product Price,0,0.0,0,0,0.0
+Order Item Total,0,0.0,0,0,0.0
+Sales,0,0.0,0,0,0.0
+Order Profit Per Order,0,0.0,0,0,0.0
+Product Price,0,0.0,0,0,0.0

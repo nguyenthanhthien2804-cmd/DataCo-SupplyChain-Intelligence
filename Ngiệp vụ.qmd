@@ -1,0 +1,126 @@
+---
+title: "Untitled"
+format: html
+---
+
+Dưới đây là bản Phân tích Nghiệp vụ Toàn diện và Chuyên sâu đối với tệp dữ liệu 
+
+7_PJ13_2521001054_Nguyễn Lê Nhật Hạ.csv
+ phục vụ đề tài nghiên cứu PRJ-13: Dự báo Rủi ro Giao hàng Chậm trễ trong Chuỗi Cung ứng Toàn cầu (DataCo Big Supply Chain Delivery Delay).
+
+BÁO CÁO PHÂN TÍCH NGHIỆP VỤ CHUỖI CUNG ỨNG (SCM BUSINESS ANALYSIS)
+# 1. Tổng Quan Hồ Sơ Dữ Liệu & Đơn Vị Quan Sát
+Tiêu chí	Thông số kỹ thuật	Ý nghĩa nghiệp vụ
+Quy mô mẫu	$180,519$ dòng $\times$ $53$ cột	Bộ dữ liệu giao dịch quy mô lớn (Big Tabular Data), phản ánh hoạt động bán lẻ đa kênh trong giai đoạn 2015 – 2018.
+Dung lượng tệp thô	$\approx 87.24\text{ MB}$	Lưu trữ dưới định dạng CSV, mã hóa UTF-8.
+Bản chất dữ liệu	Personalized Synthetic Noisy Dataset	Tập dữ liệu được cá nhân hóa và cấy các dị thường thực tế (lỗi nhập liệu, đơn vị trôi nổi, giá trị khuyết) phục vụ học phần Khoa học Dữ liệu.
+Đơn vị quan sát (Granularity)	Mục hàng trong đơn (Line Item / Order Item)	Mỗi dòng đại diện cho một mặt hàng giao dịch cụ thể (Order Item Id), không phải là một đơn hàng tổng thể (Order Id). Một đơn hàng có thể có nhiều mục hàng với các sản phẩm, số lượng và lợi nhuận khác nhau.
+Biến mục tiêu (Target)	Late_delivery_risk	Cờ nhị phân: $1$ (Có nguy cơ trễ hạn giao hàng) và $0$ (Đúng hạn hoặc giao sớm).
+
+# 2. Bối Cảnh Kinh Doanh & Vòng Đời Đơn Hàng (Order Fulfillment Lifecycle)
+Bộ dữ liệu mô phỏng chuỗi cung ứng bán lẻ quốc tế của tập đoàn DataCo Global, vận hành theo mô hình bán lẻ đa kênh (Omnichannel Retail) phục vụ khách hàng trên 5 đại thị trường: LATAM ($24.2%$), Europe ($23.4%$), Pacific Asia ($19.3%$), USCA ($14.3%$), và Africa ($6.4%$).
+
+Chu trình phát sinh dữ liệu trải qua 4 giai đoạn liên phòng ban:
+
+┌─────────────────────────┐      ┌─────────────────────────┐      ┌─────────────────────────┐      ┌─────────────────────────┐
+│ GIAI ĐOẠN 1: TẠO ĐƠN    │      │ GIAI ĐOẠN 2: THIẾT LẬP  │      │ GIAI ĐOẠN 3: XUẤT KHO   │      │ GIAI ĐOẠN 4: GIAO HÀNG  │
+│      & THANH TOÁN       │ ───> │      CAM KẾT SLA        │ ───> │      & ĐIỀU PHỐI 3PL    │ ───> │      & HẬU KIỂM OTIF    │
+├─────────────────────────┤      ├─────────────────────────┤      ├─────────────────────────┤      ├─────────────────────────┤
+│ • Khách hàng đặt mua    │      │ • Gắn Shipping Mode     │      │ • Xuất kho WMS          │      │ • 3PL quét mã giao hàng │
+│ • Cổng thanh toán ghi   │      │ • TMS ấn định ngày cam  │      │ • Bàn giao đơn vị vận   │      │ • Ghi nhận ngày thực tế │
+│   nhận phương thức & tiền│      │   kết: Scheduled Days   │      │   chuyển chặng cuối     │      │ • Đối soát cờ trễ hạn:  │
+│   (DEBIT, CASH, TRANSFER│      │   (0, 1, 2, 4 ngày)     │      │                         │   Late_delivery_risk    │
+└─────────────────────────┘      └─────────────────────────┘      └─────────────────────────┘      └─────────────────────────┘
+Khởi tạo đơn hàng & Thanh toán (Sales & Finance): Khách hàng đặt hàng qua hệ thống OMS/CRM; phòng Tài chính - Kế toán ghi nhận qua cổng thanh toán (Type), tính toán giá trị thực thu (Sales per customer) và lợi nhuận (Benefit per order).
+Thiết lập cam kết SLA (Logistics Planning): Dựa vào gói dịch vụ vận chuyển mà khách chọn (Shipping Mode), hệ thống Quản lý Vận tải (TMS) gắn số ngày cam kết hoàn thành tối đa (Days for shipment (scheduled)).
+Hoàn tất kho vận & Bốc xếp (Warehouse & Dispatch): Hệ thống WMS điều phối đóng gói theo danh mục hàng hóa (Category Name, Department Name).
+Giao vận chặng cuối & Hậu kiểm (3PL Last-mile Delivery): Đối tác giao vận (3PL) cập nhật ngày giờ giao hàng thực tế (shipping date), số ngày thực tế (Days for shipping (real)), trạng thái giao (Delivery Status) và hệ thống tự động xác định rủi ro trễ hạn (Late_delivery_risk).
+
+# 3. Phân Nhóm Nghiệp Vụ 53 Thuộc Tính
+Dữ liệu được cấu trúc chặt chẽ quanh 6 trụ cột nghiệp vụ:
+
+3.1. Nhóm Vận Chuyển & Cam Kết Dịch Vụ SLA (Trọng Tâm Đề Tài)
+Shipping Mode: Phương thức vận chuyển (Standard Class, Second Class, First Class, Same Day).
+Days for shipment (scheduled): Số ngày cam kết giao hàng theo thỏa thuận mức dịch vụ (SLA).
+Days for shipping (real): Số ngày vận chuyển thực tế từ xuất kho đến khi khách ký nhận.
+Delivery Status: Trạng thái thực tế (Late delivery, Advance shipping, Shipping on time, Shipping canceled).
+Late_delivery_risk: Biến mục tiêu nhị phân đo lường nguy cơ vi phạm cam kết giao hàng.
+shipping date (DateOrders): Thời điểm đơn vị 3PL hoàn tất giao hàng.
+3.2. Nhóm Quản Lý Đơn Hàng & Phân Bổ Địa Lý
+Order Id, order date (DateOrders), Order Status: Theo dõi tiến trình đơn hàng và yếu tố mùa vụ theo thời gian.
+Type: Phương thức thanh toán (DEBIT, TRANSFER, PAYMENT, CASH) – phản ánh mức độ tín nhiệm và thời gian xác thực tài chính.
+Market, Order Region, Order Country, Order City, Order State, Order Zipcode: Mạng lưới địa lý giao hàng, phản ánh khoảng cách vận tải và các rào cản hải quan, thủ tục biên giới.
+3.3. Nhóm Kinh Tế Đơn Vị & Tài Chính (Unit Economics)
+Sales per customer: Doanh số thuần thực thu trên từng dòng giao dịch sau khi khấu trừ chiết khấu.
+Benefit per order / Order Profit Per Order: Lợi nhuận ròng thu về từ mục hàng.
+Order Item Discount, Order Item Discount Rate: Chính sách giá khuyến mại.
+Order Item Quantity, Product Price, Order Item Total: Quy mô giá trị và thể tích của mục hàng.
+3.4. Nhóm Phân Khúc & Hồ Sơ Khách Hàng
+Customer Id, Customer Segment: Nhận diện khách hàng thuộc phân khúc Cá nhân (Consumer chiếm ~$51.8%$), Doanh nghiệp (Corporate chiếm ~$30.3%$), hay Văn phòng tại nhà (Home Office chiếm ~$17.9%$).
+Customer City, Customer State, Customer Country, Customer Zipcode: Địa chỉ cư trú của khách hàng.
+Latitude, Longitude: Tọa độ địa lý của trung tâm tiếp nhận/kho gửi hàng, phục vụ tính toán khoảng cách không gian.
+3.5. Nhóm Danh Mục Sản Phẩm & Kho Bãi
+Product Card Id, Product Name, Product Price, Product Status: Thông tin thương mại và tình trạng sẵn sàng của mặt hàng.
+Category Id, Category Name, Department Id, Department Name: Phân cấp ngành hàng (Đồ thể thao, May mặc, Dụng cụ ngoài trời...). Đặc tính sản phẩm (kích thước, cồng kềnh, dễ vỡ) ảnh hưởng trực tiếp đến thời gian bốc xếp và tốc độ luân chuyển kho bãi.
+3.6. Nhóm Quản Trị Dữ Liệu & Thông Tin Định Danh (Data Governance & PII)
+Customer Email, Customer Password: Dữ liệu định danh cá nhân nhạy cảm, bắt buộc phải loại bỏ trước khi đưa dữ liệu vào Data Lake/Pipeline huấn luyện mô hình theo chuẩn GDPR.
+Customer Fname, Customer Lname, Customer Street: Dữ liệu định danh cá nhân mang tính định danh riêng, không mang giá trị quy luật cho bài toán dự báo.
+
+# 4. Bốn Phát Hiện Dị Thường Dữ Liệu & "Quy Tắc Nghiệp Vụ Vàng"
+Qua kiểm toán chi tiết tệp dữ liệu của sinh viên Nguyễn Lê Nhật Hạ, nhóm phát hiện 4 vấn đề kỹ thuật lớn:
+
+┌─────────────────────────────────────────────────────────────────────────────────────────────┐
+│                               DỊ THƯỜNG DỮ LIỆU ĐƯỢC PHÁT HIỆN                              │
+├───────────────────────────────┬───────────────────────────────┬─────────────────────────────┤
+│ 1. Nhiễu chuỗi biến mục tiêu  │ 2. Nghịch lý SLA First Class  │ 3. Nguy cơ rò rỉ dữ liệu    │
+│    '1 VND', '1 USD', '1 %',   │    Cam kết cố định 1 ngày cho │    Days for shipping (real) │
+│    '?', '-', '9999', thiếu NaN│    mọi khoảng cách địa lý     │    & Delivery Status rò rỉ  │
+│    (8,378 dòng)               │    --> Tỷ lệ trễ > 95%        │    100% nhãn kết quả        │
+└───────────────────────────────┴───────────────────────────────┴─────────────────────────────┘
+4.1. Dị thường nghiêm trọng tại Biến mục tiêu Late_delivery_risk
+Biến mục tiêu bị chèn các ký tự đơn vị tiền tệ/khối lượng/tỷ lệ phần trăm: '1 VND', '1 USD', '1 %', '1 kg', '1 đ', '0 VND', '0 USD', '0 %', '0 kg', '0 đ'.
+Chứa các mã khuyết không chuẩn: '?', '-', '-1', '9999'.
+Có tới $8,378$ giá trị khuyết hoàn toàn (NaN).
+4.2. Khám phá "Quy Tắc Nghiệp Vụ Vàng" (Ground Truth Recovery Rules)
+Bằng phương pháp đối chiếu chéo logic chuỗi cung ứng, nhóm thiết lập bộ 3 quy tắc khôi phục nhãn mục tiêu đạt độ chính xác 100%:
+
+$$\text{Quy tắc 1: } \text{Delivery Status} = \text{'Late delivery'} \implies \text{Late_delivery_risk} = 1 \quad (100%)$$
+
+$$\text{Quy tắc 2: } \text{Delivery Status} \in {\text{'Advance shipping'}, \text{'Shipping on time'}, \text{'Shipping canceled'}} \implies \text{Late_delivery_risk} = 0 \quad (100%)$$
+
+$$\text{Quy tắc 3 (Quy tắc gốc SCM): } \text{Late_delivery_risk} = \begin{cases} 1 & \text{nếu } \text{Days for shipping (real)} > \text{Days for shipment (scheduled)} \ 0 & \text{ngược lại} \end{cases}$$
+
+Kết quả phân phối tự nhiên sau khôi phục:
+Nhãn trễ hạn ($1$): $54.62%$ ($98,597$ dòng).
+Nhãn đúng hạn/sớm ($0$): $45.38%$ ($81,922$ dòng).
+Ý nghĩa: Tỷ lệ mất cân bằng lớp ở mức cực kỳ nhẹ (~$55:45$), đây là tỷ lệ phân phối lý tưởng, không cần thiết phải lạm dụng kỹ thuật sinh mẫu nhân tạo SMOTE (tránh làm sai lệch đặc tính không gian của dữ liệu dạng bảng).
+4.3. Nghịch lý Nghiệp vụ ở Phương thức vận chuyển First Class
+Thực trạng cam kết: Hệ thống TMS của DataCo áp dụng một mức SLA cứng nhắc:
+Same Day: Cam kết giao trong $0$ ngày.
+First Class: Cam kết giao trong $1$ ngày.
+Second Class: Cam kết giao trong $2$ ngày.
+Standard Class: Cam kết giao trong $4$ ngày.
+Nghịch lý: Gói First Class cam kết giao trong $1$ ngày bất kể khoảng cách giao hàng (từ Mỹ sang Tây Âu, Nam Mỹ hay châu Á). Trên thực tế, thủ tục hải quan và vận tải quốc tế tối thiểu mất $2-4$ ngày. Hậu quả là tỷ lệ trễ hạn của gói First Class lên tới trên $95%$!
+4.4. Cảnh báo Rò rỉ Dữ liệu Nghiêm trọng (Data Leakage)
+Các biến: Days for shipping (real), Delivery Status, shipping date (DateOrders) là những thông tin chỉ xuất hiện sau khi đơn hàng đã xuất kho hoặc giao thành công.
+Cảnh báo học thuật: Nếu đưa các biến này vào làm đặc trưng đầu vào ($X$) để dự báo rủi ro tại thời điểm tạo đơn, mô hình sẽ bị rò rỉ dữ liệu $100%$ (học vẹt từ kết quả tương lai), đạt độ chính xác ảo nhưng hoàn toàn tê liệt khi áp dụng vào thực tế.
+# 5. Phân Tích Địa Lý & Điểm Nghẽn Mạng Lưới Giao Vận
+           PHÂN BỔ LƯU LƯỢNG ĐƠN HÀNG THEO THỊ TRƯỜNG TOÀN CẦU
+  LATAM (Châu Mỹ Latinh)      █████████████████████████ 24.2% (Điểm nóng trễ hạn)
+  Europe (Châu Âu)            ████████████████████████  23.4% (Quy định hải quan)
+  Pacific Asia (Châu Á - TBD) ███████████████████       19.3%
+  USCA (Mỹ & Canada)          ██████████████            14.3%
+  Africa (Châu Phi)           ██████                    6.4%
+Thị trường LATAM và Europe là hai tâm điểm rủi ro lớn nhất:
+Chiếm tới gần một nửa tổng lưu lượng đơn hàng của tập đoàn ($43,687$ đơn LATAM và $42,325$ đơn Europe).
+Có tỷ lệ chậm trễ cao do tuyến đường vận chuyển dài và thời gian thông quan qua nhiều quốc gia phức tạp.
+Khu vực Đông Nam Á và Nam Á trong Pacific Asia:
+Cơ sở hạ tầng logistics chặng cuối (Last-mile) ở các quốc gia đang phát triển còn phân mảnh, dẫn đến sự dao động lớn trong số ngày giao thực tế.
+6. Đề Xuất Chiến Lược Quản Trị Vận Hành Chuỗi Cung Ứng (Prescriptive Insights)
+Dựa trên kết quả phân tích nghiệp vụ, nhóm nghiên cứu đề xuất 4 giải pháp mang tính hành động cụ thể cho ban lãnh đạo DataCo:
+
+# STT	Trụ cột hành động	Giải pháp nghiệp vụ cụ thể	Tác động kỳ vọng (ROI / KPI)
+1	Chính sách Cam kết Động (Dynamic SLA)	Chấm dứt cam kết cứng $1$ ngày của gói First Class cho các đơn hàng xuyên biên giới. Điều chỉnh SLA theo khoảng cách địa lý ($2 - 3$ ngày đối với tuyến vượt đại dương).	Cắt giảm ngay lập tức $\ge 40%$ số đơn hàng bị dán nhãn vi phạm hợp đồng ảo.
+2	Hệ thống Cảnh báo Sớm AI (Early Warning System)	Tích hợp mô hình Học máy (XGBoost Pipeline) vào hệ thống OMS. Ngay khi khách đặt đơn, nếu mô hình dự báo xác suất rủi ro $> 0.65$, hệ thống gắn nhãn cảnh báo đỏ.	Giúp đội ngũ logistics có cửa sổ thời gian từ $12 - 24$ giờ để can thiệp điều phối trước khi đơn xuất kho.
+3	Chiến lược Phân luồng Ưu tiên (Priority Fulfillment)	Áp dụng quy tắc ưu tiên kép: Đơn hàng vừa có rủi ro trễ cao vừa có giá trị lớn (Sales per customer cao) sẽ được đưa vào luồng đóng gói khẩn cấp (Fast-track Wave).	Bảo vệ dòng doanh thu cao nhất và duy trì sự hài lòng của nhóm khách hàng chiến lược (Corporate).
+4	Tái cấu trúc Đối tác 3PL theo OTIF	Thiết lập điều khoản thưởng/phạt theo tỷ lệ giao hàng đúng hẹn (On-Time In-Full) trong hợp đồng với các đơn vị vận chuyển chặng cuối tại LATAM và Europe.	Buộc các nhà xe nâng cao năng lực thông quan và cải thiện chất lượng đội tàu bay/xe tải chặng cuối.

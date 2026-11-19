@@ -1,0 +1,193 @@
+﻿Ten_Dia_Danh,Tong_So_Dong,So_Dong_Tre,So_Don_Hang,Ty_Le_Tre_Pct,Cap_Dia_Ly
+Canada,714,347,283,48.6,Order Region
+Caribbean,6127,3251,2546,53.06,Order Region
+Central Africa,1252,724,502,57.83,Order Region
+Central America,21094,11556,8603,54.78,Order Region
+Central Asia,393,209,173,53.18,Order Region
+East Africa,1379,783,570,56.78,Order Region
+East of USA,5146,2837,2120,55.13,Order Region
+Eastern Asia,5437,2965,2658,54.53,Order Region
+Eastern Europe,2898,1623,1175,56.0,Order Region
+North Africa,2376,1292,973,54.38,Order Region
+Northern Europe,7261,3926,3204,54.07,Order Region
+Oceania,7487,4034,3544,53.88,Order Region
+South America,11032,6011,4558,54.49,Order Region
+South Asia,5691,3216,2681,56.51,Order Region
+South of USA,3017,1709,1242,56.65,Order Region
+Southeast Asia,7089,3932,3440,55.47,Order Region
+Southern Africa,853,454,358,53.22,Order Region
+Southern Europe,7026,3869,3042,55.07,Order Region
+US Center,4316,2378,1763,55.1,Order Region
+West Africa,2784,1475,1132,52.98,Order Region
+West Asia,4469,2467,1815,55.2,Order Region
+West of USA,5916,3193,2443,53.97,Order Region
+Western Europe,19927,11159,8642,56.0,Order Region
+Africa,9483,5181,3654,54.63,Market
+Europe,40821,22472,16740,55.05,Market
+LATAM,42191,22937,16262,54.36,Market
+Pacific Asia,33768,18572,15048,55.0,Market
+USCA,20828,11441,8040,54.93,Market
+Afganistán,111,67,56,60.36,Order Country
+Albania,24,13,13,54.17,Order Country
+Alemania,5849,3294,2798,56.32,Order Country
+Angola,197,115,90,58.38,Order Country
+Arabia Saudí,515,297,238,57.67,Order Country
+Argelia,317,163,147,51.42,Order Country
+Argentina,1219,628,536,51.52,Order Country
+Armenia,5,5,1,100.0,Order Country
+Australia,5273,2867,2716,54.37,Order Country
+Austria,874,513,402,58.7,Order Country
+Azerbaiyán,43,26,19,60.47,Order Country
+Bangladés,301,165,149,54.82,Order Country
+Barbados,69,39,35,56.52,Order Country
+Baréin,3,0,1,0.0,Order Country
+Belice,12,7,5,58.33,Order Country
+Benín,55,27,28,49.09,Order Country
+Bielorrusia,126,61,54,48.41,Order Country
+Bolivia,133,82,61,61.65,Order Country
+Bosnia y Herzegovina,25,18,16,72.0,Order Country
+Botsuana,7,5,4,71.43,Order Country
+Brasil,4980,2689,2266,54.0,Order Country
+Bulgaria,96,50,46,52.08,Order Country
+Burkina Faso,8,1,3,12.5,Order Country
+Bután,2,2,2,100.0,Order Country
+Bélgica,417,238,194,57.07,Order Country
+Camboya,94,58,51,61.7,Order Country
+Camerún,166,71,78,42.77,Order Country
+Canada,593,289,268,48.74,Order Country
+Chad,1,0,1,0.0,Order Country
+Chile,460,273,206,59.35,Order Country
+China,3533,1912,1843,54.12,Order Country
+Chipre,5,4,3,80.0,Order Country
+Colombia,1059,555,501,52.41,Order Country
+Corea del sur,366,220,200,60.11,Order Country
+Costa Rica,21,17,10,80.95,Order Country
+Costa de Marfil,138,85,75,61.59,Order Country
+Croacia,56,33,25,58.93,Order Country
+Cuba,2214,1123,996,50.72,Order Country
+Dinamarca,171,71,80,41.52,Order Country
+Ecuador,183,118,87,64.48,Order Country
+Egipto,738,410,337,55.56,Order Country
+El Salvador,2352,1310,1066,55.7,Order Country
+Emiratos Árabes Unidos,20,14,11,70.0,Order Country
+Eritrea,1,1,1,100.0,Order Country
+Eslovaquia,16,12,7,75.0,Order Country
+Eslovenia,3,2,2,66.67,Order Country
+España,2377,1329,1146,55.91,Order Country
+Estados Unidos,15324,8469,6964,55.27,Order Country
+Estonia,22,21,13,95.45,Order Country
+Etiopía,19,7,9,36.84,Order Country
+Filipinas,1332,754,691,56.61,Order Country
+Finlandia,175,82,85,46.86,Order Country
+Francia,8159,4532,3823,55.55,Order Country
+Gabón,28,24,11,85.71,Order Country
+Georgia,61,44,26,72.13,Order Country
+Ghana,165,98,74,59.39,Order Country
+Grecia,18,7,11,38.89,Order Country
+Guadalupe,22,8,13,36.36,Order Country
+Guatemala,1701,953,766,56.03,Order Country
+Guayana Francesa,5,2,4,40.0,Order Country
+Guinea,29,11,12,37.93,Order Country
+Guinea Ecuatorial,2,2,2,100.0,Order Country
+Guinea-Bissau,15,7,8,46.67,Order Country
+Guyana,9,7,5,77.78,Order Country
+Haití,327,180,153,55.05,Order Country
+Honduras,2232,1211,994,54.26,Order Country
+Hong Kong,49,16,32,32.65,Order Country
+Hungría,114,70,51,61.4,Order Country
+India,2991,1647,1533,55.07,Order Country
+Indonesia,2584,1421,1348,54.99,Order Country
+Irak,613,303,266,49.43,Order Country
+Irlanda,304,190,152,62.5,Order Country
+Irán,880,483,397,54.89,Order Country
+Israel,148,84,73,56.76,Order Country
+Italia,3067,1642,1478,53.54,Order Country
+Jamaica,95,49,49,51.58,Order Country
+Japón,461,240,248,52.06,Order Country
+Jordania,73,40,33,54.79,Order Country
+Kazajistán,167,94,84,56.29,Order Country
+Kenia,146,70,78,47.95,Order Country
+Kirguistán,58,22,31,37.93,Order Country
+Kuwait,1,0,1,0.0,Order Country
+Laos,4,4,3,100.0,Order Country
+Lesoto,15,9,5,60.0,Order Country
+Liberia,23,8,12,34.78,Order Country
+Libia,63,32,31,50.79,Order Country
+Lituania,84,50,40,59.52,Order Country
+Luxemburgo,4,4,3,100.0,Order Country
+Líbano,14,3,9,21.43,Order Country
+Macedonia,4,0,2,0.0,Order Country
+Madagascar,97,51,46,52.58,Order Country
+Malasia,332,211,171,63.55,Order Country
+Mali,64,39,33,60.94,Order Country
+Marruecos,701,386,330,55.06,Order Country
+Martinica,72,39,41,54.17,Order Country
+Mauritania,12,7,4,58.33,Order Country
+Moldavia,52,36,27,69.23,Order Country
+Mongolia,48,33,24,68.75,Order Country
+Montenegro,7,4,2,57.14,Order Country
+Mozambique,154,95,72,61.69,Order Country
+Myanmar (birmania),249,134,130,53.82,Order Country
+México,8181,4467,3706,54.6,Order Country
+Namibia,11,8,6,72.73,Order Country
+Nepal,50,26,22,52.0,Order Country
+Nicaragua,1895,1059,848,55.88,Order Country
+Nigeria,1388,726,654,52.31,Order Country
+Noruega,213,117,93,54.93,Order Country
+Nueva Zelanda,962,502,442,52.18,Order Country
+Níger,64,42,28,65.62,Order Country
+Omán,6,0,2,0.0,Order Country
+Pakistán,482,272,259,56.43,Order Country
+Panamá,1222,610,554,49.92,Order Country
+Papúa Nueva Guinea,40,22,24,55.0,Order Country
+Paraguay,50,20,21,40.0,Order Country
+Países Bajos,1201,662,585,55.12,Order Country
+Perú,457,243,233,53.17,Order Country
+Polonia,412,232,186,56.31,Order Country
+Portugal,201,96,94,47.76,Order Country
+Qatar,25,13,12,52.0,Order Country
+Reino Unido,4557,2426,2185,53.24,Order Country
+República Centroafricana,12,7,7,58.33,Order Country
+República Checa,121,64,62,52.89,Order Country
+República Democrática del Con,95,55,70,57.89,Order Country
+República Democrática del Congo,527,299,263,56.74,Order Country
+República Dominicana,2258,1249,1065,55.31,Order Country
+República de Gambia,3,3,1,100.0,Order Country
+República del Congo,7,6,3,85.71,Order Country
+Ruanda,55,29,27,52.73,Order Country
+Rumania,288,168,131,58.33,Order Country
+Rusia,629,339,281,53.9,Order Country
+Senegal,168,70,78,41.67,Order Country
+Serbia,1,0,1,0.0,Order Country
+Sierra Leona,21,13,10,61.9,Order Country
+Singapur,274,152,144,55.47,Order Country
+Siria,36,18,21,50.0,Order Country
+Somalia,86,57,40,66.28,Order Country
+Sri Lanka,10,8,7,80.0,Order Country
+Suazilandia,4,4,2,100.0,Order Country
+Sudafrica,685,355,312,51.82,Order Country
+Sudán,145,67,75,46.21,Order Country
+Sudán del sur,4,4,3,100.0,Order Country
+Suecia,595,347,277,58.32,Order Country
+Suiza,178,100,104,56.18,Order Country
+Surinam,7,0,3,0.0,Order Country
+Sáhara Occidental,1,1,1,100.0,Order Country
+Tailandia,570,336,283,58.95,Order Country
+Taiwán,14,5,7,35.71,Order Country
+Tanzania,226,129,111,57.08,Order Country
+Tayikistán,2,1,2,50.0,Order Country
+Togo,82,28,30,34.15,Order Country
+Trinidad y Tobago,78,48,40,61.54,Order Country
+Turkmenistán,32,23,19,71.88,Order Country
+Turquía,2127,1173,956,55.15,Order Country
+Túnez,21,16,10,76.19,Order Country
+Ucrania,650,348,275,53.54,Order Country
+Uganda,57,37,28,64.91,Order Country
+Uruguay,86,48,39,55.81,Order Country
+Uzbekistán,65,36,35,55.38,Order Country
+Venezuela,641,356,284,55.54,Order Country
+Vietnam,463,241,241,52.05,Order Country
+Yemen,50,28,25,56.0,Order Country
+Yibuti,19,13,10,68.42,Order Country
+Zambia,173,98,82,56.65,Order Country
+Zimbabue,109,64,53,58.72,Order Country

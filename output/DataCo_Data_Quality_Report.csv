@@ -1,0 +1,46 @@
+column,dtype,null_count,null_pct,unknown_count
+Type,category,0,0.0,37308
+Days for shipping (real),Int64,18999,10.524653914546391,0
+Days for shipment (scheduled),Int64,43613,24.15978373467613,0
+Benefit per order,Float64,45444,25.17408139863394,0
+Sales per customer,Float64,23723,13.141552966723724,0
+Delivery Status,category,0,0.0,40451
+Late_delivery_risk,Int8,22817,12.639666738681246,0
+Category Id,string,0,0.0,10237
+Category Name,category,0,0.0,44344
+Customer City,string,0,0.0,24323
+Customer Country,category,0,0.0,14460
+Customer Id,string,20431,11.317922213174237,0
+Customer Segment,category,0,0.0,9742
+Customer State,category,0,0.0,29662
+Customer Zipcode,string,0,0.0,3
+Department Id,category,0,0.0,29198
+Department Name,category,0,0.0,6251
+Market,category,0,0.0,17545
+Order City,string,0,0.0,41900
+Order Country,string,0,0.0,40423
+Order Customer Id,string,16201,8.974678565691146,0
+order date (DateOrders),datetime64[us],21160,11.72175782050643,0
+Order Id,string,15166,8.40133171577507,0
+Order Item Cardprod Id,string,0,0.0,5672
+Order Item Discount,Float64,53106,29.41850996294019,0
+Order Item Discount Rate,Float64,32886,18.21747295298556,0
+Order Item Id,string,9324,5.165107274026557,0
+Order Item Product Price,Float64,40133,22.23200881901628,0
+Order Item Profit Ratio,Float64,51351,28.4463131304738,0
+Order Item Quantity,Float64,13316,7.376508843944404,0
+Sales,Float64,49507,27.424814008497723,0
+Order Item Total,Float64,21811,12.082384679729003,0
+Order Profit Per Order,Float64,14836,8.218525473772843,0
+Order Region,category,0,0.0,26258
+Order State,string,0,0.0,44944
+Order Status,category,0,0.0,14921
+Order Zipcode,string,0,0.0,143152
+Product Card Id,string,21539,11.93170801965444,0
+Product Category Id,string,0,0.0,6472
+Product Description,category,0,0.0,150661
+Product Name,string,0,0.0,12399
+Product Price,Float64,34026,18.848985425356886,0
+Product Status,category,0,0.0,7281
+shipping date (DateOrders),datetime64[us],26863,14.880982057290367,0
+Shipping Mode,category,0,0.0,5859

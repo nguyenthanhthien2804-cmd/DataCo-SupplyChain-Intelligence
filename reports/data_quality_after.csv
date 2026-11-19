@@ -1,0 +1,54 @@
+﻿Tên Cột,Kiểu Dữ Liệu Sau Xử Lý,Số Lượng Null,Tỷ Lệ Null (%),Số Giá Trị Unknown,Số Giá Trị Độc Nhất (Cardinality),Trạng Thái Chất Lượng
+Type,category,59522,32.97,0,10,Còn 59522 NaN hợp lệ
+Days for shipping (real),Int8,0,0.0,0,7,Sạch (0 NaN)
+Days for shipment (scheduled),Int8,0,0.0,0,4,Sạch (0 NaN)
+Benefit per order,float32,0,0.0,0,21355,Sạch (0 NaN)
+Sales per customer,float32,0,0.0,0,4460,Sạch (0 NaN)
+Delivery Status,category,72588,40.21,0,4,Còn 72588 NaN hợp lệ
+Late_delivery_risk,Int8,6302,3.49,0,2,Còn 6302 NaN hợp lệ
+Category Id,Int32,15448,8.56,0,218,Còn 15448 NaN hợp lệ
+Category Name,category,0,0.0,70933,156,Sạch (0 NaN)
+Customer City,str,0,0.0,0,567,Sạch (0 NaN)
+Customer Country,category,23141,12.82,0,2,Còn 23141 NaN hợp lệ
+Customer Fname,string,9424,5.22,0,1762,Còn 9424 NaN hợp lệ
+Customer Id,Int32,30740,17.03,0,22097,Còn 30740 NaN hợp lệ
+Customer Lname,string,26844,14.87,0,3171,Còn 26844 NaN hợp lệ
+Customer Segment,category,0,0.0,16588,4,Sạch (0 NaN)
+Customer State,category,0,0.0,44038,45,Sạch (0 NaN)
+Customer Street,string,60965,33.77,0,18616,Còn 60965 NaN hợp lệ
+Customer Zipcode,string,3,0.0,0,995,Còn 3 NaN hợp lệ
+Department Id,Int32,43722,24.22,0,55,Còn 43722 NaN hợp lệ
+Department Name,category,0,0.0,10009,35,Sạch (0 NaN)
+Latitude,string,22779,12.62,0,27235,Còn 22779 NaN hợp lệ
+Longitude,string,14798,8.2,0,14551,Còn 14798 NaN hợp lệ
+Market,category,0,0.0,28120,6,Sạch (0 NaN)
+Order City,str,0,0.0,0,3557,Sạch (0 NaN)
+Order Country,category,0,0.0,64780,165,Sạch (0 NaN)
+Order Customer Id,Int32,24389,13.51,0,20584,Còn 24389 NaN hợp lệ
+order date (DateOrders),datetime64[us],21160,11.72,0,63241,Còn 21160 NaN hợp lệ
+Order Id,Int32,22605,12.52,0,64730,Còn 22605 NaN hợp lệ
+Order Item Cardprod Id,Int32,8582,4.75,0,396,Còn 8582 NaN hợp lệ
+Order Item Discount,float32,0,0.0,0,1649,Sạch (0 NaN)
+Order Item Discount Rate,float32,40301,22.33,0,25,Còn 40301 NaN hợp lệ
+Order Item Id,Int32,13963,7.73,0,161956,Còn 13963 NaN hợp lệ
+Order Item Product Price,float32,0,0.0,0,213,Sạch (0 NaN)
+Order Item Profit Ratio,float32,51351,28.45,0,432,Còn 51351 NaN hợp lệ
+Order Item Quantity,Int16,12557,6.96,0,11,Còn 12557 NaN hợp lệ
+Sales,float32,0,0.0,0,467,Sạch (0 NaN)
+Order Item Total,float32,0,0.0,0,4477,Sạch (0 NaN)
+Order Profit Per Order,float32,0,0.0,0,22804,Sạch (0 NaN)
+Order Region,category,0,0.0,41964,24,Sạch (0 NaN)
+Order State,str,0,0.0,0,1080,Sạch (0 NaN)
+Order Status,category,23905,13.24,0,21,Còn 23905 NaN hợp lệ
+Order Zipcode,string,155679,86.24,0,609,Còn 155679 NaN hợp lệ
+Product Card Id,Int32,32218,17.85,0,403,Còn 32218 NaN hợp lệ
+Product Category Id,Int32,9709,5.38,0,209,Còn 9709 NaN hợp lệ
+Product Description,category,155634,86.21,0,11,Còn 155634 NaN hợp lệ
+Product Image,string,34760,19.26,0,344,Còn 34760 NaN hợp lệ
+Product Name,string,19590,10.85,0,375,Còn 19590 NaN hợp lệ
+Product Price,float32,0,0.0,0,240,Sạch (0 NaN)
+Product Status,category,10837,6.0,0,10,Còn 10837 NaN hợp lệ
+shipping date (DateOrders),datetime64[us],26863,14.88,0,60693,Còn 26863 NaN hợp lệ
+Shipping Mode,category,0,0.0,10865,5,Sạch (0 NaN)
+Customer_City_Top5_Group,category,0,0.0,38854,7,Sạch (0 NaN)
+Order_City_Top5_Group,category,0,0.0,66962,7,Sạch (0 NaN)

@@ -1,0 +1,11 @@
+metric,value
+original_rows,180519
+rows_after_dedup,180519
+exact_duplicates_removed,0
+label_conflicts,2641
+invalid_date_order,0
+Order Item Quantity,2104
+Order Item Discount Rate,7415
+Product Price,4343
+Days for shipping (real),0
+Days for shipment (scheduled),0

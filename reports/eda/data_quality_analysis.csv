@@ -1,0 +1,54 @@
+﻿Tên Cột,Kiểu Dữ Liệu,Số Lượng Null,Tỷ Lệ Null (%),Số Lượng Unknown,Tỷ Lệ Unknown (%),Tổng Số Ô Khuyết/Unknown,Tỷ Lệ Khuyết Tổng (%)
+Order Zipcode,string,155679,86.24,0,0.0,155679,86.24
+Product Description,category,155634,86.21,0,0.0,155634,86.21
+Delivery Status,category,72588,40.21,0,0.0,72588,40.21
+Order State,str,0,0.0,71848,39.8,71848,39.8
+Category Name,category,0,0.0,70933,39.29,70933,39.29
+Order City,str,0,0.0,66962,37.09,66962,37.09
+Order_City_Top5_Group,category,0,0.0,66962,37.09,66962,37.09
+Order Country,category,0,0.0,64780,35.89,64780,35.89
+Customer Street,string,60965,33.77,0,0.0,60965,33.77
+Type,category,59522,32.97,0,0.0,59522,32.97
+Order Item Profit Ratio,float32,51351,28.45,0,0.0,51351,28.45
+Customer State,category,0,0.0,44038,24.4,44038,24.4
+Department Id,Int32,43722,24.22,0,0.0,43722,24.22
+Order Region,category,0,0.0,41964,23.25,41964,23.25
+Order Item Discount Rate,float32,40301,22.33,0,0.0,40301,22.33
+Customer_City_Top5_Group,category,0,0.0,38854,21.52,38854,21.52
+Customer City,str,0,0.0,38854,21.52,38854,21.52
+Product Image,string,34760,19.26,0,0.0,34760,19.26
+Product Card Id,Int32,32218,17.85,0,0.0,32218,17.85
+Customer Id,Int32,30740,17.03,0,0.0,30740,17.03
+Market,category,0,0.0,28120,15.58,28120,15.58
+shipping date (DateOrders),datetime64[us],26863,14.88,0,0.0,26863,14.88
+Customer Lname,string,26844,14.87,0,0.0,26844,14.87
+Order Customer Id,Int32,24389,13.51,0,0.0,24389,13.51
+Order Status,category,23905,13.24,0,0.0,23905,13.24
+Customer Country,category,23141,12.82,0,0.0,23141,12.82
+Latitude,string,22779,12.62,0,0.0,22779,12.62
+Order Id,Int32,22605,12.52,0,0.0,22605,12.52
+order date (DateOrders),datetime64[us],21160,11.72,0,0.0,21160,11.72
+Product Name,string,19590,10.85,0,0.0,19590,10.85
+Customer Segment,category,0,0.0,16588,9.19,16588,9.19
+Category Id,Int32,15448,8.56,0,0.0,15448,8.56
+Longitude,string,14798,8.2,0,0.0,14798,8.2
+Order Item Id,Int32,13963,7.73,0,0.0,13963,7.73
+Order Item Quantity,Int16,12557,6.96,0,0.0,12557,6.96
+Shipping Mode,category,0,0.0,10865,6.02,10865,6.02
+Product Status,category,10837,6.0,0,0.0,10837,6.0
+Department Name,category,0,0.0,10009,5.54,10009,5.54
+Product Category Id,Int32,9709,5.38,0,0.0,9709,5.38
+Customer Fname,string,9424,5.22,0,0.0,9424,5.22
+Order Item Cardprod Id,Int32,8582,4.75,0,0.0,8582,4.75
+Late_delivery_risk,Int8,6302,3.49,0,0.0,6302,3.49
+Days for shipping (real),Int8,0,0.0,0,0.0,0,0.0
+Benefit per order,float32,0,0.0,0,0.0,0,0.0
+Sales per customer,float32,0,0.0,0,0.0,0,0.0
+Customer Zipcode,string,3,0.0,0,0.0,3,0.0
+Days for shipment (scheduled),Int8,0,0.0,0,0.0,0,0.0
+Order Item Discount,float32,0,0.0,0,0.0,0,0.0
+Order Item Product Price,float32,0,0.0,0,0.0,0,0.0
+Order Item Total,float32,0,0.0,0,0.0,0,0.0
+Sales,float32,0,0.0,0,0.0,0,0.0
+Order Profit Per Order,float32,0,0.0,0,0.0,0,0.0
+Product Price,float32,0,0.0,0,0.0,0,0.0

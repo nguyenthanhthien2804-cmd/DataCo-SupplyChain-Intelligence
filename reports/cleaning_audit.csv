@@ -1,0 +1,12 @@
+﻿Hạng Mục Kiểm Toán,Giá Trị
+Số dòng dữ liệu ban đầu,"180,519"
+Số dòng dữ liệu sau làm sạch,"180,519"
+Số cột ban đầu,53
+Số cột sau xử lý (chuẩn 51 cột),53
+Số cột PII bị loại bỏ,"2 (Customer Email, Customer Password)"
+Số dòng trùng lặp 100% bị xóa,0
+Số trường hợp xung đột nhãn mục tiêu,"2,694 (Đã xuất chi tiết ra label_conflicts.csv)"
+Số đơn hàng có ngày giao trước ngày đặt,0
+Dung lượng RAM trước tối ưu,104.54 MB
+Dung lượng RAM sau tối ưu,66.47 MB
+Tỷ lệ tiết kiệm RAM,36.42%

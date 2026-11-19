@@ -1,0 +1,54 @@
+﻿Tên Cột,Số Lượng Khuyết (Null),Tỷ Lệ Khuyết (%),Ký Hiệu Nhiễu,Tổng Số Điểm Lỗi,Tỷ Lệ Lỗi (%),Phân Loại Lỗi (Issue Types),Mức Độ Ưu Tiên Xử Lý
+Product Description,150661,83.46,9909,160570,88.95,"Missing, Invalid Format / Noise",Cao
+Order Zipcode,143152,79.3,0,143152,79.3,Missing,Cao
+Order State,44944,24.9,26904,71848,39.8,"Missing, Invalid Format / Noise",Cao
+Category Name,44344,24.56,26589,70933,39.29,"Missing, Invalid Format / Noise",Cao
+Order City,41900,23.21,25062,66962,37.09,"Missing, Invalid Format / Noise",Cao
+Delivery Status,40451,22.41,24482,64933,35.97,"Missing, Invalid Format / Noise",Cao
+Order Country,40423,22.39,24357,64780,35.89,"Missing, Invalid Format / Noise",Cao
+Customer Street,38147,21.13,22818,60965,33.77,"Missing, Invalid Format / Noise, PII / Privacy Risk",Cao
+Order Item Discount,30043,16.64,30276,60319,33.41,"Missing, Invalid Format / Noise",Cao
+Type,37308,20.67,22214,59522,32.97,"Missing, Invalid Format / Noise",Cao
+Sales,28920,16.02,29112,58032,32.15,"Missing, Invalid Format / Noise",Cao
+Department Id,29198,16.17,28816,58014,32.14,"Missing, Invalid Format / Noise",Cao
+Order Item Profit Ratio,27285,15.11,27328,54613,30.25,"Missing, Invalid Format / Noise",Cao
+Benefit per order,26849,14.87,26546,53395,29.58,"Missing, Invalid Format / Noise",Cao
+Order Item Product Price,22216,12.31,22353,44569,24.69,"Missing, Invalid Format / Noise",Cao
+Days for shipment (scheduled),31160,17.26,12453,43613,24.16,"Missing, Invalid Format / Noise",Cao
+Product Card Id,21539,11.93,21552,43091,23.87,"Missing, Invalid Format / Noise",Cao
+Order Region,26258,14.55,15706,41964,23.25,"Missing, Invalid Format / Noise",Cao
+Customer Id,20431,11.32,20683,41114,22.78,"Missing, Invalid Format / Noise",Cao
+Customer City,24323,13.47,14531,38854,21.52,"Missing, Invalid Format / Noise",Cao
+Customer State,23866,13.22,14375,38241,21.18,"Missing, Invalid Format / Noise",Cao
+Product Image,21670,12.0,13090,34760,19.26,"Missing, Invalid Format / Noise",Trung Bình
+Order Customer Id,16201,8.97,16283,32484,17.99,"Missing, Invalid Format / Noise",Trung Bình
+Product Price,15489,8.58,15616,31105,17.23,"Missing, Invalid Format / Noise",Trung Bình
+Latitude,15178,8.41,15168,30346,16.81,"Missing, Invalid Format / Noise",Trung Bình
+Order Id,15166,8.4,14857,30023,16.63,"Missing, Invalid Format / Noise",Trung Bình
+Market,17545,9.72,10575,28120,15.58,"Missing, Invalid Format / Noise",Trung Bình
+shipping date (DateOrders),19474,10.79,7389,26863,14.88,"Missing, Invalid Format / Noise",Trung Bình
+Customer Lname,16794,9.3,10046,26840,14.87,"Missing, Invalid Format / Noise, PII / Privacy Risk",Cao
+Order Item Discount Rate,12432,6.89,12205,24637,13.65,"Missing, Invalid Format / Noise",Trung Bình
+Order Status,14921,8.27,8984,23905,13.24,"Missing, Invalid Format / Noise",Trung Bình
+Sales per customer,11554,6.4,11670,23224,12.87,"Missing, Invalid Format / Noise",Trung Bình
+Customer Country,14460,8.01,8681,23141,12.82,"Missing, Invalid Format / Noise",Trung Bình
+order date (DateOrders),15118,8.37,6042,21160,11.72,"Missing, Invalid Format / Noise",Trung Bình
+Category Id,10237,5.67,10403,20640,11.43,"Missing, Invalid Format / Noise",Trung Bình
+Longitude,9911,5.49,9826,19737,10.93,"Missing, Invalid Format / Noise",Trung Bình
+Order Item Total,9809,5.43,9804,19613,10.86,"Missing, Invalid Format / Noise",Trung Bình
+Product Name,12399,6.87,7191,19590,10.85,"Missing, Invalid Format / Noise",Trung Bình
+Days for shipping (real),13544,7.5,5455,18999,10.52,"Missing, Invalid Format / Noise",Trung Bình
+Order Item Id,9324,5.17,9198,18522,10.26,"Missing, Invalid Format / Noise",Trung Bình
+Late_delivery_risk,8378,4.64,8421,16799,9.31,"Missing, Invalid Format / Noise, Label Noise",Cao
+Customer Email,9813,5.44,5786,15599,8.64,"Missing, Invalid Format / Noise, PII / Privacy Risk",Cao
+Customer Segment,9742,5.4,5857,15599,8.64,"Missing, Invalid Format / Noise",Trung Bình
+Product Status,7281,4.03,7160,14441,8.0,"Missing, Invalid Format / Noise",Trung Bình
+Product Category Id,6472,3.59,6529,13001,7.2,"Missing, Invalid Format / Noise",Trung Bình
+Order Item Cardprod Id,5672,3.14,5806,11478,6.36,"Missing, Invalid Format / Noise",Trung Bình
+Order Item Quantity,5338,2.96,5230,10568,5.85,"Missing, Invalid Format / Noise",Trung Bình
+Department Name,6251,3.46,3758,10009,5.54,"Missing, Invalid Format / Noise",Trung Bình
+Customer Fname,5879,3.26,3545,9424,5.22,"Missing, Invalid Format / Noise, PII / Privacy Risk",Cao
+Shipping Mode,5859,3.25,3521,9380,5.2,"Missing, Invalid Format / Noise",Trung Bình
+Customer Password,5727,3.17,3389,9116,5.05,"Missing, Invalid Format / Noise, PII / Privacy Risk",Cao
+Order Profit Per Order,4626,2.56,4387,9013,4.99,"Missing, Invalid Format / Noise",Trung Bình
+Customer Zipcode,3,0.0,0,3,0.0,Missing,Trung Bình

@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="vi" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DataCo Supply Chain Intelligence Dashboard - PRJ-13</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    /* HIGH CONTRAST DESIGN SYSTEM - WCAG AAA COMPLIANT */
+    :root {
+      --bg-page: #f1f5f9;
+      --bg-card: #ffffff;
+      --bg-card-alt: #f8fafc;
+      --border-color: #cbd5e1;
+      --border-focus: #4f46e5;
+      --text-heading: #0f172a;
+      --text-body: #1e293b;
+      --text-muted: #475569;
+      --primary: #4338ca;
+      --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --chart-grid: #e2e8f0;
+      --chart-axis: #64748b;
+    }
+
+    html.dark {
+      --bg-page: #0b1120;
+      --bg-card: #1e293b;
+      --bg-card-alt: #0f172a;
+      --border-color: #334155;
+      --border-focus: #6366f1;
+      --text-heading: #ffffff;
+      --text-body: #f1f5f9;
+      --text-muted: #94a3b8;
+      --primary: #6366f1;
+      --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
+      --chart-grid: #334155;
+      --chart-axis: #94a3b8;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-body);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      transition: background-color 0.25s ease, color 0.25s ease;
+      line-height: 1.5;
+    }
+
+    .ui-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 0.85rem;
+      box-shadow: var(--shadow-card);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .ui-card:hover {
+      border-color: var(--border-focus);
+    }
+
+    .tab-btn {
+      transition: all 0.2s ease;
+      font-weight: 700;
+    }
+    .tab-btn.active {
+      background: linear-gradient(135deg, #4338ca 0%, #0284c7 100%);
+      color: #ffffff !important;
+      box-shadow: 0 4px 14px rgba(67, 56, 202, 0.35);
+    }
+
+    .accordion-content {
+      display: none;
+    }
+    .accordion-content.open {
+      display: block;
+    }
+
+    /* BADGES */
+    .badge-primary { background-color: #e0e7ff; color: #3730a3; border: 1px solid #c7d2fe; }
+    .badge-success { background-color: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+    .badge-warning { background-color: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+    .badge-danger { background-color: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+    .badge-info { background-color: #e0f2fe; color: #075985; border: 1px solid #bae6fd; }
+
+    html.dark .badge-primary { background-color: rgba(99, 102, 241, 0.25); color: #a5b4fc; border: 1px solid rgba(99, 102, 241, 0.4); }
+    html.dark .badge-success { background-color: rgba(34, 197, 94, 0.25); color: #86efac; border: 1px solid rgba(34, 197, 94, 0.4); }
+    html.dark .badge-warning { background-color: rgba(245, 158, 11, 0.25); color: #fde047; border: 1px solid rgba(245, 158, 11, 0.4); }
+    html.dark .badge-danger { background-color: rgba(239, 68, 68, 0.25); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); }
+    html.dark .badge-info { background-color: rgba(14, 165, 233, 0.25); color: #7dd3fc; border: 1px solid rgba(14, 165, 233, 0.4); }
+
+    /* Custom Table Scrollbar */
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: var(--bg-card-alt);
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: var(--border-color);
+      border-radius: 4px;
+    }
+
+    /* Bar animations and tooltips */
+    .chart-bar {
+      transition: height 0.4s ease, width 0.4s ease, opacity 0.2s ease;
+    }
+    .chart-bar:hover {
+      opacity: 0.85;
+      filter: brightness(1.1);
+    }
+  </style>
+</head>
+<body class="p-3 sm:p-6 antialiased">
+
+  <div class="max-w-7xl mx-auto space-y-5">
+
+    <!-- TOP HEADER -->
+    <header class="ui-card p-5 border-l-4 border-l-indigo-600">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div>
+          <div class="flex items-center gap-2 flex-wrap mb-1.5">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold badge-primary">PRJ-13 DASHBOARD</span>
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold badge-success">✓ 100% Zero Data Loss (180,519 Dòng)</span>
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold badge-warning">⚡ RAM: 104.5MB ➔ 66.5MB (-36.42%)</span>
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold badge-info">📊 Đồ Thị Trực Quan Nâng Cấp</span>
+          </div>
+          <h1 class="text-xl sm:text-2xl font-black tracking-tight" style="color: var(--text-heading);">
+            DataCo Global Logistics & Data Quality Intelligence
+          </h1>
+          <p class="text-xs sm:text-sm font-medium mt-1" style="color: var(--text-muted);">
+            Hệ thống Báo cáo Kiểm toán Chất lượng Dữ liệu, Pipeline Làm sạch & Phân tích Đa chiều Dự báo Giao hàng Chậm trễ
+          </p>
+          <div class="text-xs font-semibold mt-2 flex items-center gap-3 flex-wrap" style="color: var(--text-muted);">
+            <span><strong>Sinh viên:</strong> Nguyễn Lê Nhật Hạ (2521001054) & Nguyễn Thanh Thiện (2521001102)</span>
+            <span>•</span>
+            <span><strong>GVHD:</strong> ThS. Trần Mạnh Tường</span>
+            <span>•</span>
+            <span><strong>Đơn vị:</strong> UFM - Khoa Khoa học Dữ liệu (HK3-2026)</span>
+          </div>
+        </div>
+
+        <!-- Theme Toggle Button -->
+        <button onclick="toggleTheme()" id="themeBtn" class="px-4 py-2 rounded-lg border text-xs font-bold flex items-center gap-2 shadow-sm transition hover:scale-105" style="background-color: var(--bg-card-alt); border-color: var(--border-color); color: var(--text-heading);">
+          <span id="themeIcon">🌙</span>
+          <span id="themeLabel">Chế độ Tối</span>
+        </button>
+      </div>
+
+      <!-- KPI METRIC CARDS RIBBON -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 mt-5 pt-4 border-t" style="border-color: var(--border-color);">
+        <div class="p-3 rounded-xl border" style="background-color: var(--bg-card-alt); border-color: var(--border-color);">
+          <div class="text-[11px] font-bold uppercase tracking-wider" style="color: var(--text-muted);">Tổng Bản Ghi</div>
+          <div class="text-lg font-black mt-1" style="color: var(--text-heading);">180,519</div>
+          <div class="text-[11px] font-bold text-emerald-600 dark:text-emerald-400">100% Giữ nguyên</div>
+        </div>
+
+        <div class="p-3 rounded-xl border" style="background-color: var(--bg-card-alt); border-color: var(--border-color);">
+          <div class="text-[11px] font-bold uppercase tracking-wider" style="color: var(--text-muted);">Đơn Hàng Gốc</div>
+          <div class="text-lg font-black text-sky-600 dark:text-sky-400 mt-1">65,752</div>
+          <div class="text-[11px] font-medium" style="color: var(--text-muted);">Order Id duy nhất</div>
+        </div>
+
+        <div class="p-3 rounded-xl border" style="background-color: var(--bg-card-alt); border-color: var(--border-color);">
+          <div class="text-[11px] font-bold uppercase tracking-wider" style="color: var(--text-muted);">Tỷ Lệ Trễ Hạn</div>
+          <div class="text-lg font-black text-rose-600 dark:text-rose-400 mt-1">54.84%</div>
+          <div class="text-[11px] font-semibold text-rose-500">95,548 đơn trễ</div>
+        </div>
+
+        <div class="p-3 rounded-xl border" style="background-color: var(--bg-card-alt); border-color: var(--border-color);">
+          <div class="text-[11px] font-bold uppercase tracking-wider" style="color: var(--text-muted);">First Class Trễ</div>
+          <div class="text-lg font-black text-red-600 dark:text-red-400 mt-1">95.76%</div>
+          <div class="text-[11px] font-bold text-red-500">Nghịch lý cam kết 1d</div>
+        </div>
+
+        <div class="p-3 rounded-xl border" style="background-color: var(--bg-card-alt); border-color: var(--border-color);">
+          <div class="text-[11px] font-bold uppercase tracking-wider" style="color: var(--text-muted);">Standard Class</div>
+          <div class="text-lg font-black text-emerald-600 dark:text-emerald-400 mt-1">38.01%</div>
+          <div class="text-[11px] font-bold text-emerald-600 dark:text-emerald-400">Trễ thấp nhất</div>
+        </div>
+
+        <div class="p-3 rounded-xl border" style="background-color: var(--bg-card-alt); border-color: var(--border-color);">
+          <div class="text-[11px] font-bold uppercase tracking-wider" style="color: var(--text-muted);">Điểm Nóng Caguas</div>
+          <div class="text-lg font-black text-purple-600 dark:text-purple-400 mt-1">52,382</div>
+          <div class="text-[11px] font-semibold text-purple-600 dark:text-purple-400">29.02% toàn bộ DL</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- NAVIGATION TABS -->
+    <nav class="flex items-center gap-2 p-1.5 rounded-xl border overflow-x-auto custom-scroll shadow-sm" style="background-color: var(--bg-card); border-color: var(--border-color);">
+      <button onclick="switchTab('sec-eda')" id="btn-sec-eda" class="tab-btn active px-4 py-2.5 rounded-lg text-xs sm:text-sm font-bold flex items-center gap-2 whitespace-nowrap">
+        <span>📊</span> PHÂN TÍCH CHUYÊN SÂU & ĐỒ THỊ
+      </button>
+      <button onclick="switchTab('sec-dirty')" id="btn-sec-dirty" class="tab-btn px-4 py-2.5 rounded-lg text-xs sm:text-sm font-bold flex items-center gap-2 whitespace-nowrap" style="color: var(--text-body);">
+        <span>⚠️</span> BÁO CÁO ĐỘ DƠ
+      </button>
+      <button onclick="switchTab('sec-cleaning')" id="btn-sec-cleaning" class="tab-btn px-4 py-2.5 rounded-lg text-xs sm:text-sm font-bold flex items-center gap-2 whitespace-nowrap" style="color: var(--text-body);">
+        <span>🧼</span> LÀM SẠCH DỮ LIỆU
+      </button>
+      <button onclick="switchTab('sec-ml')" id="btn-sec-ml" class="tab-btn px-4 py-2.5 rounded-lg text-xs sm:text-sm font-bold flex items-center gap-2 whitespace-nowrap" style="color: var(--text-body);">
+        <span>🤖</span> HỌC MÁY & QUẢN TRỊ
+      </button>
+      <button onclick="switchTab('sec-overview')" id="btn-sec-overview" class="tab-btn px-4 py-2.5 rounded-lg text-xs sm:text-sm font-bold flex items-center gap-2 whitespace-nowrap" style="color: var(--text-body);">
+        <span>📋</span> TỔNG QUAN DỰ ÁN
+      </button>
+    </nav>
+
+    <!-- ==================== TAB 1: PHÂN TÍCH CHUYÊN SÂU & HỆ THỐNG ĐỒ THỊ ==================== -->
+    <section id="sec-eda" class="space-y-5">
+      
+      <div class="ui-card p-4 border-l-4 border-l-sky-600" style="background-color: var(--bg-card);">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+          <div>
+            <h2 class="text-base sm:text-lg font-black" style="color: var(--text-heading);">
+              Hệ Thống Đồ Thị Minh Họa Thực Chứng Khám Phá Dữ Liệu (EDA Visualizations)
+            </h2>
+            <p class="text-xs sm:text-sm font-medium mt-1" style="color: var(--text-muted);">
+              Các đồ thị vector trực quan hóa sinh động nghịch lý First Class, cân bằng mục tiêu, xếp hạng địa lý và tương quan đa chiều.
+            </p>
+          </div>
+          <span class="badge-info px-3 py-1 rounded-full text-xs font-bold">Interactive Vector SVG</span>
+        </div>
+      </div>
+
+      <!-- ROW 1: 2 MAIN CHARTS: FIRST CLASS PARADOX & TARGET BALANCE -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+        
+        <!-- CHART 1: FIRST CLASS PARADOX COLUMN CHART (7 COLS) -->
+        <div class="lg:col-span-7 ui-card p-5 space-y-4">
+          <div class="flex justify-between items-start gap-2">
+            <div>
+              <span class="badge-danger px-2.5 py-0.5 rounded-full text-[11px] font-bold">ĐỒ THỊ 1 (RQ1)</span>
+              <h3 class="text-sm sm:text-base font-black mt-1" style="color: var(--text-heading);">
+                So Sánh Tỷ Lệ Giao Hàng Trễ & Thời Gian Giữa 4 Gói Vận Chuyển
+              </h3>
+              <p class="text-xs font-medium" style="color: var(--text-muted);">
+                Minh họa trực quan nghịch lý First Class: Thu phí cao, cam kết 1 ngày nhưng trễ tới 95.76%!
+              </p>
+            </div>
+            <div class="text-right flex-shrink-0">
+              <span class="text-xs font-mono font-bold text-red-600 dark:text-red-400">Chi² = 34,852.65</span>
+              <div class="text-[10px] text-slate-500">Cramér's V = 0.4613</div>
+            </div>
+          </div>
+
+          <!-- Interactive SVG Bar Chart -->
+          <div class="w-full overflow-x-auto">
+            <svg viewBox="0 0 550 260" class="w-full h-auto" style="min-width: 480px;">
+              <!-- Grid lines -->
+              <line x1="50" y1="30" x2="520" y2="30" stroke="var(--chart-grid)" stroke-dasharray="3 3"/>
+              <text x="40" y="34" fill="var(--chart-axis)" font-size="10" text-anchor="end">100%</text>
+
+              <line x1="50" y1="80" x2="520" y2="80" stroke="var(--chart-grid)" stroke-dasharray="3 3"/>
+              <text x="40" y="84" fill="var(--chart-axis)" font-size="10" text-anchor="end">75%</text>
+
+              <line x1="50" y1="130" x2="520" y2="130" stroke="var(--chart-grid)" stroke-dasharray="3 3"/>
+              <text x="40" y="134" fill="var(--chart-axis)" font-size="10" text-anchor="end">50%</text>
+
+              <line x1="50" y1="180" x2="520" y2="180" stroke="var(--chart-grid)" stroke-dasharray="3 3"/>
+              <text x="40" y="184" fill="var(--chart-axis)" font-size="10" text-anchor="end">25%</text>
+
+              <line x1="50" y1="230" x2="520" y2="230" stroke="var(--chart-axis)" stroke-width="1.5"/>
+              <text x="40" y="234" fill="var(--chart-axis)" font-size="10" text-anchor="end">0%</text>
+
+              <!-- BAR GROUP 1: FIRST CLASS (95.76%) -->
+              <g class="chart-group">
+                <rect x="75" y="38" width="60" height="192" rx="6" fill="#e11d48" class="chart-bar"/>
+                <text x="105" y="30" fill="#e11d48" font-size="12" font-weight="900" text-anchor="middle">95.76%</text>
+                <text x="105" y="246" fill="var(--text-heading)" font-size="11" font-weight="700" text-anchor="middle">First Class</text>
+                <text x="105" y="258" fill="var(--text-muted)" font-size="9" text-anchor="middle">Cam kết: 1d | Thực: 2d</text>
+              </g>
+
+              <!-- BAR GROUP 2: SECOND CLASS (76.68%) -->
+              <g class="chart-group">
+                <rect x="195" y="76" width="60" height="154" rx="6" fill="#f59e0b" class="chart-bar"/>
+                <text x="225" y="68" fill="#d97706" font-size="12" font-weight="900" text-anchor="middle">76.68%</text>
+                <text x="225" y="246" fill="var(--text-heading)" font-size="11" font-weight="700" text-anchor="middle">Second Class</text>
+                <text x="225" y="258" fill="var(--text-muted)" font-size="9" text-anchor="middle">Cam kết: 2d | Thực: 4d</text>
+              </g>
+
+              <!-- BAR GROUP 3: SAME DAY (45.97%) -->
+              <g class="chart-group">
+                <rect x="315" y="138" width="60" height="92" rx="6" fill="#0284c7" class="chart-bar"/>
+                <text x="345" y="130" fill="#0284c7" font-size="12" font-weight="900" text-anchor="middle">45.97%</text>
+                <text x="345" y="246" fill="var(--text-heading)" font-size="11" font-weight="700" text-anchor="middle">Same Day</text>
+                <text x="345" y="258" fill="var(--text-muted)" font-size="9" text-anchor="middle">Cam kết: 0d | Thực: 0.4d</text>
+              </g>
+
+              <!-- BAR GROUP 4: STANDARD CLASS (38.01%) -->
+              <g class="chart-group">
+                <rect x="435" y="154" width="60" height="76" rx="6" fill="#10b981" class="chart-bar"/>
+                <text x="465" y="146" fill="#059669" font-size="12" font-weight="900" text-anchor="middle">38.01%</text>
+                <text x="465" y="246" fill="var(--text-heading)" font-size="11" font-weight="700" text-anchor="middle">Standard Class</text>
+                <text x="465" y="258" fill="var(--text-muted)" font-size="9" text-anchor="middle">Cam kết: 4d | Thực: 3.99d</text>
+              </g>
+            </svg>
+          </div>
+
+          <!-- Bottom Summary Badge -->
+          <div class="p-3 rounded-lg border bg-amber-50/50 dark:bg-amber-950/20 border-amber-200 dark:border-amber-900 text-xs flex items-center justify-between">
+            <span class="font-medium text-amber-800 dark:text-amber-300">
+              💡 <strong>Nghịch lý:</strong> Khách trả tiền nhiều nhất cho First Class lại chịu tỷ lệ trễ hạn cao gấp <strong>2.5 lần</strong> gói Standard Class giá rẻ!
+            </span>
+            <span class="badge-danger px-2 py-0.5 rounded font-black whitespace-nowrap ml-2">Chênh lệch +57.75%</span>
+          </div>
+        </div>
+
+        <!-- CHART 2: DONUT CHART TARGET DISTRIBUTION (5 COLS) -->
+        <div class="lg:col-span-5 ui-card p-5 space-y-4 flex flex-col justify-between">
+          <div>
+            <span class="badge-primary px-2.5 py-0.5 rounded-full text-[11px] font-bold">ĐỒ THỊ 2 (RQ2)</span>
+            <h3 class="text-sm sm:text-base font-black mt-1" style="color: var(--text-heading);">
+              Phân Bố Cân Bằng Tự Nhiên Của Biến Mục Tiêu (Late Delivery Risk)
+            </h3>
+            <p class="text-xs font-medium" style="color: var(--text-muted);">
+              Khảo sát trên 174,217 bản ghi hợp lệ: Khẳng định tính cân bằng lý tưởng, không cần SMOTE.
+            </p>
+          </div>
+
+          <!-- Donut Graphic -->
+          <div class="flex items-center justify-center my-2">
+            <div class="relative w-48 h-48">
+              <svg viewBox="0 0 100 100" class="w-full h-full transform -rotate-90">
+                <!-- Background track -->
+                <circle cx="50" cy="50" r="38" fill="none" stroke="var(--chart-grid)" stroke-width="14" />
+                <!-- On-time slice (45.16%): dasharray = 45.16 * 2.3876 = 107.82, circumference = 238.76 -->
+                <circle cx="50" cy="50" r="38" fill="none" stroke="#10b981" stroke-width="14" stroke-dasharray="107.82 238.76" stroke-dashoffset="0" />
+                <!-- Late slice (54.84%): dasharray = 54.84 * 2.3876 = 130.94 -->
+                <circle cx="50" cy="50" r="38" fill="none" stroke="#e11d48" stroke-width="14" stroke-dasharray="130.94 238.76" stroke-dashoffset="-107.82" />
+              </svg>
+              <!-- Center Text -->
+              <div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+                <span class="text-2xl font-black text-rose-600 dark:text-rose-400">54.84%</span>
+                <span class="text-[11px] font-bold" style="color: var(--text-muted);">Giao Trễ (1)</span>
+                <span class="text-[9px] text-slate-400 mt-0.5">Tỷ lệ ~1.21 : 1</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Legend & Count Breakdown -->
+          <div class="space-y-2 text-xs">
+            <div class="p-2.5 rounded-lg border flex justify-between items-center bg-red-50/40 dark:bg-red-950/20 border-red-200 dark:border-red-900/50">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-rose-600 flex-shrink-0"></span>
+                <span class="font-bold text-red-700 dark:text-red-300">Nhãn 1 (Giao hàng trễ hạn):</span>
+              </div>
+              <div class="text-right">
+                <span class="font-extrabold text-red-600 dark:text-red-400">95,548 dòng (54.84%)</span>
+                <div class="text-[10px] text-slate-500">36,260 đơn hàng</div>
+              </div>
+            </div>
+
+            <div class="p-2.5 rounded-lg border flex justify-between items-center bg-emerald-50/40 dark:bg-emerald-950/20 border-emerald-200 dark:border-emerald-900/50">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-emerald-500 flex-shrink-0"></span>
+                <span class="font-bold text-emerald-700 dark:text-emerald-300">Nhãn 0 (Đúng hạn / Sớm):</span>
+              </div>
+              <div class="text-right">
+                <span class="font-extrabold text-emerald-600 dark:text-emerald-400">78,669 dòng (45.16%)</span>
+                <div class="text-[10px] text-slate-500">29,492 đơn hàng</div>
+              </div>
+            </div>
+
+            <div class="text-[11px] font-semibold text-indigo-700 dark:text-indigo-400 italic text-center pt-1">
+              ✓ Kết luận: Không cần sinh mẫu nhân tạo SMOTE, tránh làm méo phân phối dữ liệu dạng bảng.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ROW 2: TOP 10 REGIONS HORIZONTAL BAR CHART & MULTIVARIATE HEATMAP -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+        
+        <!-- CHART 3: TOP 10 REGIONS HORIZONTAL BAR CHART (7 COLS) -->
+        <div class="lg:col-span-7 ui-card p-5 space-y-3">
+          <div class="flex justify-between items-start gap-2">
+            <div>
+              <span class="badge-warning px-2.5 py-0.5 rounded-full text-[11px] font-bold">ĐỒ THỊ 3 (RQ1)</span>
+              <h3 class="text-sm sm:text-base font-black mt-1" style="color: var(--text-heading);">
+                Xếp Hạng Top 10 Khu Vực (Order Region) Có Tỷ Lệ Giao Hàng Trễ Cao Nhất
+              </h3>
+              <p class="text-xs font-medium" style="color: var(--text-muted);">
+                Trích xuất từ 23 vùng địa lý chuẩn sau khi đã làm sạch 80% phân mảnh rác
+              </p>
+            </div>
+            <span class="text-xs font-mono font-bold text-indigo-600 dark:text-indigo-400">Cỡ mẫu N=133,684</span>
+          </div>
+
+          <!-- Horizontal Bars -->
+          <div class="space-y-2 pt-2 text-xs">
+            
+            <div>
+              <div class="flex justify-between font-bold mb-1">
+                <span>1. Central Africa (Trung Phi)</span>
+                <span class="text-red-600 dark:text-red-400">57.83% (724/1,252 đơn)</span>
+              </div>
+              <div class="w-full bg-slate-200 dark:bg-slate-800 h-4 rounded-full overflow-hidden flex">
+                <div class="bg-rose-600 h-full rounded-full chart-bar" style="width: 57.83%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between font-bold mb-1">
+                <span>2. East Africa (Đông Phi)</span>
+                <span class="text-red-600 dark:text-red-400">56.78% (783/1,379 đơn)</span>
+              </div>
+              <div class="w-full bg-slate-200 dark:bg-slate-800 h-4 rounded-full overflow-hidden flex">
+                <div class="bg-rose-600 h-full rounded-full chart-bar" style="width: 56.78%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between font-bold mb-1">
+                <span>3. South of USA (Nam Hoa Kỳ)</span>
+                <span class="text-amber-600 dark:text-amber-400">56.65% (1,709/3,017 đơn)</span>
+              </div>
+              <div class="w-full bg-slate-200 dark:bg-slate-800 h-4 rounded-full overflow-hidden flex">
+                <div class="bg-amber-600 h-full rounded-full chart-bar" style="width: 56.65%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between font-bold mb-1">
+                <span>4. South Asia (Nam Á)</span>
+                <span class="text-amber-600 dark:text-amber-400">56.51% (3,216/5,691 đơn)</span>
+              </div>
+              <div class="w-full bg-slate-200 dark:bg-slate-800 h-4 rounded-full overflow-hidden flex">
+                <div class="bg-amber-600 h-full rounded-full chart-bar" style="width: 56.51%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between font-bold mb-1">
+                <span>5. Western Europe (Tây Âu)</span>
+                <span class="text-amber-600 dark:text-amber-400">56.00% (11,159/19,927 đơn)</span>
+              </div>
+              <div class="w-full bg-slate-200 dark:bg-slate-800 h-4 rounded-full overflow-hidden flex">
+                <div class="bg-amber-600 h-full rounded-full chart-bar" style="width: 56.00%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between font-bold mb-1">
+                <span>6. Eastern Europe (Đông Âu)</span>
+                <span class="text-amber-600 dark:text-amber-400">56.00% (1,623/2,898 đơn)</span>
+              </div>
+              <div class="w-full bg-slate-200 dark:bg-slate-800 h-4 rounded-full overflow-hidden flex">
+                <div class="bg-amber-600 h-full rounded-full chart-bar" style="width: 56.00%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between font-bold mb-1">
+                <span>7. Southeast Asia (Đông Nam Á)</span>
+                <span class="text-sky-600 dark:text-sky-400">55.47% (3,932/7,089 đơn)</span>
+              </div>
+              <div class="w-full bg-slate-200 dark:bg-slate-800 h-4 rounded-full overflow-hidden flex">
+                <div class="bg-sky-600 h-full rounded-full chart-bar" style="width: 55.47%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between font-bold mb-1">
+                <span>8. West Asia (Tây Á)</span>
+                <span class="text-sky-600 dark:text-sky-400">55.20% (2,467/4,469 đơn)</span>
+              </div>
+              <div class="w-full bg-slate-200 dark:bg-slate-800 h-4 rounded-full overflow-hidden flex">
+                <div class="bg-sky-600 h-full rounded-full chart-bar" style="width: 55.20%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between font-bold mb-1">
+                <span>9. Central America (Trung Mỹ)</span>
+                <span class="text-sky-600 dark:text-sky-400">54.78% (11,556/21,094 đơn)</span>
+              </div>
+              <div class="w-full bg-slate-200 dark:bg-slate-800 h-4 rounded-full overflow-hidden flex">
+                <div class="bg-sky-600 h-full rounded-full chart-bar" style="width: 54.78%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between font-bold mb-1">
+                <span>10. Canada (Bắc Mỹ)</span>
+                <span class="text-emerald-600 dark:text-emerald-400">48.60% (347/714 đơn)</span>
+              </div>
+              <div class="w-full bg-slate-200 dark:bg-slate-800 h-4 rounded-full overflow-hidden flex">
+                <div class="bg-emerald-500 h-full rounded-full chart-bar" style="width: 48.60%"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- CHART 4: MULTIVARIATE HEATMAP (SHIPPING MODE X MARKET) (5 COLS) -->
+        <div class="lg:col-span-5 ui-card p-5 space-y-3 flex flex-col justify-between">
+          <div>
+            <span class="badge-primary px-2.5 py-0.5 rounded-full text-[11px] font-bold">ĐỒ THỊ 4 (ĐA BIẾN)</span>
+            <h3 class="text-sm sm:text-base font-black mt-1" style="color: var(--text-heading);">
+              Ma Trận Nhiệt Tương Tác: Shipping Mode × 5 Đại Thị Trường
+            </h3>
+            <p class="text-xs font-medium" style="color: var(--text-muted);">
+              Tỷ lệ trễ hạn (%) phân theo từng phương thức vận chuyển và từng châu lục
+            </p>
+          </div>
+
+          <!-- Heatmap Matrix Table with Color Coding -->
+          <div class="overflow-x-auto border rounded-xl" style="border-color: var(--border-color);">
+            <table class="w-full text-center text-xs border-collapse">
+              <thead>
+                <tr class="font-bold border-b" style="background-color: var(--bg-card-alt); color: var(--text-heading); border-color: var(--border-color);">
+                  <th class="p-2 text-left">Thị Trường</th>
+                  <th class="p-2 text-red-600">First</th>
+                  <th class="p-2 text-amber-600">Second</th>
+                  <th class="p-2 text-sky-600">Same</th>
+                  <th class="p-2 text-emerald-600">Standard</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y font-bold" style="border-color: var(--border-color);">
+                <tr>
+                  <td class="p-2.5 text-left font-bold" style="color: var(--text-heading);">LATAM</td>
+                  <td class="p-2.5 bg-red-100 dark:bg-red-950/60 text-red-700 dark:text-red-300">95.4%</td>
+                  <td class="p-2.5 bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300">76.3%</td>
+                  <td class="p-2.5 bg-sky-100 dark:bg-sky-950/60 text-sky-700 dark:text-sky-300">45.8%</td>
+                  <td class="p-2.5 bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300">37.8%</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 text-left font-bold" style="color: var(--text-heading);">Europe</td>
+                  <td class="p-2.5 bg-red-100 dark:bg-red-950/60 text-red-700 dark:text-red-300">95.9%</td>
+                  <td class="p-2.5 bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300">77.1%</td>
+                  <td class="p-2.5 bg-sky-100 dark:bg-sky-950/60 text-sky-700 dark:text-sky-300">46.2%</td>
+                  <td class="p-2.5 bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300">38.4%</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 text-left font-bold" style="color: var(--text-heading);">Pacific Asia</td>
+                  <td class="p-2.5 bg-red-100 dark:bg-red-950/60 text-red-700 dark:text-red-300">95.8%</td>
+                  <td class="p-2.5 bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300">76.8%</td>
+                  <td class="p-2.5 bg-sky-100 dark:bg-sky-950/60 text-sky-700 dark:text-sky-300">46.0%</td>
+                  <td class="p-2.5 bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300">38.1%</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 text-left font-bold" style="color: var(--text-heading);">USCA</td>
+                  <td class="p-2.5 bg-red-100 dark:bg-red-950/60 text-red-700 dark:text-red-300">95.6%</td>
+                  <td class="p-2.5 bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300">76.5%</td>
+                  <td class="p-2.5 bg-sky-100 dark:bg-sky-950/60 text-sky-700 dark:text-sky-300">45.7%</td>
+                  <td class="p-2.5 bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300">37.9%</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 text-left font-bold" style="color: var(--text-heading);">Africa</td>
+                  <td class="p-2.5 bg-red-100 dark:bg-red-950/60 text-red-700 dark:text-red-300">96.1%</td>
+                  <td class="p-2.5 bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300">77.4%</td>
+                  <td class="p-2.5 bg-sky-100 dark:bg-sky-950/60 text-sky-700 dark:text-sky-300">46.5%</td>
+                  <td class="p-2.5 bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300">38.6%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="text-[11px] font-semibold text-slate-500 italic">
+            * Nhận xét: Nghịch lý First Class (&gt;95%) xảy ra <strong>đồng nhất trên mọi châu lục</strong>, chứng minh nguồn gốc xuất phát từ chính sách cam kết SLA sai lầm chứ không phải do địa hình một khu vực cụ thể.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ROW 3: 6 BUSINESS INSIGHTS EXPANDABLE CARDS -->
+      <div class="ui-card p-5 space-y-4">
+        <h3 class="text-sm sm:text-base font-black" style="color: var(--text-heading);">
+          Bộ 6 Insights Kinh Doanh Định Lượng Thực Chứng (Click để xem chi tiết)
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 text-xs">
+          
+          <div class="p-3.5 rounded-xl border cursor-pointer hover:border-indigo-500 transition" style="background-color: var(--bg-card-alt); border-color: var(--border-color);" onclick="toggleAccordion('ins-exp-1')">
+            <div class="flex justify-between items-center font-bold text-red-600 dark:text-red-400">
+              <span>INSIGHT 1: Nghịch Lý SLA First Class</span>
+              <span>▼</span>
+            </div>
+            <p class="mt-1 font-medium" style="color: var(--text-body);">First Class có tỷ lệ trễ 95.76% do cam kết 1 ngày phi thực tế.</p>
+            <div id="ins-exp-1" class="accordion-content mt-2 pt-2 border-t space-y-1 font-medium" style="border-color: var(--border-color); color: var(--text-muted);">
+              <div>• <strong>Bằng chứng:</strong> Chi-Square = 34,863.00, p &lt; 10⁻¹⁶, Cramér's V = 0.4473.</div>
+              <div>• <strong>Khuyến nghị SCM:</strong> Chuyển sang Dynamic SLA (2 - 3 ngày) theo khoảng cách vận chuyển.</div>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-xl border cursor-pointer hover:border-indigo-500 transition" style="background-color: var(--bg-card-alt); border-color: var(--border-color);" onclick="toggleAccordion('ins-exp-2')">
+            <div class="flex justify-between items-center font-bold text-sky-600 dark:text-sky-400">
+              <span>INSIGHT 2: Độc Lập Giữa Giá Trị Đơn & Tốc Độ</span>
+              <span>▼</span>
+            </div>
+            <p class="mt-1 font-medium" style="color: var(--text-body);">Giá trị đơn hàng (Sales) và lợi nhuận không có liên hệ với nguy cơ trễ hạn.</p>
+            <div id="ins-exp-2" class="accordion-content mt-2 pt-2 border-t space-y-1 font-medium" style="border-color: var(--border-color); color: var(--text-muted);">
+              <div>• <strong>Bằng chứng:</strong> Pearson r = -0.0037, ANOVA F = 0.82, p = 0.48 &gt; 0.05.</div>
+              <div>• <strong>Khuyến nghị SCM:</strong> Đơn $20 và $1,500 bị xử lý như nhau ➔ Cần luồng xanh ưu tiên đơn VIP.</div>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-xl border cursor-pointer hover:border-indigo-500 transition" style="background-color: var(--bg-card-alt); border-color: var(--border-color);" onclick="toggleAccordion('ins-exp-3')">
+            <div class="flex justify-between items-center font-bold text-amber-600 dark:text-amber-400">
+              <span>INSIGHT 3: Điểm Nghẽn Địa Lý Tây Âu & Trung Phi</span>
+              <span>▼</span>
+            </div>
+            <p class="mt-1 font-medium" style="color: var(--text-body);">Western Europe (55.93%) và Central Africa (57.83%) trễ vượt trội toàn cầu.</p>
+            <div id="ins-exp-3" class="accordion-content mt-2 pt-2 border-t space-y-1 font-medium" style="border-color: var(--border-color); color: var(--text-muted);">
+              <div>• <strong>Bằng chứng:</strong> Chi-Square = 62.52, p = 9e-6. Do thủ tục thông quan và đối tác 3PL xa kho.</div>
+              <div>• <strong>Khuyến nghị SCM:</strong> Mở rộng mô hình kho vệ tinh Hub & Spoke tại Tây Âu và Mỹ Latinh.</div>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-xl border cursor-pointer hover:border-indigo-500 transition" style="background-color: var(--bg-card-alt); border-color: var(--border-color);" onclick="toggleAccordion('ins-exp-4')">
+            <div class="flex justify-between items-center font-bold text-emerald-600 dark:text-emerald-400">
+              <span>INSIGHT 4: Cân Bằng Tự Nhiên (Không Cần SMOTE)</span>
+              <span>▼</span>
+            </div>
+            <p class="mt-1 font-medium" style="color: var(--text-body);">Tỷ lệ nhãn mục tiêu 54.84% Trễ vs 45.16% Đúng hạn (~1.21 : 1).</p>
+            <div id="ins-exp-4" class="accordion-content mt-2 pt-2 border-t space-y-1 font-medium" style="border-color: var(--border-color); color: var(--text-muted);">
+              <div>• <strong>Bằng chứng:</strong> 95,548 đơn trễ vs 78,669 đơn đúng hạn trên 174,217 dòng hợp lệ.</div>
+              <div>• <strong>Khuyến nghị SCM:</strong> Dữ liệu cân bằng tự nhiên rất đẹp, tuyệt đối cấm lạm dụng SMOTE.</div>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-xl border cursor-pointer hover:border-indigo-500 transition" style="background-color: var(--bg-card-alt); border-color: var(--border-color);" onclick="toggleAccordion('ins-exp-5')">
+            <div class="flex justify-between items-center font-bold text-purple-600 dark:text-purple-400">
+              <span>INSIGHT 5: Tập Trung Khách Hàng Tại Đô Thị Caguas</span>
+              <span>▼</span>
+            </div>
+            <p class="mt-1 font-medium" style="color: var(--text-body);">Caguas (Puerto Rico) chiếm 29.02% tổng đơn hàng với 52,382 bản ghi.</p>
+            <div id="ins-exp-5" class="accordion-content mt-2 pt-2 border-t space-y-1 font-medium" style="border-color: var(--border-color); color: var(--text-muted);">
+              <div>• <strong>Bằng chứng:</strong> Sau chuẩn hóa, gom từ 5 biến thể phân mảnh thành 52,382 dòng. Tỷ lệ trễ 54.79%.</div>
+              <div>• <strong>Khuyến nghị SCM:</strong> Đặt Fulfillment Center chuyên trách tại Caguas gỡ được 1/3 áp lực chuỗi cung ứng.</div>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-xl border cursor-pointer hover:border-indigo-500 transition" style="background-color: var(--bg-card-alt); border-color: var(--border-color);" onclick="toggleAccordion('ins-exp-6')">
+            <div class="flex justify-between items-center font-bold text-red-600 dark:text-red-400">
+              <span>INSIGHT 6: Rào Chắn Rò Rỉ Dữ Liệu (Leakage Barrier)</span>
+              <span>▼</span>
+            </div>
+            <p class="mt-1 font-medium" style="color: var(--text-body);">Loại trừ 3 biến hậu giao hàng để tránh độ chính xác ảo 100%.</p>
+            <div id="ins-exp-6" class="accordion-content mt-2 pt-2 border-t space-y-1 font-medium" style="border-color: var(--border-color); color: var(--text-muted);">
+              <div>• <strong>Bằng chứng:</strong> Days shipping (real) có r = 0.36; Delivery Status tương quan 100% với nhãn.</div>
+              <div>• <strong>Khuyến nghị SCM:</strong> Chỉ dùng Pre-dispatch features tại thời điểm Order Date.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==================== TAB 2: BÁO CÁO ĐỘ DƠ (KÈM ĐỒ THỊ) ==================== -->
+    <section id="sec-dirty" class="hidden space-y-5">
+      
+      <div class="ui-card p-4 border-l-4 border-l-amber-500" style="background-color: var(--bg-card);">
+        <h2 class="text-base sm:text-lg font-black" style="color: var(--text-heading);">
+          Báo Cáo Kiểm Toán Độ Dơ & Các Dạng Nhiễu Dữ Liệu Gốc (Data Quality Audit)
+        </h2>
+        <p class="text-xs sm:text-sm font-medium mt-1" style="color: var(--text-muted);">
+          Rà soát chuyên sâu toàn diện <strong>180,519 bản ghi x 53 thuộc tính</strong>: Đồ thị tỷ lệ khuyết thiếu và đối chiếu phân mảnh danh mục.
+        </p>
+      </div>
+
+      <!-- CHART: MISSING VALUES BAR CHART -->
+      <div class="ui-card p-5 space-y-4">
+        <div class="flex justify-between items-start gap-2">
+          <div>
+            <span class="badge-danger px-2.5 py-0.5 rounded-full text-[11px] font-bold">ĐỒ THỊ MINH HỌA ĐỘ DƠ</span>
+            <h3 class="text-sm sm:text-base font-black mt-1" style="color: var(--text-heading);">
+              Tỷ Lệ Khuyết Thiếu Dữ Liệu (Missing Values %) Tại Top 10 Cột Lỗi Cao Nhất
+            </h3>
+            <p class="text-xs font-medium" style="color: var(--text-muted);">
+              Phân cấp thành 3 mức độ: Cực cao (&gt;70%), Trung bình (15% - 25%), và Then chốt (3% - 15%)
+            </p>
+          </div>
+          <span class="text-xs font-mono font-bold text-rose-600">Max 83.46%</span>
+        </div>
+
+        <div class="space-y-2.5 text-xs">
+          <div>
+            <div class="flex justify-between font-bold mb-1">
+              <span>Product Description (Mô tả sản phẩm):</span>
+              <span class="text-rose-600 dark:text-rose-400">83.46% (150,661 dòng thiếu)</span>
+            </div>
+            <div class="w-full bg-slate-200 dark:bg-slate-800 h-4 rounded-full overflow-hidden flex">
+              <div class="bg-rose-600 h-full rounded-full chart-bar" style="width: 83.46%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between font-bold mb-1">
+              <span>Order Zipcode (Mã bưu chính nhận):</span>
+              <span class="text-rose-600 dark:text-rose-400">79.30% (143,152 dòng thiếu)</span>
+            </div>
+            <div class="w-full bg-slate-200 dark:bg-slate-800 h-4 rounded-full overflow-hidden flex">
+              <div class="bg-rose-600 h-full rounded-full chart-bar" style="width: 79.30%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between font-bold mb-1">
+              <span>Order State (Bang/Tỉnh nhận):</span>
+              <span class="text-amber-600 dark:text-amber-400">24.90% (44,944 dòng thiếu)</span>
+            </div>
+            <div class="w-full bg-slate-200 dark:bg-slate-800 h-4 rounded-full overflow-hidden flex">
+              <div class="bg-amber-500 h-full rounded-full chart-bar" style="width: 24.90%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between font-bold mb-1">
+              <span>Category Name (Tên ngành hàng):</span>
+              <span class="text-amber-600 dark:text-amber-400">24.56% (44,344 dòng thiếu)</span>
+            </div>
+            <div class="w-full bg-slate-200 dark:bg-slate-800 h-4 rounded-full overflow-hidden flex">
+              <div class="bg-amber-500 h-full rounded-full chart-bar" style="width: 24.56%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between font-bold mb-1">
+              <span>Order City (Thành phố nhận):</span>
+              <span class="text-amber-600 dark:text-amber-400">23.21% (41,900 dòng thiếu)</span>
+            </div>
+            <div class="w-full bg-slate-200 dark:bg-slate-800 h-4 rounded-full overflow-hidden flex">
+              <div class="bg-amber-500 h-full rounded-full chart-bar" style="width: 23.21%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between font-bold mb-1">
+              <span>Delivery Status (Trạng thái giao):</span>
+              <span class="text-amber-600 dark:text-amber-400">22.41% (40,451 dòng thiếu)</span>
+            </div>
+            <div class="w-full bg-slate-200 dark:bg-slate-800 h-4 rounded-full overflow-hidden flex">
+              <div class="bg-amber-500 h-full rounded-full chart-bar" style="width: 22.41%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between font-bold mb-1">
+              <span>Type (Phương thức thanh toán):</span>
+              <span class="text-sky-600 dark:text-sky-400">20.67% (37,308 dòng thiếu)</span>
+            </div>
+            <div class="w-full bg-slate-200 dark:bg-slate-800 h-4 rounded-full overflow-hidden flex">
+              <div class="bg-sky-500 h-full rounded-full chart-bar" style="width: 20.67%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between font-bold mb-1">
+              <span>Days for shipment (SLA cam kết):</span>
+              <span class="text-sky-600 dark:text-sky-400">17.26% (31,159 dòng thiếu)</span>
+            </div>
+            <div class="w-full bg-slate-200 dark:bg-slate-800 h-4 rounded-full overflow-hidden flex">
+              <div class="bg-sky-500 h-full rounded-full chart-bar" style="width: 17.26%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between font-bold mb-1">
+              <span>Days for shipping real (Thực tế):</span>
+              <span class="text-emerald-600 dark:text-emerald-400">7.50% (13,544 dòng thiếu)</span>
+            </div>
+            <div class="w-full bg-slate-200 dark:bg-slate-800 h-4 rounded-full overflow-hidden flex">
+              <div class="bg-emerald-500 h-full rounded-full chart-bar" style="width: 7.50%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEARCHABLE AUDIT TABLE -->
+      <div class="ui-card p-4">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-3">
+          <div>
+            <h3 class="text-sm font-bold" style="color: var(--text-heading);">Bảng Kiểm Toán Chi Tiết 53 Cột (Data Quality Audit)</h3>
+            <p class="text-[11px] font-medium" style="color: var(--text-muted);">Gõ từ khóa tìm kiếm hoặc lọc theo mức độ ưu tiên xử lý:</p>
+          </div>
+          <div class="flex items-center gap-2 w-full sm:w-auto">
+            <input type="text" id="searchInput" onkeyup="filterAudit()" placeholder="Tìm tên cột (ví dụ: City, Price)..." class="px-3 py-1.5 rounded-lg border text-xs focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full sm:w-56" style="background-color: var(--bg-card-alt); border-color: var(--border-color); color: var(--text-heading);">
+            <select id="filterSelect" onchange="filterAudit()" class="px-3 py-1.5 rounded-lg border text-xs font-semibold focus:outline-none" style="background-color: var(--bg-card-alt); border-color: var(--border-color); color: var(--text-heading);">
+              <option value="ALL">Tất cả mức độ</option>
+              <option value="Cao">Ưu tiên Cao</option>
+              <option value="Trung Bình">Ưu tiên Trung Bình</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto max-h-80 border rounded-lg custom-scroll" style="border-color: var(--border-color);">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead class="sticky top-0 font-bold border-b shadow-sm" style="background-color: var(--bg-card); color: var(--text-heading); border-color: var(--border-color);">
+              <tr>
+                <th class="p-2.5">STT</th>
+                <th class="p-2.5">Tên Cột</th>
+                <th class="p-2.5">Số Dòng Null</th>
+                <th class="p-2.5">Tỷ Lệ Khuyết</th>
+                <th class="p-2.5">Ký Hiệu Nhiễu</th>
+                <th class="p-2.5">Tổng Lỗi</th>
+                <th class="p-2.5">Phân Loại Lỗi</th>
+                <th class="p-2.5">Ưu Tiên</th>
+              </tr>
+            </thead>
+            <tbody id="auditTableBody" class="divide-y font-medium" style="color: var(--text-body); border-color: var(--border-color);">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==================== TAB 3: LÀM SẠCH DỮ LIỆU (KÈM ĐỒ THỊ) ==================== -->
+    <section id="sec-cleaning" class="hidden space-y-5">
+      
+      <div class="ui-card p-4 border-l-4 border-l-emerald-600" style="background-color: var(--bg-card);">
+        <h2 class="text-base sm:text-lg font-black" style="color: var(--text-heading);">
+          Pipeline Làm Sạch Dữ Liệu Kiểm Toán (6-Stage Production Pipeline)
+        </h2>
+        <p class="text-xs sm:text-sm font-medium mt-1" style="color: var(--text-muted);">
+          Nguyên tắc <strong>Zero Data Loss</strong> (giữ nguyên vẹn 100% 180,519 bản ghi), bảo đảm tiêu chuẩn kiểm toán học thuật nghiêm ngặt.
+        </p>
+      </div>
+
+      <!-- CHART: BEFORE VS AFTER CARDINALITY REDUCTION -->
+      <div class="ui-card p-5 space-y-4">
+        <div class="flex justify-between items-start gap-2">
+          <div>
+            <span class="badge-success px-2.5 py-0.5 rounded-full text-[11px] font-bold">ĐỒ THỊ HIỆU QUẢ LÀM SẠCH</span>
+            <h3 class="text-sm sm:text-base font-black mt-1" style="color: var(--text-heading);">
+              Mức Độ Triệt Tiêu Phân Mảnh Danh Mục Địa Lý (Số Lượng Nhóm: Trước vs Sau)
+            </h3>
+            <p class="text-xs font-medium" style="color: var(--text-muted);">
+              Đo lường sự sụt giảm số lượng biến thể rác (Cardinality Reduction) qua pipeline chuẩn hóa 8 cột
+            </p>
+          </div>
+          <span class="badge-success px-2.5 py-1 rounded text-xs font-black">Giảm 75% - 83%</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+          <!-- Col 1: Order Region & Market -->
+          <div class="space-y-3 p-3.5 rounded-xl border" style="background-color: var(--bg-card-alt); border-color: var(--border-color);">
+            <div>
+              <div class="flex justify-between font-bold mb-1">
+                <span>Order Region (Vùng địa lý nhận):</span>
+                <span class="text-emerald-600 dark:text-emerald-400 font-extrabold">115 ➔ 23 nhóm (-80.0%)</span>
+              </div>
+              <div class="space-y-1">
+                <div class="flex items-center gap-2">
+                  <span class="w-12 text-[10px] text-slate-400">Trước:</span>
+                  <div class="w-full bg-slate-200 dark:bg-slate-700 h-3 rounded-full overflow-hidden">
+                    <div class="bg-rose-500 h-full rounded-full" style="width: 100%"></div>
+                  </div>
+                  <span class="text-[10px] font-bold w-8 text-right">115</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-12 text-[10px] text-emerald-500 font-bold">Sau:</span>
+                  <div class="w-full bg-slate-200 dark:bg-slate-700 h-3 rounded-full overflow-hidden">
+                    <div class="bg-emerald-500 h-full rounded-full" style="width: 20%"></div>
+                  </div>
+                  <span class="text-[10px] font-bold text-emerald-500 w-8 text-right">23</span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between font-bold mb-1">
+                <span>Market (Đại thị trường toàn cầu):</span>
+                <span class="text-emerald-600 dark:text-emerald-400 font-extrabold">26 ➔ 5 nhóm (-80.8%)</span>
+              </div>
+              <div class="space-y-1">
+                <div class="flex items-center gap-2">
+                  <span class="w-12 text-[10px] text-slate-400">Trước:</span>
+                  <div class="w-full bg-slate-200 dark:bg-slate-700 h-3 rounded-full overflow-hidden">
+                    <div class="bg-rose-500 h-full rounded-full" style="width: 100%"></div>
+                  </div>
+                  <span class="text-[10px] font-bold w-8 text-right">26</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-12 text-[10px] text-emerald-500 font-bold">Sau:</span>
+                  <div class="w-full bg-slate-200 dark:bg-slate-700 h-3 rounded-full overflow-hidden">
+                    <div class="bg-emerald-500 h-full rounded-full" style="width: 19.2%"></div>
+                  </div>
+                  <span class="text-[10px] font-bold text-emerald-500 w-8 text-right">5</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Col 2: Customer City & Order City -->
+          <div class="space-y-3 p-3.5 rounded-xl border" style="background-color: var(--bg-card-alt); border-color: var(--border-color);">
+            <div>
+              <div class="flex justify-between font-bold mb-1">
+                <span>Customer City (Đô thị khách hàng):</span>
+                <span class="text-emerald-600 dark:text-emerald-400 font-extrabold">2,811 ➔ 566 nhóm (-79.9%)</span>
+              </div>
+              <div class="space-y-1">
+                <div class="flex items-center gap-2">
+                  <span class="w-12 text-[10px] text-slate-400">Trước:</span>
+                  <div class="w-full bg-slate-200 dark:bg-slate-700 h-3 rounded-full overflow-hidden">
+                    <div class="bg-rose-500 h-full rounded-full" style="width: 100%"></div>
+                  </div>
+                  <span class="text-[10px] font-bold w-12 text-right">2,811</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-12 text-[10px] text-emerald-500 font-bold">Sau:</span>
+                  <div class="w-full bg-slate-200 dark:bg-slate-700 h-3 rounded-full overflow-hidden">
+                    <div class="bg-emerald-500 h-full rounded-full" style="width: 20.1%"></div>
+                  </div>
+                  <span class="text-[10px] font-bold text-emerald-500 w-12 text-right">566</span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between font-bold mb-1">
+                <span>Order City (Đô thị nhận hàng):</span>
+                <span class="text-emerald-600 dark:text-emerald-400 font-extrabold">14,560 ➔ 3,556 nhóm (-75.6%)</span>
+              </div>
+              <div class="space-y-1">
+                <div class="flex items-center gap-2">
+                  <span class="w-12 text-[10px] text-slate-400">Trước:</span>
+                  <div class="w-full bg-slate-200 dark:bg-slate-700 h-3 rounded-full overflow-hidden">
+                    <div class="bg-rose-500 h-full rounded-full" style="width: 100%"></div>
+                  </div>
+                  <span class="text-[10px] font-bold w-12 text-right">14,560</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-12 text-[10px] text-emerald-500 font-bold">Sau:</span>
+                  <div class="w-full bg-slate-200 dark:bg-slate-700 h-3 rounded-full overflow-hidden">
+                    <div class="bg-emerald-500 h-full rounded-full" style="width: 24.4%"></div>
+                  </div>
+                  <span class="text-[10px] font-bold text-emerald-500 w-12 text-right">3,556</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Before vs After Resource Consumption Bar -->
+      <div class="ui-card p-4 space-y-3">
+        <h3 class="text-xs sm:text-sm font-bold" style="color: var(--text-heading);">Thước Đo Định Lượng Hiệu Quả Trước vs Sau (Before vs After)</h3>
+        <div class="space-y-3 text-xs">
+          <div>
+            <div class="flex justify-between text-xs mb-1 font-semibold" style="color: var(--text-body);">
+              <span>Dung lượng bộ nhớ RAM (Python):</span>
+              <span class="font-bold text-emerald-600 dark:text-emerald-400">104.54 MB ➔ 66.47 MB (Tiết kiệm 36.42%)</span>
+            </div>
+            <div class="w-full bg-slate-200 dark:bg-slate-800 h-3.5 rounded-full overflow-hidden flex border border-slate-300 dark:border-slate-700">
+              <div class="bg-indigo-600 text-[9px] font-bold text-white flex items-center justify-center" style="width: 63.58%">66.47 MB (Sau)</div>
+              <div class="bg-red-400/60 text-[9px] text-slate-800 dark:text-white flex items-center justify-center" style="width: 36.42%">-38.07 MB</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between text-xs mb-1 font-semibold" style="color: var(--text-body);">
+              <span>Kích thước tệp trên đĩa:</span>
+              <span class="font-bold text-sky-600 dark:text-sky-400">CSV thô 87.24 MB ➔ Parquet nén 11.41 MB (Giảm 86.9%)</span>
+            </div>
+            <div class="w-full bg-slate-200 dark:bg-slate-800 h-3.5 rounded-full overflow-hidden flex border border-slate-300 dark:border-slate-700">
+              <div class="bg-emerald-600 text-[9px] font-bold text-white flex items-center justify-center" style="width: 13.08%">11.41 MB (Parquet)</div>
+              <div class="bg-slate-400/50 text-[9px] text-slate-800 dark:text-white flex items-center justify-center" style="width: 86.92%">87.24 MB (CSV Thô)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==================== TAB 4: HỌC MÁY & QUẢN TRỊ (KÈM ĐỒ THỊ) ==================== -->
+    <section id="sec-ml" class="hidden space-y-5">
+      
+      <div class="ui-card p-4 border-l-4 border-l-purple-600" style="background-color: var(--bg-card);">
+        <h2 class="text-base sm:text-lg font-black" style="color: var(--text-heading);">
+          Đánh Giá Học Máy Baseline & Đề Xuất Quản Trị SCM (RQ3 & RQ4)
+        </h2>
+        <p class="text-xs sm:text-sm font-medium mt-1" style="color: var(--text-muted);">
+          So sánh đối đầu giữa Logistic Regression và Random Forest (đối chiếu từ <code>output/DataCo_Baseline_ML_Evaluation.csv</code>).
+        </p>
+      </div>
+
+      <!-- CHART: ML METRICS COMPARISON GROUPED BAR -->
+      <div class="ui-card p-5 space-y-4">
+        <div class="flex justify-between items-start gap-2">
+          <div>
+            <span class="badge-primary px-2.5 py-0.5 rounded-full text-[11px] font-bold">ĐỒ THỊ HIỆU NĂNG MÔ HÌNH</span>
+            <h3 class="text-sm sm:text-base font-black mt-1" style="color: var(--text-heading);">
+              So Sánh Đối Đầu 6 Chỉ Số: Logistic Regression vs Random Forest
+            </h3>
+            <p class="text-xs font-medium" style="color: var(--text-muted);">
+              Random Forest vượt trội rõ rệt ở chỉ số Recall (62.05% vs 55.78%) - hạn chế tối đa việc bỏ sót đơn trễ hạn
+            </p>
+          </div>
+          <div class="flex items-center gap-3 text-xs font-bold">
+            <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-sky-500"></span> Logistic Regression</span>
+            <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-emerald-500"></span> Random Forest</span>
+          </div>
+        </div>
+
+        <!-- SVG Grouped Bar Chart -->
+        <div class="w-full overflow-x-auto">
+          <svg viewBox="0 0 600 240" class="w-full h-auto" style="min-width: 500px;">
+            <!-- Grid Lines -->
+            <line x1="50" y1="30" x2="570" y2="30" stroke="var(--chart-grid)" stroke-dasharray="3 3"/>
+            <text x="40" y="34" fill="var(--chart-axis)" font-size="10" text-anchor="end">1.00</text>
+
+            <line x1="50" y1="75" x2="570" y2="75" stroke="var(--chart-grid)" stroke-dasharray="3 3"/>
+            <text x="40" y="79" fill="var(--chart-axis)" font-size="10" text-anchor="end">0.75</text>
+
+            <line x1="50" y1="120" x2="570" y2="120" stroke="var(--chart-grid)" stroke-dasharray="3 3"/>
+            <text x="40" y="124" fill="var(--chart-axis)" font-size="10" text-anchor="end">0.50</text>
+
+            <line x1="50" y1="165" x2="570" y2="165" stroke="var(--chart-grid)" stroke-dasharray="3 3"/>
+            <text x="40" y="169" fill="var(--chart-axis)" font-size="10" text-anchor="end">0.25</text>
+
+            <line x1="50" y1="210" x2="570" y2="210" stroke="var(--chart-axis)" stroke-width="1.5"/>
+            <text x="40" y="214" fill="var(--chart-axis)" font-size="10" text-anchor="end">0.00</text>
+
+            <!-- GROUP 1: ROC-AUC -->
+            <rect x="70" y="79" width="28" height="131" rx="4" fill="#0284c7" class="chart-bar"/>
+            <rect x="102" y="78" width="28" height="132" rx="4" fill="#10b981" class="chart-bar"/>
+            <text x="98" y="226" fill="var(--text-heading)" font-size="11" font-weight="700" text-anchor="middle">ROC-AUC</text>
+            <text x="84" y="73" fill="#0284c7" font-size="10" font-weight="700" text-anchor="middle">0.73</text>
+            <text x="116" y="72" fill="#10b981" font-size="10" font-weight="900" text-anchor="middle">0.73</text>
+
+            <!-- GROUP 2: PR-AUC -->
+            <rect x="155" y="67" width="28" height="143" rx="4" fill="#0284c7" class="chart-bar"/>
+            <rect x="187" y="67" width="28" height="143" rx="4" fill="#10b981" class="chart-bar"/>
+            <text x="183" y="226" fill="var(--text-heading)" font-size="11" font-weight="700" text-anchor="middle">PR-AUC</text>
+            <text x="169" y="61" fill="#0284c7" font-size="10" font-weight="700" text-anchor="middle">0.79</text>
+            <text x="201" y="61" fill="#10b981" font-size="10" font-weight="900" text-anchor="middle">0.80</text>
+
+            <!-- GROUP 3: ACCURACY -->
+            <rect x="240" y="86" width="28" height="124" rx="4" fill="#0284c7" class="chart-bar"/>
+            <rect x="272" y="87" width="28" height="123" rx="4" fill="#10b981" class="chart-bar"/>
+            <text x="268" y="226" fill="var(--text-heading)" font-size="11" font-weight="700" text-anchor="middle">Accuracy</text>
+            <text x="254" y="80" fill="#0284c7" font-size="10" font-weight="700" text-anchor="middle">68.7%</text>
+            <text x="286" y="81" fill="#10b981" font-size="10" font-weight="900" text-anchor="middle">68.1%</text>
+
+            <!-- GROUP 4: PRECISION -->
+            <rect x="325" y="65" width="28" height="145" rx="4" fill="#0284c7" class="chart-bar"/>
+            <rect x="357" y="75" width="28" height="135" rx="4" fill="#10b981" class="chart-bar"/>
+            <text x="353" y="226" fill="var(--text-heading)" font-size="11" font-weight="700" text-anchor="middle">Precision</text>
+            <text x="339" y="59" fill="#0284c7" font-size="10" font-weight="900" text-anchor="middle">80.5%</text>
+            <text x="371" y="69" fill="#10b981" font-size="10" font-weight="700" text-anchor="middle">74.8%</text>
+
+            <!-- GROUP 5: RECALL (KEY METRIC) -->
+            <rect x="410" y="110" width="28" height="100" rx="4" fill="#0284c7" class="chart-bar"/>
+            <rect x="442" y="98" width="28" height="112" rx="4" fill="#10b981" class="chart-bar"/>
+            <text x="438" y="226" fill="var(--text-heading)" font-size="11" font-weight="900" text-anchor="middle">Recall ★</text>
+            <text x="424" y="104" fill="#0284c7" font-size="10" font-weight="700" text-anchor="middle">55.8%</text>
+            <text x="456" y="92" fill="#10b981" font-size="10" font-weight="900" text-anchor="middle">62.1%</text>
+
+            <!-- GROUP 6: F1-SCORE -->
+            <rect x="495" y="91" width="28" height="119" rx="4" fill="#0284c7" class="chart-bar"/>
+            <rect x="527" y="88" width="28" height="122" rx="4" fill="#10b981" class="chart-bar"/>
+            <text x="523" y="226" fill="var(--text-heading)" font-size="11" font-weight="700" text-anchor="middle">F1-Score</text>
+            <text x="509" y="85" fill="#0284c7" font-size="10" font-weight="700" text-anchor="middle">65.9%</text>
+            <text x="541" y="82" fill="#10b981" font-size="10" font-weight="900" text-anchor="middle">67.8%</text>
+          </svg>
+        </div>
+
+        <div class="p-3 bg-emerald-50/50 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-800 rounded-lg text-xs flex justify-between items-center">
+          <span class="font-bold text-emerald-800 dark:text-emerald-300">
+            ★ Kết luận mô hình: Random Forest Classifier vượt trội với Recall 62.05% (+6.27%) và F1-Score 67.84% (+1.95%).
+          </span>
+          <span class="badge-success px-2 py-0.5 rounded font-bold">Lựa chọn ưu tiên SCM</span>
+        </div>
+      </div>
+
+      <!-- 4 Prescriptions -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+        <div class="ui-card p-3.5 border space-y-1">
+          <div class="font-bold text-red-600 dark:text-red-400">1. Tái Cấu Trúc Dynamic SLA</div>
+          <p style="color: var(--text-body);">Bỏ cam kết cứng 1 ngày cho First Class xuyên lục địa, chuyển sang 2 - 3 ngày động tránh vỡ cam kết.</p>
+        </div>
+        <div class="ui-card p-3.5 border space-y-1">
+          <div class="font-bold text-amber-600 dark:text-amber-400">2. Cảnh Báo Sớm WMS/OMS</div>
+          <p style="color: var(--text-body);">Tự động cảnh báo đơn có rủi ro &gt; 0.65 để ưu tiên soạn hàng và bốc xếp xuất kho trước trong 2 giờ.</p>
+        </div>
+        <div class="ui-card p-3.5 border space-y-1">
+          <div class="font-bold text-emerald-600 dark:text-emerald-400">3. Fulfillment Center Caguas</div>
+          <p style="color: var(--text-body);">Đặt kho vệ tinh chuyên trách tại Caguas (Puerto Rico) nhằm xử lý gần 1/3 nhu cầu đơn hàng toàn hệ thống.</p>
+        </div>
+        <div class="ui-card p-3.5 border space-y-1">
+          <div class="font-bold text-sky-600 dark:text-sky-400">4. Thưởng / Phạt OTIF Với Đối Tác 3PL</div>
+          <p style="color: var(--text-body);">Gắn chỉ số OTIF trực tiếp vào hợp đồng cước phí giao vận tại Tây Âu và Trung Phi.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==================== TAB 5: TỔNG QUAN DỰ ÁN ==================== -->
+    <section id="sec-overview" class="hidden space-y-5">
+      
+      <div class="ui-card p-4 border-l-4 border-l-indigo-600" style="background-color: var(--bg-card);">
+        <h2 class="text-base sm:text-lg font-black" style="color: var(--text-heading);">
+          Bối Cảnh Nghiệp Vụ & Kiến Trúc Dữ Liệu DataCo Global
+        </h2>
+        <p class="text-xs sm:text-sm font-medium mt-1" style="color: var(--text-muted);">
+          Đơn vị quan sát là <strong>Một mục hàng trong đơn (Line Item Transaction)</strong>, gom cụm theo <code>Order Id</code>. Phản ánh chuỗi vận hành bán lẻ đa kênh toàn cầu.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+        <div class="ui-card p-4 border space-y-2">
+          <div class="font-bold text-sky-600 dark:text-sky-400 text-sm">🏢 5 Phân Hệ Vận Hành</div>
+          <ul class="space-y-1 list-disc list-inside font-medium" style="color: var(--text-body);">
+            <li><strong>CRM / Sales:</strong> Ghi nhận Khách hàng, Sản phẩm, Đơn đặt</li>
+            <li><strong>Finance / ERP:</strong> Ghi nhận Thanh toán, Doanh thu, Lợi nhuận</li>
+            <li><strong>Warehouse / WMS:</strong> Đóng gói, Phân loại, Xuất kho</li>
+            <li><strong>Logistics / TMS:</strong> Thiết lập Shipping Mode, Cam kết SLA</li>
+            <li><strong>3PL Carrier:</strong> Quét mã vận đơn, Ngày giao thực tế</li>
+          </ul>
+        </div>
+
+        <div class="ui-card p-4 border space-y-2">
+          <div class="font-bold text-emerald-600 dark:text-emerald-400 text-sm">🌐 5 Đại Thị Trường Toàn Cầu</div>
+          <div class="space-y-1 font-medium" style="color: var(--text-body);">
+            <div class="flex justify-between"><span>LATAM (Mỹ Latinh):</span> <strong>43,687 đơn (~24.2%)</strong></div>
+            <div class="flex justify-between"><span>Europe (Châu Âu):</span> <strong>42,241 đơn (~23.4%)</strong></div>
+            <div class="flex justify-between"><span>Pacific Asia:</span> <strong>34,858 đơn (~19.3%)</strong></div>
+            <div class="flex justify-between"><span>USCA (Mỹ & Canada):</span> <strong>25,799 đơn (~14.3%)</strong></div>
+            <div class="flex justify-between"><span>Africa (Châu Phi):</span> <strong>11,540 đơn (~6.4%)</strong></div>
+          </div>
+        </div>
+
+        <div class="ui-card p-4 border space-y-2">
+          <div class="font-bold text-amber-600 dark:text-amber-400 text-sm">⚖️ Nguyên Tắc Xử Lý Dữ Liệu</div>
+          <ul class="space-y-1 list-disc list-inside font-medium" style="color: var(--text-body);">
+            <li><strong>Zero Data Loss:</strong> Giữ 100% 180,519 bản ghi, không dùng dropna tùy tiện.</li>
+            <li><strong>GDPR:</strong> Xóa triệt để Customer Email & Customer Password.</li>
+            <li><strong>Chống Rò Rỉ:</strong> Cách ly 100% 3 biến hậu giao hàng khỏi ML.</li>
+            <li><strong>Cân Bằng Tự Nhiên:</strong> Tỷ lệ 54.84% : 45.16% không cần SMOTE.</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // Tab Switching
+    function switchTab(targetId) {
+      const tabs = ['sec-eda', 'sec-dirty', 'sec-cleaning', 'sec-ml', 'sec-overview'];
+      tabs.forEach(id => {
+        const sec = document.getElementById(id);
+        const btn = document.getElementById('btn-' + id);
+        if (id === targetId) {
+          sec.classList.remove('hidden');
+          btn.classList.add('active');
+        } else {
+          sec.classList.add('hidden');
+          btn.classList.remove('active');
+        }
+      });
+    }
+
+    // Accordion Toggle
+    function toggleAccordion(accId) {
+      const el = document.getElementById(accId);
+      const icon = document.getElementById(accId + '-icon');
+      if (!el) return;
+      if (el.classList.contains('open')) {
+        el.classList.remove('open');
+        if (icon) icon.textContent = 'Xem Chi Tiết ▼';
+      } else {
+        el.classList.add('open');
+        if (icon) icon.textContent = 'Thu Gọn ▲';
+      }
+    }
+
+    // Theme Toggle
+    function toggleTheme() {
+      const html = document.documentElement;
+      const isDark = html.classList.contains('dark');
+      if (isDark) {
+        html.classList.remove('dark');
+        html.classList.add('light');
+        document.getElementById('themeIcon').textContent = '🌙';
+        document.getElementById('themeLabel').textContent = 'Chế độ Tối';
+      } else {
+        html.classList.remove('light');
+        html.classList.add('dark');
+        document.getElementById('themeIcon').textContent = '☀️';
+        document.getElementById('themeLabel').textContent = 'Chế độ Sáng';
+      }
+    }
+
+    // Audit Table Data
+    const auditRows = [
+      { stt: 1, name: "Product Description", nulls: "150,661", pct: "83.46%", noise: "9,909", total: "160,570", type: "Missing, Invalid Format", pri: "Cao" },
+      { stt: 2, name: "Order Zipcode", nulls: "143,152", pct: "79.30%", noise: "0", total: "143,152", type: "Missing Value", pri: "Cao" },
+      { stt: 3, name: "Order State", nulls: "44,944", pct: "24.90%", noise: "26,904", total: "71,848", type: "Missing, Noise, Fragmented", pri: "Cao" },
+      { stt: 4, name: "Category Name", nulls: "44,344", pct: "24.56%", noise: "26,589", total: "70,933", type: "Missing, String Noise", pri: "Cao" },
+      { stt: 5, name: "Order City", nulls: "41,900", pct: "23.21%", noise: "25,062", total: "66,962", type: "Missing, String Noise", pri: "Cao" },
+      { stt: 6, name: "Delivery Status", nulls: "40,451", pct: "22.41%", noise: "24,482", total: "64,933", type: "Missing, Data Leakage", pri: "Cao" },
+      { stt: 7, name: "Order Country", nulls: "40,423", pct: "22.39%", noise: "24,357", total: "64,780", type: "Missing, Noise", pri: "Cao" },
+      { stt: 8, name: "Customer Street", nulls: "38,147", pct: "21.13%", noise: "22,818", total: "60,965", type: "Missing, PII Risk", pri: "Cao" },
+      { stt: 9, name: "Order Item Discount", nulls: "30,043", pct: "16.64%", noise: "30,276", total: "60,319", type: "Missing, Decimal Comma", pri: "Cao" },
+      { stt: 10, name: "Type (Payment)", nulls: "37,308", pct: "20.67%", noise: "22,214", total: "59,522", type: "Missing, Category Noise", pri: "Cao" },
+      { stt: 11, name: "Sales", nulls: "28,920", pct: "16.02%", noise: "29,112", total: "58,032", type: "European Comma, Noise", pri: "Cao" },
+      { stt: 12, name: "Department Id", nulls: "29,198", pct: "16.17%", noise: "28,816", total: "58,014", type: "Missing Foreign Key", pri: "Cao" },
+      { stt: 13, name: "Benefit per order", nulls: "26,849", pct: "14.87%", noise: "26,546", total: "53,395", type: "Negative Outliers, Comma", pri: "Cao" },
+      { stt: 14, name: "Order Item Product Price", nulls: "22,216", pct: "12.31%", noise: "22,353", total: "44,569", type: "Unit Noise, Comma", pri: "Cao" },
+      { stt: 15, name: "Days for shipment (sched)", nulls: "31,159", pct: "17.26%", noise: "0", total: "31,159", type: "Missing SLA", pri: "Cao" },
+      { stt: 16, name: "Days for shipping (real)", nulls: "13,544", pct: "7.50%", noise: "0", total: "13,544", type: "Critical Data Leakage", pri: "Cao" },
+      { stt: 17, name: "Late_delivery_risk", nulls: "6,302", pct: "3.49%", noise: "2,076", total: "8,378", type: "Unit Noise (1 VND/USD)", pri: "Cao" },
+      { stt: 18, name: "Customer Email", nulls: "0", pct: "0.00%", noise: "180,519", total: "180,519", type: "Sensitive PII (Dropped)", pri: "Cao" },
+      { stt: 19, name: "Customer Password", nulls: "0", pct: "0.00%", noise: "180,519", total: "180,519", type: "Sensitive PII (Dropped)", pri: "Cao" },
+      { stt: 20, name: "Customer City", nulls: "38,854", pct: "21.52%", noise: "2,811", total: "41,665", type: "Fragmented (2811->566)", pri: "Trung Bình" },
+      { stt: 21, name: "Order Region", nulls: "41,964", pct: "23.25%", noise: "115", total: "42,079", type: "Fragmented (115->23)", pri: "Trung Bình" },
+      { stt: 22, name: "Market", nulls: "28,120", pct: "15.58%", noise: "26", total: "28,146", type: "Truncated Strings (26->5)", pri: "Trung Bình" }
+    ];
+
+    function renderAudit(data) {
+      const tbody = document.getElementById('auditTableBody');
+      if (!tbody) return;
+      tbody.innerHTML = '';
+      data.forEach(item => {
+        const tr = document.createElement('tr');
+        tr.className = 'hover:bg-slate-100 dark:hover:bg-slate-800/50 transition';
+        const badge = item.pri === 'Cao' ? 'badge-danger' : 'badge-warning';
+        tr.innerHTML = `
+          <td class="p-2.5 font-mono" style="color: var(--text-muted);">${item.stt}</td>
+          <td class="p-2.5 font-bold font-mono" style="color: var(--text-heading);">${item.name}</td>
+          <td class="p-2.5 font-mono">${item.nulls}</td>
+          <td class="p-2.5 font-mono font-bold ${parseFloat(item.pct) > 50 ? 'text-red-600 dark:text-red-400' : ''}">${item.pct}</td>
+          <td class="p-2.5 font-mono text-amber-600 dark:text-amber-400 font-bold">${item.noise}</td>
+          <td class="p-2.5 font-mono font-bold">${item.total}</td>
+          <td class="p-2.5 text-[11px]" style="color: var(--text-muted);">${item.type}</td>
+          <td class="p-2.5"><span class="px-2 py-0.5 rounded text-[10px] font-bold ${badge}">${item.pri}</span></td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function filterAudit() {
+      const q = document.getElementById('searchInput').value.toLowerCase();
+      const pri = document.getElementById('filterSelect').value;
+      const res = auditRows.filter(r => {
+        const matchName = r.name.toLowerCase().includes(q) || r.type.toLowerCase().includes(q);
+        const matchPri = pri === 'ALL' || r.pri === pri;
+        return matchName && matchPri;
+      });
+      renderAudit(res);
+    }
+
+    // Auto-render
+    renderAudit(auditRows);
+  </script>
+</body>
+</html>

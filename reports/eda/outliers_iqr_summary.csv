@@ -1,0 +1,6 @@
+﻿Cột Định Lượng,Q1 (25%),Median,Q3 (75%),IQR,Ngưỡng Rào Dưới,Ngưỡng Rào Trên,Số Ngoại Lệ,Tỷ Lệ Ngoại Lệ (%),Độ Lệch Skewness,Bản Chất Nghiệp Vụ
+Sales,129.99,199.92,299.95,169.96,-124.95,554.89,9222,5.11,27.06,Ngoại lệ hợp lệ (Đơn hàng giá trị cao / Bán sỉ)
+Sales per customer,108.74,165.93,248.98,140.23,-101.61,459.33,7451,4.13,23.9,Ngoại lệ hợp lệ (Đơn hàng giá trị cao / Bán sỉ)
+Benefit per order,12.01,31.75,62.38,50.37,-63.55,137.94,24644,13.65,-48.13,Ngoại lệ hợp lệ (Đơn hàng giá trị cao / Bán sỉ)
+Order Item Quantity,1.0,1.0,3.0,2.0,-2.0,6.0,1273,0.76,15.56,Ngoại lệ hợp lệ (Đơn hàng giá trị cao / Bán sỉ)
+Product Price,50.0,65.0,199.99,149.99,-174.99,424.98,6910,3.83,50.61,Ngoại lệ hợp lệ (Đơn hàng giá trị cao / Bán sỉ)

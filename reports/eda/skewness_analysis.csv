@@ -1,0 +1,8 @@
+﻿Biến Số,Hệ Số Skewness,Hình Dạng Phân Phối,Đề Xuất Biến Đổi ML
+Sales,27.064,Lệch phải mạnh (Right-skewed),Áp dụng log1p() hoặc Box-Cox
+Sales per customer,23.9047,Lệch phải mạnh (Right-skewed),Áp dụng log1p() hoặc Box-Cox
+Benefit per order,-48.1308,Lệch trái mạnh (Left-skewed),Áp dụng log1p() hoặc Box-Cox
+Product Price,50.6061,Lệch phải mạnh (Right-skewed),Áp dụng log1p() hoặc Box-Cox
+Order Item Quantity,15.564,Lệch phải mạnh (Right-skewed),Áp dụng log1p() hoặc Box-Cox
+Days for shipping (real),0.0239,Gần đối xứng (Normal-like),Chuẩn hóa StandardScaler() trực tiếp
+Days for shipment (scheduled),-0.7517,Gần đối xứng (Normal-like),Chuẩn hóa StandardScaler() trực tiếp

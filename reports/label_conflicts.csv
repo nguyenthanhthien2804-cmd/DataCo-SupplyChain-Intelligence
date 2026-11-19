@@ -1,0 +1,2695 @@
+﻿Order Id,Order Item Id,Shipping Mode,Days for shipping (real),Days for shipment (scheduled),Delivery Status,Raw_Late_delivery_risk,Derived_Late_delivery_risk
+,179250,Standard Class,6,4,Shipping canceled,0,1
+75917,179232,Second Class,3,2,Shipping canceled,0,1
+75901,179216,Same Day,1,0,Shipping canceled,0,1
+49075,-1,Standard Class,6,4,,0,1
+33824,84425,Standard Class,5,4,Shipping canceled,0,1
+37845,94445,Standard Class,6,4,Shipping canceled,0,1
+41345,103211,Standard Class,6,4,Shipping canceled,0,1
+,179162,Second Class,3,2,,0,1
+,179117,Same Day,1,0,,0,1
+9999,151294,,6,4,,0,1
+580,1424,Standard Class,6,4,Shipping canceled,0,1
+56244,140672,Standard Class,5,4,,0,1
+3625,9026,Standard Class,6,4,Shipping canceled,0,1
+,14724,Standard Class,5,4,Shipping canceled,0,1
+31145,77830,,6,4,,0,1
+44265,110520,,6,4,,0,1
+41590,103813,Standard Class,6,4,Shipping canceled,0,1
+,103814,Standard Class,6,4,Shipping canceled,0,1
+64274,,Standard Class,5,4,,0,1
+13939,34880,Standard Class,5,4,Shipping canceled,0,1
+46864,117157,Standard Class,5,4,Shipping canceled,0,1
+62840,157125,Standard Class,6,4,Shipping canceled,0,1
+63220,158064,Standard Class,6,4,Shipping canceled,0,1
+65439,163539,Standard Class,5,4,,0,1
+,157124,Standard Class,6,4,Shipping canceled,0,1
+66764,166874,Standard Class,5,4,Shipping canceled,0,1
+66764,166870,Standard Class,5,4,,0,1
+10014,25020,Standard Class,5,4,Shipping canceled,0,1
+48954,122405,Standard Class,5,4,,0,1
+45339,113282,Standard Class,5,4,Shipping canceled,0,1
+-75780,179095,Standard Class,6,4,,0,1
+75749,179064,Standard Class,5,4,Shipping canceled,0,1
+75729,179044,,5,2,Shipping canceled,0,1
+73168,176483,First Class,2,1,,0,1
+73135,176450,Standard Class,6,4,,0,1
+73132,176447,First Class,2,1,Shipping canceled,0,1
+62419,156022,Standard Class,5,4,,0,1
+16459,41106,Standard Class,5,4,Shipping canceled,0,1
+,40158,Standard Class,6,4,Shipping canceled,0,1
+19540,48844,Standard Class,6,4,Shipping canceled,0,1
+55000,137547,Standard Class,6,4,Shipping canceled,0,1
+57479,143795,,5,4,Shipping canceled,0,1
+24650,61721,Standard Class,6,4,,0,1
+24650,61720,Standard Class,6,4,,0,1
+24650,61719,,6,4,Shipping canceled,0,1
+9999,83925,Standard Class,5,4,,0,1
+32594,81522,Standard Class,5,4,Shipping canceled,0,1
+36344,90743,Standard Class,5,4,Shipping canceled,0,1
+28724,71900,Standard Class,5,4,Shipping canceled,0,1
+38950,97235,Standard Class,6,4,,0,1
+38950,97234,Standard Class,6,4,,0,1
+,81477,Standard Class,5,4,Shipping canceled,0,1
+48860,122169,Standard Class,6,4,Shipping canceled,0,1
+36685,91565,Standard Class,6,4,Shipping canceled,0,1
+41569,,Standard Class,5,4,,0,1
+44830,,Standard Class,6,4,Shipping canceled,0,1
+73087,,Second Class,3,2,,0,1
+54930,9999,Standard Class,6,4,Shipping canceled,0,1
+51744,9999,Second Class,5,2,Shipping canceled,0,1
+39540,98704,Second Class,6,2,,0,1
+6299,15760,Second Class,5,2,,0,1
+,131145,Standard Class,6,4,,0,1
+,6396,Standard Class,5,4,Shipping canceled,0,1
+8200,20486,Standard Class,6,4,,0,1
+8200,20485,Standard Class,6,4,Shipping canceled,0,1
+,168,Standard Class,5,4,,0,1
+57460,143740,Standard Class,6,4,,0,1
+4744,11888,Standard Class,5,4,Shipping canceled,0,1
+2550,6378,Standard Class,6,4,,0,1
+10049,25105,Standard Class,5,4,,0,1
+22875,57263,Standard Class,6,4,,0,1
+20395,50916,Standard Class,6,4,Shipping canceled,0,1
+25880,64778,Standard Class,6,4,,0,1
+13284,33231,Standard Class,5,4,,0,1
+45420,113491,Standard Class,6,4,,0,1
+4354,10907,Standard Class,5,4,Shipping canceled,0,1
+10204,25505,Standard Class,5,4,Shipping canceled,0,1
+52719,131797,Standard Class,5,4,,0,1
+54669,-1,Standard Class,5,4,Shipping canceled,0,1
+52719,131798,Standard Class,5,4,Shipping canceled,0,1
+58744,147034,Standard Class,5,4,Shipping canceled,0,1
+10215,25541,Standard Class,6,4,,0,1
+5748,14312,First Class,2,1,,0,1
+33374,-1,Standard Class,5,4,,0,1
+,91564,Standard Class,6,4,,0,1
+,83355,Standard Class,5,4,Shipping canceled,0,1
+38305,95625,Standard Class,6,4,,0,1
+43975,109839,Standard Class,6,4,,0,1
+48220,120598,,6,4,Shipping canceled,0,1
+44150,110248,Standard Class,6,4,,0,1
+63065,157671,Standard Class,6,4,,0,1
+,30812,Standard Class,6,4,,0,1
+64555,-1,Standard Class,6,4,,0,1
+,9999,Standard Class,5,4,Shipping canceled,0,1
+1859,4650,Standard Class,5,4,,0,1
+251000,6276,Standard Class,6,4,,0,1
+57225,,Standard Class,6,4,,0,1
+51520,,Standard Class,6,4,Shipping canceled,0,1
+,136714,Standard Class,5,4,Shipping canceled,0,1
+46899,117239,Standard Class,5,4,Shipping canceled,0,1
+,123505,Standard Class,6,4,,0,1
+49410,123503,Standard Class,6,4,Shipping canceled,0,1
+34855,870740,Standard Class,6,4,,0,1
+38305,95623,Standard Class,6,4,,0,1
+-1,109577,Standard Class,5,4,,0,1
+48220,120597,Standard Class,6,4,Shipping canceled,0,1
+12330,30814,Standard Class,6,4,,0,1
+64329,160799,Standard Class,5,4,Shipping canceled,0,1
+48904,122280,Standard Class,5,4,,0,1
+64329,160800,Standard Class,5,4,Shipping canceled,0,1
+-1,26184,Standard Class,6,4,Shipping canceled,0,1
+5270,13160,,6,4,Shipping canceled,0,1
+4354,10908,Standard Class,5,4,,0,1
+53430,133505,Standard Class,6,4,Shipping canceled,0,1
+1859,4648,Standard Class,5,4,Shipping canceled,0,1
+50659,126586,,2,1,Shipping canceled,0,1
+64781,161921,First Class,2,1,Shipping canceled,0,1
+71293,174608,First Class,2,1,Shipping canceled,0,1
+11693,29239,First Class,2,1,,0,1
+19464,48649,,2,1,Shipping canceled,0,1
+56812,142094,First Class,2,1,,0,1
+5197,12981,First Class,2,1,,0,1
+,,First Class,2,1,Shipping canceled,0,1
+59245,148281,First Class,2,1,Shipping canceled,0,1
+22975,57496,First Class,2,1,Shipping canceled,0,1
+,180396,First Class,2,1,Shipping canceled,0,1
+26667,,First Class,2,1,Shipping canceled,0,1
+25167,63082,First Class,2,1,Shipping canceled,0,1
+27334,68463,First Class,2,1,Shipping canceled,0,1
+37800000,94328,First Class,2,1,,0,1
+37800,94327,First Class,2,1,Shipping canceled,0,1
+,91132,First Class,2,1,Shipping canceled,0,1
+37800,94326,First Class,2,1,,0,1
+63631,159042,,2,1,Shipping canceled,0,1
+818,2037,First Class,2,1,Shipping canceled,0,1
+59245,148282,First Class,2,1,Shipping canceled,0,1
+5197,12983,First Class,2,1,,0,1
+27818,69641,First Class,2,1,Shipping canceled,0,1
+,,First Class,2,1,,0,1
+5197,12984,First Class,2,1,,0,1
+10036,25075,First Class,2,1,Shipping canceled,0,1
+26667,66773,First Class,2,1,,0,1
+,44483,First Class,2,1,Shipping canceled,0,1
+818,2038,First Class,2,1,,0,1
+818,2035,First Class,2,1,,0,1
+,,First Class,2,1,,0,1
+36500,91135,First Class,2,1,,0,1
+55935,139861,First Class,2,1,Shipping canceled,0,1
+56812,142096,First Class,2,1,Shipping canceled,0,1
+818,2036,First Class,2,1,,0,1
+57467,143763,First Class,2,1,,0,1
+27334,,First Class,2,1,,0,1
+9999,69640,First Class,2,1,Shipping canceled,0,1
+74042,177357,Same Day,1,0,Shipping canceled,0,1
+62148,155380,Second Class,4,2,Shipping canceled,0,1
+19445,48597,Second Class,6,2,Shipping canceled,0,1
+,48601,Second Class,6,2,Shipping canceled,0,1
+71469,174784,Second Class,5,2,,0,1
+7682,19220,Second Class,3,2,Shipping canceled,0,1
+,138275,Second Class,6,2,,0,1
+56938,142409,Second Class,4,2,,0,1
+2664,6676,Second Class,5,2,,0,1
+9113,22732,Second Class,4,2,,0,1
+6965,17454,Second Class,6,2,Shipping canceled,0,1
+58512,146446,Second Class,3,2,Shipping canceled,0,1
+,119555,Second Class,6,2,,0,1
+74075,177390,Second Class,6,2,,0,1
+302690,75625,Second Class,5,2,,0,1
+36729,91650,Second Class,5,2,Shipping canceled,0,1
+6965,17450,Second Class,6,2,,0,1
+47810,119553,Second Class,6,2,Shipping canceled,0,1
+27877,69786,Second Class,3,2,Shipping canceled,0,1
+43715,109183,Second Class,6,2,Shipping canceled,0,1
+,48599,Second Class,6,2,,0,1
+61984,154971,Second Class,5,2,Shipping canceled,0,1
+17230,43091,Second Class,6,2,Shipping canceled,0,1
+,19219,Second Class,3,2,,0,1
+27877,69787,Second Class,3,2,Shipping canceled,0,1
+,57783,Second Class,4,2,,0,1
+61984,9999,Second Class,5,2,,0,1
+2664,,Second Class,5,2,,0,1
+7682,9999,Second Class,3,2,Shipping canceled,0,1
+,57785,Second Class,4,2,Shipping canceled,0,1
+,48598,Second Class,6,2,Shipping canceled,0,1
+17230,43090,Second Class,6,2,,0,1
+6965000,17451,Second Class,6,2,Shipping canceled,0,1
+42375,105816,Standard Class,6,4,Shipping canceled,0,1
+48255,120691,Standard Class,6,4,,0,1
+48255000,120690,Standard Class,6,4,Shipping canceled,0,1
+,38702,Standard Class,5,4,,0,1
+42255,105497,,6,4,Shipping canceled,0,1
+25725,64423,Standard Class,6,4,,0,1
+9999,5340800,Standard Class,5,4,Shipping canceled,0,1
+34824,87003,Standard Class,5,4,,0,1
+49075,122701,Standard Class,6,4,Shipping canceled,0,1
+41059,102492,Standard Class,5,4,Shipping canceled,0,1
+45979,114908,Standard Class,5,4,Shipping canceled,0,1
+50849,127095,Standard Class,5,4,Shipping canceled,0,1
+63220,158065,Standard Class,6,4,,0,1
+66959,167373,Standard Class,5,4,,0,1
+66764,166873,Standard Class,5,4,Shipping canceled,0,1
+63155,157878,Standard Class,6,4,,0,1
+9999,160978,Standard Class,6,4,Shipping canceled,0,1
+68555,171390,Standard Class,6,4,Shipping canceled,0,1
+17104,42778,Standard Class,5,4,Shipping canceled,0,1
+65679,164139,,5,4,Shipping canceled,0,1
+20154,50365,,5,4,Shipping canceled,0,1
+14610,36545,Standard Class,6,4,Shipping canceled,0,1
+,42777,Standard Class,5,4,,0,1
+53474,133620,,5,4,,0,1
+6750,16873,Standard Class,6,4,Shipping canceled,0,1
+6514,16284,Standard Class,5,4,,0,1
+53474,133623,Standard Class,5,4,Shipping canceled,0,1
+54965,137458,Standard Class,6,4,Shipping canceled,0,1
+55334,138380,Standard Class,5,4,Shipping canceled,0,1
+,6380,Standard Class,6,4,,0,1
+5934,14764,Standard Class,5,4,Shipping canceled,0,1
+25880,64776,Standard Class,6,4,,0,1
+46549,116361,Standard Class,5,4,Shipping canceled,0,1
+24945,62503,Standard Class,6,4,,0,1
+37360,93264,Standard Class,6,4,,0,1
+34824,87004,Standard Class,5,4,Shipping canceled,0,1
+31604,78976,Standard Class,5,4,Shipping canceled,0,1
+31564,78863,Standard Class,5,4,Shipping canceled,0,1
+31364,78395,,5,4,Shipping canceled,0,1
+37960,94767,,6,4,,0,1
+,173199,Standard Class,5,4,Shipping canceled,0,1
+,173944,Standard Class,5,4,Shipping canceled,0,1
+69814,173129,Standard Class,5,4,Shipping canceled,0,1
+,166686,Standard Class,6,4,,0,1
+15925,,Standard Class,6,4,Shipping canceled,0,1
+2754,6909,Standard Class,5,4,Shipping canceled,0,1
+2754,6906,Standard Class,5,4,,0,1
+5155,12877,Standard Class,6,4,,0,1
+76649,179964,Standard Class,5,4,Shipping canceled,0,1
+,120421,Standard Class,5,4,Shipping canceled,0,1
+30674,76633,Standard Class,5,4,Shipping canceled,0,1
+27899,69834000,Standard Class,5,4,Shipping canceled,0,1
+71910,175225,Standard Class,6,4,,0,1
+48154,120418,Standard Class,5,4,Shipping canceled,0,1
+,97705,,5,4,,0,1
+,85079,Standard Class,5,4,,0,1
+36790,91813,Standard Class,6,4,Shipping canceled,0,1
+42375,105814,Standard Class,6,4,,0,1
+66425,166055,Standard Class,6,4,Shipping canceled,0,1
+16500,-1,Standard Class,6,4,,0,1
+,150667,,6,4,Shipping canceled,0,1
+60165,150557,Standard Class,6,4,,0,1
+,86643,Standard Class,6,4,Shipping canceled,0,1
+-1,166056,Standard Class,6,4,,0,1
+5920,14730,Standard Class,6,4,,0,1
+5155,12876,Standard Class,6,4,,0,1
+48154,120420,Standard Class,5,4,Shipping canceled,0,1
+38389,95807,Standard Class,5,4,Shipping canceled,0,1
+38389,95808,Standard Class,5,4,,0,1
+,126291,Standard Class,6,4,Shipping canceled,0,1
+66685,166687,Standard Class,6,4,Shipping canceled,0,1
+54929,137387,Standard Class,5,4,,0,1
+60220,150665,Standard Class,6,4,,0,1
+5920,14731,Standard Class,6,4,Shipping canceled,0,1
+5920000,14732,Standard Class,6,4,,0,1
+27899,,Standard Class,5,4,Shipping canceled,0,1
+39144,97704,Standard Class,5,4,Shipping canceled,0,1
+38160,95256,Standard Class,6,4,Shipping canceled,0,1
+9999,126290,,6,4,,0,1
+63824,159543,Standard Class,5,4,Shipping canceled,0,1
+60220,150669,Standard Class,6,4,,0,1
+2754,6908,Standard Class,5,4,,0,1
+6329,15840,Standard Class,5,4,Shipping canceled,0,1
+20429,,Standard Class,5,4,Shipping canceled,0,1
+38160,95257,Standard Class,6,4,,0,1
+36790,91811,Standard Class,6,4,Shipping canceled,0,1
+20289,50673,Standard Class,5,4,,0,1
+16819,42031,Same Day,1,0,,0,1
+14554,36412,Standard Class,5,4,Shipping canceled,0,1
+4809,12026,Standard Class,5,4,,0,1
+56390,141046,Standard Class,6,4,,0,1
+55675,139253,First Class,2,1,Shipping canceled,0,1
+42255,,Standard Class,6,4,,0,1
+22899,57323,Standard Class,5,4,Shipping canceled,0,1
+1203000,30061,Same Day,1,0,Shipping canceled,0,1
+46709,116796,,5,4,,0,1
+45117,112673,Second Class,3,2,,0,1
+28724,,Standard Class,5,4,,0,1
+61678,154200,First Class,2,1,Shipping canceled,0,1
+45339,113280,Standard Class,5,4,,0,1
+25599,64126,Standard Class,5,4,Shipping canceled,0,1
+18740,46862,First Class,2,1,Shipping canceled,0,1
+62024,155065,Second Class,5,2,,0,1
+59649,149275,Second Class,5,2,Shipping canceled,0,1
+37960,94764,Standard Class,6,4,,0,1
+,75638,Standard Class,5,4,,0,1
+15957,39872,,1,0,Shipping canceled,0,1
+,6813,Same Day,1,0,Shipping canceled,0,1
+50484,126142,First Class,2,1,,0,1
+37845,94448,Standard Class,6,4,,0,1
+21362,53420,First Class,2,1,,0,1
+5270,131620,Standard Class,6,4,,0,1
+4292,10744,Second Class,3,2,Shipping canceled,0,1
+2680,6716000,First Class,2,1,Shipping canceled,0,1
+6774000,169355,Second Class,6,2,Shipping canceled,0,1
+23425,,Standard Class,6,4,Shipping canceled,0,1
+19540,48843,Standard Class,6,4,,0,1
+5731,14267,Same Day,1,0,,0,1
+58498,146417,Same Day,1,0,Shipping canceled,0,1
+59360,148604,First Class,2,1,,0,1
+25599,64128,Standard Class,5,4,Shipping canceled,0,1
+8235,20575,Standard Class,6,4,Shipping canceled,0,1
+65195,162934,,6,4,Shipping canceled,0,1
+60808,152163,Second Class,4,2,,0,1
+59015,147736,Standard Class,6,4,Shipping canceled,0,1
+66270,165659,,2,1,Shipping canceled,0,1
+,9999,First Class,2,1,Shipping canceled,0,1
+58912,147471,First Class,2,1,Shipping canceled,0,1
+,179484,,5,4,Shipping canceled,0,1
+-1,179449,Standard Class,5,4,,0,1
+76069,179384,Standard Class,5,4,,0,1
+76040,,Standard Class,6,4,,0,1
+76023,179338,Second Class,4,2,Shipping canceled,0,1
+75975,-1,Standard Class,6,4,Shipping canceled,0,1
+75949,179264,Second Class,5,2,,0,1
+73473,176788,First Class,2,1,Shipping canceled,0,1
+73449,176764,Standard Class,5,4,Shipping canceled,0,1
+73440,9999,Standard Class,6,4,Shipping canceled,0,1
+73407,176722,First Class,2,1,,0,1
+73379,176694,Standard Class,5,4,Shipping canceled,0,1
+73234,176549,First Class,2,1,Shipping canceled,0,1
+68754,,First Class,2,1,Shipping canceled,0,1
+68754,171882,First Class,2,1,,0,1
+,171125,Second Class,5,2,Shipping canceled,0,1
+68191,170488,First Class,2,1,,0,1
+68053,170131,First Class,2,1,,0,1
+67605,169024,Standard Class,6,4,Shipping canceled,0,1
+67390,1684420,Second Class,6,2,,0,1
+67375,168403,Standard Class,6,4,Shipping canceled,0,1
+67258,168102,Second Class,4,2,,0,1
+67044,167605,Standard Class,5,4,Shipping canceled,0,1
+,166830,First Class,2,1,,0,1
+,,First Class,2,1,Shipping canceled,0,1
+,165562,Second Class,3,2,Shipping canceled,0,1
+66043,165070,First Class,2,1,,0,1
+66043,165068,First Class,2,1,,0,1
+65672,,First Class,2,1,,0,1
+65210,162973,First Class,2,1,Shipping canceled,0,1
+65136,162775,First Class,2,1,,0,1
+,161772,Same Day,1,0,Shipping canceled,0,1
+64525,161287,Standard Class,6,4,Shipping canceled,0,1
+64329,160801,Standard Class,5,4,Shipping canceled,0,1
+64079,160211,First Class,2,1,Shipping canceled,0,1
+-1,160099,Second Class,5,2,Shipping canceled,0,1
+63958,159890,Second Class,4,2,Shipping canceled,0,1
+63852,159615,Second Class,3,2,Shipping canceled,0,1
+63852,159613,Second Class,3,2,Shipping canceled,0,1
+63155,157880,Standard Class,6,4,Shipping canceled,0,1
+62955,,Standard Class,6,4,,0,1
+629250,157361,First Class,2,1,Shipping canceled,0,1
+62680,156709,Standard Class,6,4,Shipping canceled,0,1
+62610,156518,Standard Class,6,4,,0,1
+,156225,,5,4,Shipping canceled,0,1
+-61984,154973,Second Class,5,2,,0,1
+,154202,First Class,2,1,Shipping canceled,0,1
+61214,153125,Standard Class,5,4,,0,1
+60808,152164,Second Class,4,2,,0,1
+60600,151675,Standard Class,6,4,Shipping canceled,0,1
+60283,150827,First Class,2,1,,0,1
+,149962,Second Class,5,2,Shipping canceled,0,1
+-1,149676,First Class,2,1,,0,1
+59604,9999,Standard Class,5,4,,0,1
+59112,9999,First Class,2,1,,0,1
+58744,147035,Standard Class,5,4,Shipping canceled,0,1
+58704,146930,Standard Class,5,4,,0,1
+58704,146928,,5,4,,0,1
+58585,146619,Standard Class,6,4,,0,1
+58238,145719,Second Class,4,2,,0,1
+57954,144999,Second Class,5,2,Shipping canceled,0,1
+57339,143423,Standard Class,5,4,,0,1
+57324,143389,Standard Class,5,4,,0,1
+57324,143388,Standard Class,5,4,,0,1
+56120,,Standard Class,6,4,Shipping canceled,0,1
+55915,139817,First Class,2,1,Shipping canceled,0,1
+,139392,Same Day,1,0,Shipping canceled,0,1
+,137620,First Class,2,1,,0,1
+54723,9999,Same Day,1,0,,0,1
+,135241,Second Class,4,2,,0,1
+53800,134499,Standard Class,6,4,Shipping canceled,0,1
+52859,132160,Standard Class,5,4,,0,1
+52622,131543,First Class,2,1,Shipping canceled,0,1
+,30068,,2,1,Shipping canceled,0,1
+11184,27938,Standard Class,5,4,,0,1
+11135,,,6,4,Shipping canceled,0,1
+10993,27544,Second Class,4,2,,0,1
+10939,27385,Standard Class,5,4,Shipping canceled,0,1
+9999,26115,Standard Class,5,4,Shipping canceled,0,1
+,25758,First Class,2,1,Shipping canceled,0,1
+,25019,Standard Class,5,4,Shipping canceled,0,1
+9768,24386,First Class,2,1,Shipping canceled,0,1
+9419,2350300,First Class,2,1,,0,1
+9210,22989,Standard Class,6,4,Shipping canceled,0,1
+8929,22263,Standard Class,5,4,Shipping canceled,0,1
+8820,22022,Standard Class,6,4,,0,1
+8820,22021,Standard Class,6,4,Shipping canceled,0,1
+8750,21833,Standard Class,6,4,,0,1
+7889,19708,Second Class,5,2,,0,1
+7454,18689,Standard Class,5,4,,0,1
+7360,18427,Second Class,6,2,,0,1
+7252,18166,Second Class,3,2,,0,1
+7252,18165,Second Class,3,2,,0,1
+9999,17064,Same Day,1,0,,0,1
+58744,147033,Standard Class,5,4,Shipping canceled,0,1
+6000,14943,Standard Class,6,4,Shipping canceled,0,1
+51520,128760,Standard Class,6,4,,0,1
+,,Standard Class,5,4,Shipping canceled,0,1
+46899,,Standard Class,5,4,Shipping canceled,0,1
+22840,57168,Standard Class,6,4,,0,1
+,123506,,6,4,,0,1
+40165,100232,Standard Class,6,4,Shipping canceled,0,1
+38950,97237,Standard Class,6,4,Shipping canceled,0,1
+50429,126005,Standard Class,5,4,Shipping canceled,0,1
+40165,100231,Standard Class,6,4,Shipping canceled,0,1
+32574,81474,Standard Class,5,4,Shipping canceled,0,1
+35764,89309,Standard Class,5,4,,0,1
+,107815,First Class,2,1,Shipping canceled,0,1
+71032,174347,First Class,2,1,Shipping canceled,0,1
+69620,,First Class,2,1,,0,1
+65161,162852,First Class,2,1,Shipping canceled,0,1
+65782000,164413,First Class,2,1,,0,1
+14533,36352,First Class,2,1,,0,1
+70934,174249,First Class,2,1,,0,1
+66512,166257,First Class,2,1,Shipping canceled,0,1
+11988,29949,First Class,2,1,Shipping canceled,0,1
+,166253,First Class,2,1,,0,1
+15352,38389,First Class,2,1,,0,1
+18740,46864,First Class,2,1,Shipping canceled,0,1
+10973,27492,First Class,2,1,,0,1
+55675,139254,First Class,2,1,Shipping canceled,0,1
+10074,25158,First Class,2,1,Shipping canceled,0,1
+52622,131542,,2,1,,0,1
+9613,24012,First Class,2,1,Shipping canceled,0,1
+753,1853,First Class,2,1,,0,1
+10290,25760,First Class,2,1,,0,1
+,135065,First Class,2,1,Shipping canceled,0,1
+10290,,First Class,2,1,Shipping canceled,0,1
+6180,15447,,2,1,Shipping canceled,0,1
+59112,147943,First Class,2,1,Shipping canceled,0,1
+58392,146147,First Class,2,1,,0,1
+55993,139998,First Class,2,1,Shipping canceled,0,1
+,140000,First Class,2,1,Shipping canceled,0,1
+59726,149449,First Class,2,1,,0,1
+6842,17129,First Class,2,1,Shipping canceled,0,1
+6842,17128,First Class,2,1,,0,1
+72922,176237,First Class,2,1,Shipping canceled,0,1
+72217,175532,First Class,2,1,,0,1
+23437,58634,First Class,2,1,Shipping canceled,0,1
+29112,72855,First Class,2,1,,0,1
+-1,58632,First Class,2,1,Shipping canceled,0,1
+73683,176998,First Class,2,1,Shipping canceled,0,1
+76897,180212,First Class,2,1,Shipping canceled,0,1
+27711,69377,First Class,2,1,,0,1
+50280,125654,First Class,2,1,Shipping canceled,0,1
+75463,178778,First Class,2,1,,0,1
+74207,177522,First Class,2,1,Shipping canceled,0,1
+73536,176851,First Class,2,1,,0,1
+34192,,First Class,2,1,,0,1
+40910,102101,First Class,2,1,,0,1
+34192,85369,First Class,2,1,Shipping canceled,0,1
+38337,95691,First Class,2,1,Shipping canceled,0,1
+38405,95850,First Class,2,1,,0,1
+40406,100835,First Class,2,1,,0,1
+-38337,95689,First Class,2,1,,0,1
+40406,100836,First Class,2,1,Shipping canceled,0,1
+67232,168038,First Class,2,1,,0,1
+49349,123355,First Class,2,1,Shipping canceled,0,1
+60283,150828,First Class,2,1,,0,1
+10290,,First Class,2,1,,0,1
+,25756,First Class,2,1,Shipping canceled,0,1
+,9389,,2,1,,0,1
+24142,60408,First Class,2,1,,0,1
+21362,53419,First Class,2,1,Shipping canceled,0,1
+28875,,First Class,2,1,,0,1
+24979,62588,First Class,2,1,Shipping canceled,0,1
+29431,73634,First Class,2,1,,0,1
+40910,102100,,2,1,,0,1
+32979,82478,First Class,2,1,Shipping canceled,0,1
+34354,85807,First Class,2,1,,0,1
+11673,29192,First Class,2,1,,0,1
+18740,46865,First Class,2,1,Shipping canceled,0,1
+49582,123916,First Class,2,1,Shipping canceled,0,1
+,162199,First Class,2,1,,0,1
+11988,29952,First Class,2,1,Shipping canceled,0,1
+,29951,First Class,2,1,Shipping canceled,0,1
+61678,154199,First Class,2,1,,0,1
+49349,123356,First Class,2,1,,0,1
+54014,,First Class,2,1,Shipping canceled,0,1
+3757,9335,,2,1,Shipping canceled,0,1
+56361,140975,First Class,2,1,Shipping canceled,0,1
+4067,10123,First Class,2,1,,0,1
+6842,17130,First Class,2,1,,0,1
+29112,-1,First Class,2,1,,0,1
+30973,77414,First Class,2,1,Shipping canceled,0,1
+,69378,First Class,2,1,Shipping canceled,0,1
+20968,52409,First Class,2,1,,0,1
+39749,99178,First Class,2,1,Shipping canceled,0,1
+,101141,First Class,2,1,Shipping canceled,0,1
+39151,97724,First Class,2,1,Shipping canceled,0,1
+-1,99175,First Class,2,1,Shipping canceled,0,1
+,87805,First Class,2,1,,0,1
+38405,95852,First Class,2,1,Shipping canceled,0,1
+,105817,First Class,2,1,,0,1
+58415,146215,First Class,2,1,Shipping canceled,0,1
+55314,138322,First Class,2,1,,0,1
+-6180,15449,First Class,2,1,Shipping canceled,0,1
+52622,131541,First Class,2,1,Shipping canceled,0,1
+753,1852,First Class,2,1,,0,1
+,97723,First Class,2,1,Shipping canceled,0,1
+66512,166256,First Class,2,1,Shipping canceled,0,1
+11673,29194,First Class,2,1,Shipping canceled,0,1
+49582,123918,First Class,2,1,,0,1
+49582,123917,First Class,2,1,Shipping canceled,0,1
+10973,27491,First Class,2,1,Shipping canceled,0,1
+6180,9999,First Class,2,1,Shipping canceled,0,1
+3774,9388,First Class,2,1,,0,1
+,16373,First Class,2,1,Shipping canceled,0,1
+54014,135063,First Class,2,1,,0,1
+58392,146145,First Class,2,1,,0,1
+,17126,First Class,2,1,,0,1
+30973,77416,First Class,2,1,Shipping canceled,0,1
+32979,82477,,2,1,,0,1
+38405,95851,First Class,2,1,Shipping canceled,0,1
+38337,95690,First Class,2,1,Shipping canceled,0,1
+38066,-1,First Class,2,1,Shipping canceled,0,1
+46559,116382,Same Day,1,0,Shipping canceled,0,1
+46556,116374,Same Day,1,0,Shipping canceled,0,1
+46556,116373,Same Day,1,0,Shipping canceled,0,1
+46559,116381,Same Day,1,0,,0,1
+61785,154442,Same Day,1,0,Shipping canceled,0,1
+70480,173795,Same Day,1,0,Shipping canceled,0,1
+1069,2665,Same Day,1,0,Shipping canceled,0,1
+56790,142028,Same Day,1,0,Shipping canceled,0,1
+76783,,Same Day,1,0,,0,1
+,19134,Same Day,1,0,,0,1
+3687,9179,Same Day,1,0,Shipping canceled,0,1
+7643,19131,Same Day,1,0,,0,1
+1069,2666,,1,0,Shipping canceled,0,1
+61785,154443,Same Day,1,0,Shipping canceled,0,1
+7643,19133,Same Day,1,0,,0,1
+54723,136855,Same Day,1,0,,0,1
+,116383,Same Day,1,0,Shipping canceled,0,1
+35746,89274,Same Day,1,0,,0,1
+62999,,Second Class,5,2,,0,1
+12102,30262,Second Class,3,2,Shipping canceled,0,1
+70873,174188,Second Class,4,2,,0,1
+64548,161339,Second Class,4,2,,0,1
+,171801,Second Class,4,2,,0,1
+,,Second Class,4,2,Shipping canceled,0,1
+,42388,Second Class,5,2,,0,1
+66694,166707,Second Class,5,2,,0,1
+,,Second Class,5,2,,0,1
+62213,155558,Second Class,4,2,,0,1
+54297,135767,Second Class,3,2,Shipping canceled,0,1
+4023,9998,Second Class,4,2,,0,1
+4879,12215,Second Class,5,2,,0,1
+54297,135768,Second Class,3,2,Shipping canceled,0,1
+7883,19694,Second Class,4,2,Shipping canceled,0,1
+58238,,,4,2,,0,1
+57222,143128,Second Class,3,2,Shipping canceled,0,1
+10278,25728,Second Class,4,2,,0,1
+53855,134652,Second Class,6,2,,0,1
+-1,143028,Second Class,6,2,,0,1
+57180000,143026,Second Class,6,2,Shipping canceled,0,1
+60590,151649,Second Class,6,2,Shipping canceled,0,1
+60590,151648,Second Class,6,2,,0,1
+53498,133685,Second Class,4,2,Shipping canceled,0,1
+26547,66464,Second Class,3,2,,0,1
+,59539,,5,2,Shipping canceled,0,1
+23794,59538,Second Class,5,2,,0,1
+21030,52564,Second Class,6,2,,0,1
+21030,52563,Second Class,6,2,Shipping canceled,0,1
+20640,51567,Second Class,6,2,,0,1
+20950,52353,Second Class,6,2,Shipping canceled,0,1
+20950,52352,Second Class,6,2,,0,1
+26547,66465,Second Class,3,2,,0,1
+30715,76725,Second Class,6,2,Shipping canceled,0,1
+29365,73469,Second Class,6,2,Shipping canceled,0,1
+26250,65710,Second Class,6,2,,0,1
+46778,116958,Second Class,4,2,,0,1
+76959,,Second Class,5,2,Shipping canceled,0,1
+46778,116957,Second Class,4,2,,0,1
+29365,73465,Second Class,6,2,Shipping canceled,0,1
+,81263,Second Class,5,2,,0,1
+34953,87330,Second Class,4,2,Shipping canceled,0,1
+39803,99318,Second Class,4,2,,0,1
+37013,,Second Class,4,2,Shipping canceled,0,1
+17518,43797,Second Class,4,2,,0,1
+60759,152053,Second Class,5,2,Shipping canceled,0,1
+23794,59541,Second Class,5,2,,0,1
+,66466,Second Class,3,2,,0,1
+32070,-1,,6,2,,0,1
+52260,130566,Standard Class,6,4,Shipping canceled,0,1
+52259,,Standard Class,5,4,Shipping canceled,0,1
+52165,130337,Standard Class,6,4,,0,1
+52037,130023,,2,1,,0,1
+-51492,128685,Second Class,3,2,,0,1
+507240,126766,First Class,2,1,Shipping canceled,0,1
+50605,126465,Standard Class,6,4,Shipping canceled,0,1
+50540,,Standard Class,6,4,,0,1
+50210,125500,Same Day,1,0,Shipping canceled,0,1
+49625,124041,Standard Class,6,4,Shipping canceled,0,1
+49040,122619,Standard Class,6,4,Shipping canceled,0,1
+-49040,122618,Standard Class,6,4,Shipping canceled,0,1
+48809,122071,Standard Class,5,4,Shipping canceled,0,1
+48809,122069,Standard Class,5,4,,0,1
+48464,121204,,5,4,,0,1
+9999,120164,First Class,2,1,Shipping canceled,0,1
+47810,119552,Second Class,6,2,,0,1
+46778,116956,Second Class,4,2,Shipping canceled,0,1
+,116449,Second Class,5,2,Shipping canceled,0,1
+46558,116379,Same Day,1,0,,0,1
+46422,116067,First Class,2,1,Shipping canceled,0,1
+45334,113267,First Class,2,1,,0,1
+45034,112447,Standard Class,5,4,Shipping canceled,0,1
+,,Second Class,3,2,Shipping canceled,0,1
+42255,105494,Standard Class,6,4,,0,1
+42115,105146,Standard Class,6,4,,0,1
+,,Second Class,5,2,Shipping canceled,0,1
+40534,101138,First Class,2,1,Shipping canceled,0,1
+40049,99934,Standard Class,5,4,Shipping canceled,0,1
+39585,,First Class,2,1,,0,1
+9999,98809,First Class,2,1,,0,1
+38965,,Second Class,6,2,Shipping canceled,0,1
+6329,15839,Standard Class,5,4,Shipping canceled,0,1
+6299,15762,Second Class,5,2,,0,1
+6180,15448,First Class,2,1,Shipping canceled,0,1
+6068,15147,Second Class,4,2,Shipping canceled,0,1
+5802,14443,Second Class,3,2,Shipping canceled,0,1
+5533,13808,Second Class,4,2,Shipping canceled,0,1
+5255,1312300,Second Class,6,2,Shipping canceled,0,1
+9999,12982,First Class,2,1,Shipping canceled,0,1
+5174,12926,Standard Class,5,4,,0,1
+5160,12893,Standard Class,6,4,,0,1
+4809,12029,Standard Class,5,4,Shipping canceled,0,1
+4040,10047,Standard Class,6,4,Shipping canceled,0,1
+3268,8145,,2,1,,0,1
+2754,,Standard Class,5,4,,0,1
+2628,6596,Second Class,4,2,Shipping canceled,0,1
+2468,6164,Second Class,4,2,Shipping canceled,0,1
+2325,5816,Standard Class,6,4,,0,1
+2325,5815,Standard Class,6,4,,0,1
+2189,5488,Standard Class,5,4,Shipping canceled,0,1
+1509,3768,First Class,2,1,,0,1
+1002,2501,Second Class,3,2,,0,1
+,2447,Second Class,3,2,Shipping canceled,0,1
+320,798,Standard Class,6,4,Shipping canceled,0,1
+68412,171043,Second Class,3,2,,0,1
+68076000,170198,First Class,2,1,,0,1
+,170153,Standard Class,5,4,,0,1
+67936,169829,Same Day,1,0,Shipping canceled,0,1
+67687,169232,,2,1,Shipping canceled,0,1
+9999,,First Class,2,1,Shipping canceled,0,1
+67390,168443,Second Class,6,2,Shipping canceled,0,1
+,168441,Second Class,6,2,,0,1
+67380,168419,Standard Class,6,4,,0,1
+,168346,First Class,2,1,Shipping canceled,0,1
+66986,167446,First Class,2,1,Shipping canceled,0,1
+,167400,Second Class,3,2,Shipping canceled,0,1
+66937,167323,First Class,2,1,Shipping canceled,0,1
+66785,166927,Same Day,1,0,,0,1
+66749,166833,First Class,2,1,,0,1
+66450,,,6,4,,0,1
+,165781,Standard Class,6,4,Shipping canceled,0,1
+,165066,First Class,2,1,Shipping canceled,0,1
+65900,,Second Class,6,2,Shipping canceled,0,1
+65161,162854,First Class,2,1,Shipping canceled,0,1
+9999,161284,Standard Class,6,4,Shipping canceled,0,1
+64395,160977,Standard Class,6,4,Shipping canceled,0,1
+64341,160835,First Class,2,1,Shipping canceled,0,1
+64329,,Standard Class,5,4,Shipping canceled,0,1
+64274,160679,Standard Class,5,4,Shipping canceled,0,1
+63974,159943,Second Class,5,2,,0,1
+63958,159889,Second Class,4,2,Shipping canceled,0,1
+9999,94766,Standard Class,6,4,,0,1
+37958,94759,Second Class,4,2,,0,1
+37529,93669,First Class,2,1,Shipping canceled,0,1
+9999,91191,Second Class,5,2,Shipping canceled,0,1
+36500,91134,First Class,2,1,,0,1
+36359,90787,First Class,2,1,,0,1
+36344,90742,Standard Class,5,4,,0,1
+36279,90586,Standard Class,5,4,Shipping canceled,0,1
+36023,89935,Same Day,1,0,Shipping canceled,0,1
+35434,88521,Standard Class,5,4,Shipping canceled,0,1
+35015,87461,Standard Class,6,4,,0,1
+34814,86975,Standard Class,5,4,,0,1
+,86538,Standard Class,6,4,Shipping canceled,0,1
+34417,85982,First Class,2,1,Shipping canceled,0,1
+34249,85521,First Class,2,1,,0,1
+34249,85518,First Class,2,1,,0,1
+,83505,Standard Class,6,4,Shipping canceled,0,1
+32302,80785,Second Class,3,2,Shipping canceled,0,1
+31604,78977,Standard Class,5,4,,0,1
+31526,78769,First Class,2,1,,0,1
+31433,78565,First Class,2,1,,0,1
+30971,77407,First Class,2,1,Shipping canceled,0,1
+30715,76722,Second Class,6,2,Shipping canceled,0,1
+29989,9999,Second Class,5,2,,0,1
+-29774,74500,Standard Class,5,4,,0,1
+29580,74023,Second Class,6,2,,0,1
+29580,74021,Second Class,6,2,Shipping canceled,0,1
+29452,73684,First Class,2,1,Shipping canceled,0,1
+29112,72853,First Class,2,1,,0,1
+28925,72378,Standard Class,6,4,,0,1
+28596,71568,First Class,2,1,,0,1
+27535,68924,First Class,2,1,Shipping canceled,0,1
+,68461,First Class,2,1,,0,1
+26250,65711,Second Class,6,2,,0,1
+25751,64491,Same Day,1,0,Shipping canceled,0,1
+25725,64424,,6,4,Shipping canceled,0,1
+-1,63811,Second Class,4,2,Shipping canceled,0,1
+37013,92367,Second Class,4,2,Shipping canceled,0,1
+,36399,Second Class,6,2,Shipping canceled,0,1
+,153956,Second Class,3,2,,0,1
+5991400,149960,Second Class,5,2,Shipping canceled,0,1
+57222,143129,Second Class,3,2,Shipping canceled,0,1
+53498,,Second Class,4,2,,0,1
+54529,136366,Second Class,5,2,Shipping canceled,0,1
+53498,133686,Second Class,4,2,,0,1
+57222,143126,Second Class,3,2,,0,1
+26989,67600000,Second Class,5,2,,0,1
+32070,80197,Second Class,6,2,Shipping canceled,0,1
+65574,,Second Class,5,2,Shipping canceled,0,1
+57222,143127,Second Class,3,2,Shipping canceled,0,1
+21030,52565,Second Class,6,2,,0,1
+29365,73467,,6,2,Shipping canceled,0,1
+,116955,Second Class,4,2,Shipping canceled,0,1
+20949,52351,Second Class,5,2,Shipping canceled,0,1
+20949,52349,Second Class,5,2,Shipping canceled,0,1
+16959,42389,Second Class,5,2,Shipping canceled,0,1
+,149959,Second Class,5,2,Shipping canceled,0,1
+54529,136368,,5,2,,0,1
+,53483,Second Class,6,2,Shipping canceled,0,1
+,62299,Second Class,4,2,,0,1
+26250,65712,Second Class,6,2,Shipping canceled,0,1
+37013,92365,Second Class,4,2,,0,1
+9999,87329,Second Class,4,2,,0,1
+49295,,Standard Class,6,4,Shipping canceled,0,1
+41569,103762,,5,4,,0,1
+41569,103763,Standard Class,5,4,Shipping canceled,0,1
+43874,109575,Standard Class,5,4,,0,1
+13929,34857,Standard Class,5,4,Shipping canceled,0,1
+65195,162935,Standard Class,6,4,,0,1
+11770,29437,Standard Class,6,4,,0,1
+44830,111990,Standard Class,6,4,Shipping canceled,0,1
+-1,47615,Standard Class,5,4,Shipping canceled,0,1
+44954,112270,Standard Class,5,4,,0,1
+11729,29328,Standard Class,5,4,Shipping canceled,0,1
+13929,34858,Standard Class,5,4,,0,1
+9999,45546,Standard Class,5,4,Shipping canceled,0,1
+66230,165571,Standard Class,6,4,Shipping canceled,0,1
+62939,157399,Standard Class,5,4,Shipping canceled,0,1
+63264,158170,Standard Class,5,4,,0,1
+,158168,Standard Class,5,4,,0,1
+63264,158167,Standard Class,5,4,Shipping canceled,0,1
+19049,47617,Standard Class,5,4,Shipping canceled,0,1
+69469,,Standard Class,5,4,,0,1
+64440,161078,,6,4,Shipping canceled,0,1
+,155625,,6,4,,0,1
+13250,33151,Standard Class,6,4,Shipping canceled,0,1
+,9999,Standard Class,5,4,Shipping canceled,0,1
+9999,169588,Standard Class,6,4,Shipping canceled,0,1
+67830,169586,Standard Class,6,4,,0,1
+45420,113494,Standard Class,6,4,,0,1
+13284,33229,Standard Class,5,4,,0,1
+13284,33230,Standard Class,5,4,Shipping canceled,0,1
+13250,33152,Standard Class,6,4,,0,1
+64555,161355,Standard Class,6,4,,0,1
+13284,33232,,5,4,Shipping canceled,0,1
+56120,140349,Standard Class,6,4,Shipping canceled,0,1
+,133504,Standard Class,6,4,Shipping canceled,0,1
+56120,140348,Standard Class,6,4,Shipping canceled,0,1
+61435,153643,Standard Class,6,4,,0,1
+56120,140346,Standard Class,6,4,Shipping canceled,0,1
+7035,17610,Standard Class,6,4,,0,1
+2510,6278,Standard Class,6,4,Shipping canceled,0,1
+8929,22264,Standard Class,5,4,Shipping canceled,0,1
+10135,25317,Standard Class,6,4,,0,1
+1849,4619,Standard Class,5,4,,0,1
+10135,,Standard Class,6,4,Shipping canceled,0,1
+2090,5230,Standard Class,6,4,Shipping canceled,0,1
+-1,10909,Standard Class,5,4,Shipping canceled,0,1
+9999,25320,Standard Class,6,4,Shipping canceled,0,1
+57225,143138,Standard Class,6,4,,0,1
+10215,25540,Standard Class,6,4,,0,1
+57770,144539,,6,4,Shipping canceled,0,1
+59015,,Standard Class,6,4,Shipping canceled,0,1
+55810,139563,Standard Class,6,4,,0,1
+5174,12927,Standard Class,5,4,,0,1
+54669,136713,Standard Class,5,4,Shipping canceled,0,1
+2535,6347,,6,4,Shipping canceled,0,1
+51520,128759,Standard Class,6,4,Shipping canceled,0,1
+,147032,,5,4,,0,1
+5325,13316,Standard Class,6,4,Shipping canceled,0,1
+590150,,Standard Class,6,4,Shipping canceled,0,1
+2325,5817,Standard Class,6,4,Shipping canceled,0,1
+7034,17609,Standard Class,5,4,Shipping canceled,0,1
+10014,25018,Standard Class,5,4,Shipping canceled,0,1
+21089,527280,,5,4,,0,1
+21154,52885,Standard Class,5,4,Shipping canceled,0,1
+-1,113278,Standard Class,5,4,Shipping canceled,0,1
+72435,175750,,6,4,Shipping canceled,0,1
+23544,58895,,5,4,Shipping canceled,0,1
+27944,69939,Standard Class,5,4,Shipping canceled,0,1
+21154,52886,,5,4,Shipping canceled,0,1
+48954,122406,Standard Class,5,4,Shipping canceled,0,1
+46899,117240,Standard Class,5,4,Shipping canceled,0,1
+,65354,Standard Class,6,4,,0,1
+,9999,Standard Class,5,4,Shipping canceled,0,1
+74555,177870,Standard Class,6,4,,0,1
+22840,57170,Standard Class,6,4,,0,1
+22840,57167,Standard Class,6,4,,0,1
+77184,180499,Standard Class,5,4,Shipping canceled,0,1
+74205,177520,Standard Class,6,4,Shipping canceled,0,1
+50429,126004,Standard Class,5,4,Shipping canceled,0,1
+32324,80846,Standard Class,5,4,Shipping canceled,0,1
+32324,80845,Standard Class,5,4,Shipping canceled,0,1
+50429,126006,Standard Class,5,4,,0,1
+39140,,Standard Class,6,4,,0,1
+38305,95621,Standard Class,6,4,Shipping canceled,0,1
+33529,83700,Standard Class,5,4,Shipping canceled,0,1
+39140,97688,Standard Class,6,4,,0,1
+38305,95622,Standard Class,6,4,Shipping canceled,0,1
+33529,,Standard Class,5,4,Shipping canceled,0,1
+43874,109576,Standard Class,5,4,,0,1
+67380,168416,Standard Class,6,4,Shipping canceled,0,1
+18219,45544,Standard Class,5,4,,0,1
+11770,29438,Standard Class,6,4,Shipping canceled,0,1
+13929,34856,Standard Class,5,4,Shipping canceled,0,1
+11770,,Standard Class,6,4,,0,1
+6143500,153645,Standard Class,6,4,Shipping canceled,0,1
+8929,22262,,5,4,Shipping canceled,0,1
+2510,6277,,6,4,Shipping canceled,0,1
+19762,49393,First Class,2,1,,0,1
+19762,49394,First Class,2,1,,0,1
+47921,119844,First Class,2,1,,0,1
+70374,173689,First Class,2,1,,0,1
+62788,156979,First Class,2,1,Shipping canceled,0,1
+2144,5366,,2,1,Shipping canceled,0,1
+6482,16230,First Class,2,1,,0,1
+59137,,First Class,2,1,,0,1
+6482,16233,First Class,2,1,,0,1
+,14311,First Class,2,1,Shipping canceled,0,1
+2144,5367,First Class,2,1,Shipping canceled,0,1
+59045,147795,First Class,2,1,Shipping canceled,0,1
+3028,7554,First Class,2,1,Shipping canceled,0,1
+3028,7552,First Class,2,1,,0,1
+6521,16304,First Class,2,1,Shipping canceled,0,1
+9925,24793,First Class,2,1,,0,1
+59798,149674,First Class,2,1,Shipping canceled,0,1
+57621,144140,First Class,2,1,Shipping canceled,0,1
+57621,144141,First Class,2,1,,0,1
+9109,22723,First Class,2,1,Shipping canceled,0,1
+59798000,149673,First Class,2,1,,0,1
+3028,7551,First Class,2,1,Shipping canceled,0,1
+5126,12808,First Class,2,1,,0,1
+6521,16303,First Class,2,1,Shipping canceled,0,1
+74226,177541,First Class,2,1,,0,1
+73041,,First Class,2,1,,0,1
+75298,178613,First Class,2,1,,0,1
+74401,177716,First Class,2,1,,0,1
+74882,178197,First Class,2,1,,0,1
+39931,99620,First Class,2,1,Shipping canceled,0,1
+35374,88362,,2,1,,0,1
+38702,,First Class,2,1,Shipping canceled,0,1
+17079,42713,First Class,2,1,Shipping canceled,0,1
+2144,,First Class,2,1,,0,1
+,20737,First Class,2,1,,0,1
+-1,137622,First Class,2,1,Shipping canceled,0,1
+9390,23427,First Class,2,1,Shipping canceled,0,1
+57621,144144,First Class,2,1,,0,1
+9390,23426,First Class,2,1,Shipping canceled,0,1
+9925,24795,First Class,2,1,Shipping canceled,0,1
+8302,20739,,2,1,,0,1
+35235,87998,First Class,2,1,,0,1
+49578,123902,First Class,2,1,Shipping canceled,0,1
+63199,158003,First Class,2,1,Shipping canceled,0,1
+,,,2,1,Shipping canceled,0,1
+42657,106476,First Class,2,1,,0,1
+42414,105896,Second Class,5,2,,0,1
+42389,105837,Standard Class,5,4,,0,1
+42319,105668,First Class,2,1,Shipping canceled,0,1
+41972,104775,First Class,2,1,Shipping canceled,0,1
+41059,102491,Standard Class,5,4,Shipping canceled,0,1
+41015,102378,Standard Class,6,4,Shipping canceled,0,1
+40732,101620,First Class,2,1,Shipping canceled,0,1
+40695,101527,Standard Class,6,4,Shipping canceled,0,1
+40589,101255,Standard Class,5,4,,0,1
+40565,101211,Standard Class,6,4,Shipping canceled,0,1
+40534,101139,First Class,2,1,,0,1
+40415,100865,Standard Class,6,4,Shipping canceled,0,1
+40165,-1,Standard Class,6,4,,0,1
+40009,99837,First Class,2,1,,0,1
+39605,98856,Second Class,6,2,Shipping canceled,0,1
+38995,97342,Second Class,6,2,Shipping canceled,0,1
+38915,-1,Standard Class,6,4,Shipping canceled,0,1
+38727,,First Class,2,1,Shipping canceled,0,1
+38643,96467,Second Class,4,2,,0,1
+38238,95456,Second Class,4,2,,0,1
+37970,94792,First Class,2,1,,0,1
+37640,93944,Standard Class,6,4,,0,1
+37640,93940,Standard Class,6,4,,0,1
+37529,93668,First Class,2,1,Shipping canceled,0,1
+37013,92368,Second Class,4,2,,0,1
+36869,92008,Standard Class,5,4,Shipping canceled,0,1
+,91188,Second Class,5,2,,0,1
+36377,90825,,3,2,Shipping canceled,0,1
+35764,89308,Standard Class,5,4,Shipping canceled,0,1
+,9999,Second Class,5,2,Shipping canceled,0,1
+35451,88560,First Class,2,1,,0,1
+35451,,,2,1,Shipping canceled,0,1
+35060000,87564,Standard Class,6,4,,0,1
+35015,87460,,6,4,Shipping canceled,0,1
+34677,86615,First Class,2,1,Shipping canceled,0,1
+34249,85520,First Class,2,1,Shipping canceled,0,1
+34210,85408,Second Class,6,2,,0,1
+32830,9999,Standard Class,6,4,,0,1
+32574,81476,Standard Class,5,4,,0,1
+32377,80969,Second Class,3,2,,0,1
+24653,61730,Second Class,4,2,Shipping canceled,0,1
+24653,61728,Second Class,4,2,Shipping canceled,0,1
+24306,60801,First Class,2,1,Shipping canceled,0,1
+23883,59780,First Class,2,1,Shipping canceled,0,1
+23794,59540,Second Class,5,2,Shipping canceled,0,1
+23549,58910,Standard Class,5,4,Shipping canceled,0,1
+23549000,58908,Standard Class,5,4,,0,1
+23544,58896,Standard Class,5,4,,0,1
+23415,58574,Standard Class,6,4,,0,1
+22925,57387,Standard Class,6,4,,0,1
+22834,57148,Standard Class,5,4,Shipping canceled,0,1
+22834,57147,Standard Class,5,4,,0,1
+22339,55914,Standard Class,5,4,Shipping canceled,0,1
+21644,54116,Standard Class,5,4,Shipping canceled,0,1
+21524,53813,Standard Class,5,4,Shipping canceled,0,1
+21417,53568,First Class,2,1,,0,1
+21123,,Second Class,4,2,,0,1
+21123,52806,Second Class,4,2,,0,1
+20968,52412,First Class,2,1,Shipping canceled,0,1
+20950,52354,Second Class,6,2,Shipping canceled,0,1
+20949,52348,Second Class,5,2,Shipping canceled,0,1
+20908,52235,First Class,2,1,,0,1
+19668,49167,Second Class,4,2,,0,1
+19495,48715,First Class,2,1,,0,1
+19434,48567,First Class,2,1,Shipping canceled,0,1
+19005,47507,Second Class,6,2,Shipping canceled,0,1
+18384,45950,Second Class,5,2,Shipping canceled,0,1
+18264,45646,,5,4,Shipping canceled,0,1
+,44963,First Class,2,1,,0,1
+17985,44932,Standard Class,6,4,,0,1
+17985,44930,,6,4,Shipping canceled,0,1
+,44617,Standard Class,5,4,,0,1
+17790000,44454,Second Class,6,2,,0,1
+17090,,Standard Class,6,4,,0,1
+17079,42711,First Class,2,1,Shipping canceled,0,1
+16842000,9999,First Class,2,1,,0,1
+16809,42005,Standard Class,5,4,Shipping canceled,0,1
+16500,41217,Standard Class,6,4,Shipping canceled,0,1
+,41216,Standard Class,6,4,Shipping canceled,0,1
+,39710,,6,4,,0,1
+15679,39208,Second Class,5,2,Shipping canceled,0,1
+15640,39103,Second Class,6,2,Shipping canceled,0,1
+,39101,Second Class,6,2,Shipping canceled,0,1
+15384,38470,Second Class,5,2,Shipping canceled,0,1
+14804,37059,Standard Class,5,4,Shipping canceled,0,1
+14509,36289,Standard Class,5,4,Shipping canceled,0,1
+13968,34953,,4,2,,0,1
+13735,34399,Standard Class,6,4,,0,1
+13250,33153,Standard Class,6,4,Shipping canceled,0,1
+,32556,Standard Class,5,4,Shipping canceled,0,1
+6068,15146,Second Class,4,2,Shipping canceled,0,1
+6000,14944,Standard Class,6,4,,0,1
+5927,14745,Second Class,3,2,Shipping canceled,0,1
+5919,14726,Standard Class,5,4,,0,1
+63310,158289,Second Class,6,2,Shipping canceled,0,1
+63264,158166,Standard Class,5,4,Shipping canceled,0,1
+63245,158128,Standard Class,6,4,Shipping canceled,0,1
+62931,157381,First Class,2,1,Shipping canceled,0,1
+62925,157359,First Class,2,1,,0,1
+62840,157126,Standard Class,6,4,Shipping canceled,0,1
+,156868,,5,4,,0,1
+62610,156520,,6,4,,0,1
+62148,155381,Second Class,4,2,Shipping canceled,0,1
+62029,155083,Standard Class,5,4,,0,1
+61785,,Same Day,1,0,,0,1
+61692,154240,Second Class,3,2,Shipping canceled,0,1
+61572,153958,Second Class,3,2,Shipping canceled,0,1
+60315,150925,Standard Class,6,4,Shipping canceled,0,1
+60315,150922,Standard Class,6,4,Shipping canceled,0,1
+60283,150826,First Class,2,1,,0,1
+60220,150668,Standard Class,6,4,Shipping canceled,0,1
+59914,149963,Second Class,5,2,,0,1
+59914,149961,Second Class,5,2,Shipping canceled,0,1
+59875,149849,Standard Class,6,4,,0,1
+9999,149696,First Class,2,1,Shipping canceled,0,1
+59806,149695,First Class,2,1,Shipping canceled,0,1
+59738,149486,First Class,2,1,Shipping canceled,0,1
+,148421,Second Class,6,2,,0,1
+58912,147469,First Class,2,1,Shipping canceled,0,1
+58704,146927,Standard Class,5,4,,0,1
+58498,146420,Same Day,1,0,,0,1
+58463,146330,First Class,2,1,,0,1
+-1,146197,First Class,2,1,Shipping canceled,0,1
+58408,146195,First Class,2,1,,0,1
+58273,145813,First Class,2,1,,0,1
+58273,145812,First Class,2,1,Shipping canceled,0,1
+58133,145467,Second Class,4,2,Shipping canceled,0,1
+57651,144222,First Class,2,1,,0,1
+57467,143760,First Class,2,1,Shipping canceled,0,1
+57324,143386,,5,4,Shipping canceled,0,1
+57204,143084,,5,4,,0,1
+56819,142112,First Class,2,1,Shipping canceled,0,1
+56812,142097,,2,1,,0,1
+56544,141436,Standard Class,5,4,Shipping canceled,0,1
+56487,141310,Same Day,1,0,Shipping canceled,0,1
+56244,140674,Standard Class,5,4,Shipping canceled,0,1
+55920,139823,Standard Class,6,4,Shipping canceled,0,1
+55656,139200,First Class,2,1,Shipping canceled,0,1
+55543,13891800,First Class,2,1,Shipping canceled,0,1
+55020,137604,Standard Class,6,4,,0,1
+54875,137244,First Class,2,1,Shipping canceled,0,1
+54723,136858,Same Day,1,0,,0,1
+54529,136367,Second Class,5,2,Shipping canceled,0,1
+54529,136365,Second Class,5,2,Shipping canceled,0,1
+54165,135443,Standard Class,6,4,,0,1
+53855,134655,,6,2,Shipping canceled,0,1
+53715,134283,First Class,2,1,Shipping canceled,0,1
+53535,133793,First Class,2,1,,0,1
+,133470,First Class,2,1,,0,1
+42319,9999,First Class,2,1,Shipping canceled,0,1
+45983,114919,First Class,2,1,Shipping canceled,0,1
+48279,120749,First Class,2,1,,0,1
+47520,118799,First Class,2,1,Shipping canceled,0,1
+70935,174250,First Class,2,1,Shipping canceled,0,1
+,44965,First Class,2,1,Shipping canceled,0,1
+17997,44964,First Class,2,1,,0,1
+16478,41158,,2,1,Shipping canceled,0,1
+16478,41157,First Class,2,1,Shipping canceled,0,1
+65672,164121,First Class,2,1,,0,1
+,171884,First Class,2,1,Shipping canceled,0,1
+,48098,First Class,2,1,,0,1
+191690,47906,First Class,2,1,Shipping canceled,0,1
+19913,49778,First Class,2,1,Shipping canceled,0,1
+63528,158808,First Class,2,1,Shipping canceled,0,1
+12032,30064,First Class,2,1,,0,1
+,48097,First Class,2,1,Shipping canceled,0,1
+17997,9999,First Class,2,1,,0,1
+15388,38490,First Class,2,1,,0,1
+,154889,First Class,2,1,Shipping canceled,0,1
+65389,,First Class,2,1,Shipping canceled,0,1
+71546,,First Class,2,1,,0,1
+69951,173266,First Class,2,1,,0,1
+70644,173959,First Class,2,1,,0,1
+69999,173314,First Class,2,1,,0,1
+65652,164072,First Class,2,1,Shipping canceled,0,1
+16842,42081,First Class,2,1,,0,1
+67687,169234,First Class,2,1,,0,1
+,39898,First Class,2,1,Shipping canceled,0,1
+65652,164071,First Class,2,1,Shipping canceled,0,1
+13859,34722,First Class,2,1,,0,1
+64341,160834,First Class,2,1,,0,1
+19495,48714,First Class,2,1,Shipping canceled,0,1
+,42079,First Class,2,1,Shipping canceled,0,1
+16842,42077,First Class,2,1,Shipping canceled,0,1
+62434,156050,First Class,2,1,Shipping canceled,0,1
+65136,162776,,2,1,Shipping canceled,0,1
+65136,162774,,2,1,Shipping canceled,0,1
+19434,48565,First Class,2,1,,0,1
+,9999,First Class,2,1,,0,1
+55895,139765,First Class,2,1,Shipping canceled,0,1
+55895,139764,First Class,2,1,,0,1
+6898,17273,First Class,2,1,Shipping canceled,0,1
+3970,9858,First Class,2,1,Shipping canceled,0,1
+4801,12011,First Class,2,1,,0,1
+4801,12010,First Class,2,1,,0,1
+595760,149113,First Class,2,1,,0,1
+9838,24557,First Class,2,1,Shipping canceled,0,1
+4801,12008,First Class,2,1,,0,1
+609510,152489,First Class,2,1,,0,1
+4801,12009,First Class,2,1,Shipping canceled,0,1
+,148779,First Class,2,1,,0,1
+10222,25559,First Class,2,1,Shipping canceled,0,1
+6898,17274,First Class,2,1,,0,1
+6898,17271,First Class,2,1,Shipping canceled,0,1
+1509,3771,First Class,2,1,Shipping canceled,0,1
+-1,130485,First Class,2,1,,0,1
+1509,3767,First Class,2,1,Shipping canceled,0,1
+,23673,First Class,2,1,,0,1
+53418,,First Class,2,1,Shipping canceled,0,1
+56542,,First Class,2,1,Shipping canceled,0,1
+56542,141428,First Class,2,1,,0,1
+54903,137318,First Class,2,1,,0,1
+54903,137317,First Class,2,1,,0,1
+,,,2,1,Shipping canceled,0,1
+9988,24951,First Class,2,1,,0,1
+31193,77956,First Class,2,1,Shipping canceled,0,1
+30961,77379,First Class,2,1,,0,1
+48062,120181,First Class,2,1,Shipping canceled,0,1
+48062,120180,First Class,2,1,,0,1
+9999,62746,First Class,2,1,,0,1
+24608,61623,First Class,2,1,Shipping canceled,0,1
+25041,62747,First Class,2,1,,0,1
+23883,,First Class,2,1,,0,1
+26483,66296,First Class,2,1,,0,1
+9999,77957,First Class,2,1,,0,1
+75211,178526,First Class,2,1,,0,1
+26780,67095,First Class,2,1,Shipping canceled,0,1
+,53310,First Class,2,1,Shipping canceled,0,1
+50484,126140,First Class,2,1,,0,1
+9999,59027,,2,1,,0,1
+74087,177402,First Class,2,1,Shipping canceled,0,1
+74863,178178,First Class,2,1,Shipping canceled,0,1
+42831,106957,First Class,2,1,,0,1
+30207,75481,,2,1,,0,1
+30248,75574,First Class,2,1,Shipping canceled,0,1
+,106954,First Class,2,1,Shipping canceled,0,1
+24306,60800,First Class,2,1,,0,1
+21318,53308,First Class,2,1,Shipping canceled,0,1
+21318,53309,First Class,2,1,,0,1
+23102,,First Class,2,1,Shipping canceled,0,1
+23102,57842,First Class,2,1,Shipping canceled,0,1
+34799,86934,First Class,2,1,Shipping canceled,0,1
+34677,,First Class,2,1,,0,1
+52990,132444,Standard Class,6,4,Shipping canceled,0,1
+,132346,,6,4,Shipping canceled,0,1
+52778,131949,First Class,2,1,,0,1
+52660,9999,Standard Class,6,4,Shipping canceled,0,1
+-1,131631,Standard Class,6,4,,0,1
+52260,130569,Standard Class,6,4,Shipping canceled,0,1
+,130022,First Class,2,1,Shipping canceled,0,1
+,130021,First Class,2,1,,0,1
+51763,129314,Same Day,1,0,Shipping canceled,0,1
+51640,129039,Standard Class,6,4,Shipping canceled,0,1
+51125,127776,Second Class,6,2,,0,1
+51125,,Second Class,6,2,,0,1
+51024,127520,Same Day,1,0,Shipping canceled,0,1
+,,Standard Class,5,4,Shipping canceled,0,1
+50605,,Standard Class,6,4,Shipping canceled,0,1
+50044,125104,Standard Class,5,4,Shipping canceled,0,1
+49720,124292,Standard Class,6,4,Shipping canceled,0,1
+49578,123900,First Class,2,1,,0,1
+-1,123805,Standard Class,6,4,,0,1
+49085,122732,First Class,2,1,Shipping canceled,0,1
+48091,120258,First Class,2,1,,0,1
+,,Standard Class,5,4,Shipping canceled,0,1
+46490,,Standard Class,6,4,,0,1
+46422,116068,First Class,2,1,Shipping canceled,0,1
+45999,114967,First Class,2,1,,0,1
+,9999,First Class,2,1,,0,1
+45665,114139,Second Class,6,2,Shipping canceled,0,1
+45590,113946,Standard Class,6,4,,0,1
+,113080,Standard Class,5,4,,0,1
+45259,113079,,5,4,Shipping canceled,0,1
+45170,112823,Standard Class,6,4,,0,1
+,,Standard Class,6,4,Shipping canceled,0,1
+45034,112449,Standard Class,5,4,,0,1
+44625,111415,Second Class,6,2,Shipping canceled,0,1
+44265,-1,Standard Class,6,4,,0,1
+44170,110318,Standard Class,6,4,Shipping canceled,0,1
+44145,110239,Second Class,6,2,,0,1
+43945,,First Class,2,1,Shipping canceled,0,1
+43774,109319,Second Class,5,2,,0,1
+43345,108285,Second Class,6,2,Shipping canceled,0,1
+5270,13159,,6,4,Shipping canceled,0,1
+5189,,Second Class,5,2,,0,1
+9999,12924,Standard Class,5,4,,0,1
+5155,12875,Standard Class,6,4,Shipping canceled,0,1
+4292,10745,Second Class,3,2,,0,1
+3954,,Second Class,5,2,,0,1
+3925,9756,First Class,2,1,Shipping canceled,0,1
+,9386,First Class,2,1,Shipping canceled,0,1
+3295,,Second Class,6,2,,0,1
+,7452,First Class,2,1,Shipping canceled,0,1
+2945,-1,Second Class,6,2,Shipping canceled,0,1
+2915,7281,Second Class,6,2,Shipping canceled,0,1
+2740,6866,First Class,2,1,Shipping canceled,0,1
+,5387,Standard Class,6,4,Shipping canceled,0,1
+,5141,Second Class,6,2,Shipping canceled,0,1
+1639,4081,First Class,2,1,Shipping canceled,0,1
+,3725,Second Class,3,2,,0,1
+993,2473,First Class,2,1,,0,1
+753,1854,First Class,2,1,,0,1
+753,9999,First Class,2,1,Shipping canceled,0,1
+649,9999,First Class,2,1,Shipping canceled,0,1
+68555,171392,Standard Class,6,4,,0,1
+68412,,Second Class,3,2,Shipping canceled,0,1
+68318,170799,First Class,2,1,Shipping canceled,0,1
+67608,169034,Same Day,1,0,Shipping canceled,0,1
+67355,168348,First Class,2,1,Shipping canceled,0,1
+67334,,Standard Class,5,4,Shipping canceled,0,1
+67258,168103,Second Class,4,2,,0,1
+67137,167823,First Class,2,1,Shipping canceled,0,1
+,166871,Standard Class,5,4,Shipping canceled,0,1
+66694,-1,Second Class,5,2,Shipping canceled,0,1
+66609,166499,First Class,2,1,,0,1
+66270,165660,First Class,2,1,Shipping canceled,0,1
+66265,165645,,6,2,,0,1
+65679,164141000,Standard Class,5,4,Shipping canceled,0,1
+65552,163835,Second Class,3,2,,0,1
+64718,161773,Same Day,1,0,Shipping canceled,0,1
+,161285,Standard Class,6,4,,0,1
+64440,161077,Standard Class,6,4,,0,1
+64154,160418,Standard Class,5,4,Shipping canceled,0,1
+64132,160359,Second Class,3,2,,0,1
+39158,97735,First Class,2,1,Shipping canceled,0,1
+-1,,First Class,2,1,Shipping canceled,0,1
+40532,101132,First Class,2,1,,0,1
+39158,97734,First Class,2,1,Shipping canceled,0,1
+39158,97733,First Class,2,1,Shipping canceled,0,1
+,49779,First Class,2,1,Shipping canceled,0,1
+12061,30152,First Class,2,1,Shipping canceled,0,1
+16478,41156000,First Class,2,1,Shipping canceled,0,1
+19819,49532,First Class,2,1,Shipping canceled,0,1
+16478,41159,First Class,2,1,,0,1
+68053,170133,First Class,2,1,Shipping canceled,0,1
+65652,164073,First Class,2,1,,0,1
+60190,150603,First Class,2,1,,0,1
+10219,25551,First Class,2,1,,0,1
+53418,133469,First Class,2,1,Shipping canceled,0,1
+,106958,First Class,2,1,Shipping canceled,0,1
+34799,,First Class,2,1,,0,1
+34677,86613,First Class,2,1,,0,1
+32447,81150,First Class,2,1,,0,1
+34925,87264,First Class,2,1,Shipping canceled,0,1
+,80639,,2,1,Shipping canceled,0,1
+43450,108527,First Class,2,1,Shipping canceled,0,1
+9999,30067000,First Class,2,1,Shipping canceled,0,1
+19245,48099,First Class,2,1,,0,1
+-1,33555,First Class,2,1,,0,1
+13398,33553,First Class,2,1,Shipping canceled,0,1
+13859,34720,,2,1,,0,1
+,,First Class,2,1,,0,1
+68534,171350,,2,1,,0,1
+58414,146214,First Class,2,1,Shipping canceled,0,1
+3970,9859,First Class,2,1,Shipping canceled,0,1
+-1,134286,First Class,2,1,Shipping canceled,0,1
+9838,24556,First Class,2,1,Shipping canceled,0,1
+,131398,First Class,2,1,Shipping canceled,0,1
+9760,24363,First Class,2,1,,0,1
+51609,128962,First Class,2,1,Shipping canceled,0,1
+9476,23675,,2,1,Shipping canceled,0,1
+31193,,First Class,2,1,,0,1
+30961,77380,First Class,2,1,Shipping canceled,0,1
+24608,61622,First Class,2,1,,0,1
+30207,75482,First Class,2,1,Shipping canceled,0,1
+24373,60963,First Class,2,1,,0,1
+24373,60962,First Class,2,1,Shipping canceled,0,1
+34677,86614,First Class,2,1,,0,1
+34799,86935,First Class,2,1,Shipping canceled,0,1
+32242,,First Class,2,1,,0,1
+63466,158646,First Class,2,1,Shipping canceled,0,1
+68754,171883,First Class,2,1,,0,1
+61952,154891,First Class,2,1,Shipping canceled,0,1
+11256,28129,First Class,2,1,,0,1
+9999,49065,First Class,2,1,,0,1
+64341,160833,First Class,2,1,,0,1
+13859,34723,First Class,2,1,Shipping canceled,0,1
+19495,48713,First Class,2,1,,0,1
+53535,133795,First Class,2,1,,0,1
+60951,152488,First Class,2,1,,0,1
+59576,149111,First Class,2,1,,0,1
+1509,3769,First Class,2,1,Shipping canceled,0,1
+,147468,First Class,2,1,Shipping canceled,0,1
+9476,23671,First Class,2,1,,0,1
+20946,52338,First Class,2,1,,0,1
+50484,,First Class,2,1,,0,1
+-1,9999,First Class,2,1,Shipping canceled,0,1
+34799,86932,First Class,2,1,Shipping canceled,0,1
+37529,93667,First Class,2,1,,0,1
+31874,79652,,2,1,Shipping canceled,0,1
+39160,97742,First Class,2,1,Shipping canceled,0,1
+65672,164122,First Class,2,1,Shipping canceled,0,1
+19492,48708,First Class,2,1,,0,1
+65844,164548,,2,1,,0,1
+-1,,First Class,2,1,Shipping canceled,0,1
+66909,167258,First Class,2,1,,0,1
+64232,160595,First Class,2,1,,0,1
+63466,158645,First Class,2,1,,0,1
+15388,38489,First Class,2,1,Shipping canceled,0,1
+68534,171353,First Class,2,1,Shipping canceled,0,1
+64341,160836,First Class,2,1,Shipping canceled,0,1
+6898,9999,First Class,2,1,,0,1
+9838,24558,First Class,2,1,Shipping canceled,0,1
+,9817,First Class,2,1,,0,1
+10219,25552,First Class,2,1,Shipping canceled,0,1
+52037,130024,,2,1,,0,1
+9768,24385,First Class,2,1,,0,1
+1639,4083,First Class,2,1,Shipping canceled,0,1
+2990,7451,First Class,2,1,,0,1
+53218,132979,First Class,2,1,,0,1
+,-1,First Class,2,1,Shipping canceled,0,1
+,3770,First Class,2,1,Shipping canceled,0,1
+,76771,First Class,2,1,,0,1
+23597,59030,First Class,2,1,,0,1
+42831,,First Class,2,1,,0,1
+39148,97718,First Class,2,1,Shipping canceled,0,1
+,94305,First Class,2,1,Shipping canceled,0,1
+,80635,First Class,2,1,Shipping canceled,0,1
+-1,97745,First Class,2,1,,0,1
+31433,78564,First Class,2,1,Shipping canceled,0,1
+39158,97732,,2,1,Shipping canceled,0,1
+46925,117288,Same Day,1,0,,0,1
+13347,33420,Same Day,1,0,Shipping canceled,0,1
+15329,38334,Same Day,1,0,Shipping canceled,0,1
+12030,30062,Same Day,1,0,Shipping canceled,0,1
+,33419,Same Day,1,0,,0,1
+64730,161806,Same Day,1,0,Shipping canceled,0,1
+71562,,Same Day,1,0,,0,1
+54115,135312,Same Day,1,0,,0,1
+58480,,Same Day,1,0,Shipping canceled,0,1
+57104,,Same Day,1,0,,0,1
+54115,135309,Same Day,1,0,Shipping canceled,0,1
+2433,,Same Day,1,0,,0,1
+55879,139725,Same Day,1,0,Shipping canceled,0,1
+55879,139723,Same Day,1,0,,0,1
+53022,132518,Same Day,1,0,Shipping canceled,0,1
+58498,,Same Day,1,0,Shipping canceled,0,1
+73761,177076,Same Day,1,0,Shipping canceled,0,1
+26167,65503,Same Day,1,0,,0,1
+12030,30060,Same Day,1,0,,0,1
+16819,42030,Same Day,1,0,,0,1
+58480,146372,Same Day,1,0,,0,1
+54115,135311,Same Day,1,0,Shipping canceled,0,1
+26167,65501,Same Day,1,0,,0,1
+,65499,Same Day,1,0,,0,1
+16819,42029,,1,0,Shipping canceled,0,1
+43494,9999,Same Day,1,0,,0,1
+25203,,Same Day,1,0,,0,1
+2433,6078,Same Day,1,0,Shipping canceled,0,1
+54115,135310,Same Day,1,0,Shipping canceled,0,1
+,132517,Same Day,1,0,,0,1
+56487,141311,,1,0,Shipping canceled,0,1
+,146419,Same Day,1,0,Shipping canceled,0,1
+42414,105895,Second Class,5,2,Shipping canceled,0,1
+45392,113430,Second Class,3,2,Shipping canceled,0,1
+49002,122511,Second Class,3,2,,0,1
+48900,122267,Second Class,6,2,Shipping canceled,0,1
+49002,122510,Second Class,3,2,Shipping canceled,0,1
+45392,113429,Second Class,3,2,Shipping canceled,0,1
+69409,172724,Second Class,5,2,,0,1
+69837000,173152,Second Class,3,2,,0,1
+71253,174568,Second Class,4,2,Shipping canceled,0,1
+71358,174673,Second Class,4,2,Shipping canceled,0,1
+13382,33522,Second Class,3,2,Shipping canceled,0,1
+19047,,Second Class,3,2,,0,1
+-1,169917,Second Class,5,2,Shipping canceled,0,1
+65552,163836,Second Class,3,2,Shipping canceled,0,1
+19959,,Second Class,5,2,,0,1
+13088,32739,Second Class,4,2,Shipping canceled,0,1
+13088,32736,,4,2,,0,1
+17423,9999,Second Class,4,2,Shipping canceled,0,1
+17423,,Second Class,4,2,Shipping canceled,0,1
+65552,163837,Second Class,3,2,Shipping canceled,0,1
+69875,173190,Second Class,6,2,,0,1
+70798,174113,Second Class,4,2,,0,1
+6413200,160357,Second Class,3,2,Shipping canceled,0,1
+18210,45525,Second Class,6,2,,0,1
+11148,27871,Second Class,4,2,Shipping canceled,0,1
+70280,173595,Second Class,6,2,,0,1
+11308,28274,Second Class,4,2,,0,1
+64132,160360,Second Class,3,2,Shipping canceled,0,1
+14339,35894,Second Class,5,2,,0,1
+68412,171046,Second Class,3,2,,0,1
+5802,14444,,3,2,,0,1
+2468,,Second Class,4,2,Shipping canceled,0,1
+9079,22634,Second Class,5,2,Shipping canceled,0,1
+55505,138812,Second Class,6,2,,0,1
+54088,135243,Second Class,4,2,,0,1
+,135242,Second Class,4,2,,0,1
+6299,,Second Class,5,2,,0,1
+70530,17660,Second Class,4,2,Shipping canceled,0,1
+9927,24800,Second Class,3,2,,0,1
+5135,12833,Second Class,6,2,,0,1
+5189,12953,Second Class,5,2,Shipping canceled,0,1
+,147974,Second Class,4,2,Shipping canceled,0,1
+1558,3885,Second Class,4,2,Shipping canceled,0,1
+2628,6594,Second Class,4,2,,0,1
+,129273,Second Class,3,2,Shipping canceled,0,1
+2984,7437,Second Class,5,2,Shipping canceled,0,1
+2984,7436,Second Class,5,2,,0,1
+60808,152165,Second Class,4,2,Shipping canceled,0,1
+1002,2500,Second Class,3,2,Shipping canceled,0,1
+-59649,149278,Second Class,5,2,Shipping canceled,0,1
+28587,71543,Second Class,3,2,Shipping canceled,0,1
+25035,62733,Second Class,6,2,,0,1
+45795,114470,Second Class,6,2,,0,1
+,114469,Second Class,6,2,Shipping canceled,0,1
+21547,53866,Second Class,3,2,,0,1
+244900,61294,Second Class,6,2,Shipping canceled,0,1
+24490,,Second Class,6,2,Shipping canceled,0,1
+24490,61291,Second Class,6,2,,0,1
+20422,509840,Second Class,3,2,Shipping canceled,0,1
+22075,55225,Second Class,6,2,,0,1
+29580,74022,Second Class,6,2,Shipping canceled,0,1
+73880,,Second Class,6,2,,0,1
+24637,61686,Second Class,3,2,Shipping canceled,0,1
+,64475,Second Class,6,2,Shipping canceled,0,1
+71793,175108,Second Class,4,2,,0,1
+,64633,Second Class,6,2,Shipping canceled,0,1
+51125,9999,Second Class,6,2,Shipping canceled,0,1
+36333,90707,Second Class,4,2,Shipping canceled,0,1
+36333,90704,Second Class,4,2,Shipping canceled,0,1
+,86564,Second Class,5,2,Shipping canceled,0,1
+40584,101249,Second Class,5,2,,0,1
+39572,98774,Second Class,3,2,,0,1
+39572,98773,Second Class,3,2,,0,1
+38530,96157,Second Class,6,2,,0,1
+38329,95675,Second Class,5,2,Shipping canceled,0,1
+50997,127462,,3,2,Shipping canceled,0,1
+,122509,Second Class,3,2,Shipping canceled,0,1
+43243,108025,Second Class,4,2,,0,1
+15384,38474,Second Class,5,2,Shipping canceled,0,1
+17423,-1,Second Class,4,2,Shipping canceled,0,1
+153840,38472,,5,2,Shipping canceled,0,1
+68154,170398,Second Class,5,2,Shipping canceled,0,1
+48348,120926,Second Class,4,2,,0,1
+,9133,,4,2,,0,1
+5802,14445,Second Class,3,2,Shipping canceled,0,1
+59655,149298,Second Class,6,2,,0,1
+2915,7282,Second Class,6,2,Shipping canceled,0,1
+,129272,Second Class,3,2,Shipping canceled,0,1
+5135,12831,Second Class,6,2,Shipping canceled,0,1
+21547,53867,Second Class,3,2,Shipping canceled,0,1
+42857,107016,Second Class,3,2,Shipping canceled,0,1
+,73103,Second Class,3,2,,0,1
+29630,74131,Second Class,6,2,,0,1
+,91189,Second Class,5,2,Shipping canceled,0,1
+39453,98500,Second Class,4,2,,0,1
+39605,98858,Second Class,6,2,,0,1
+13770,34482,,6,2,Shipping canceled,0,1
+67969,169916,Second Class,5,2,,0,1
+13770,34483,Second Class,6,2,Shipping canceled,0,1
+,,Second Class,3,2,Shipping canceled,0,1
+,28273,Second Class,4,2,Shipping canceled,0,1
+64132,160358,Second Class,3,2,,0,1
+54430,136118,Second Class,6,2,Shipping canceled,0,1
+9079,,Second Class,5,2,,0,1
+929,2324,Second Class,5,2,Shipping canceled,0,1
+,15144,Second Class,4,2,Shipping canceled,0,1
+,13122,Second Class,6,2,,0,1
+59123,-1,Second Class,4,2,Shipping canceled,0,1
+54262,135671,Second Class,3,2,Shipping canceled,0,1
+60347,151018,Second Class,3,2,Shipping canceled,0,1
+25035,62732,Second Class,6,2,,0,1
+30177,75423,Second Class,3,2,,0,1
+20422,50982,Second Class,3,2,,0,1
+34659,86566,Second Class,5,2,Shipping canceled,0,1
+36333,-1,Second Class,4,2,Shipping canceled,0,1
+32377,80968,,3,2,Shipping canceled,0,1
+48900,122269,Second Class,6,2,Shipping canceled,0,1
+43243,108021,Second Class,4,2,Shipping canceled,0,1
+19664,49159,Second Class,5,2,,0,1
+-1,22632,Second Class,5,2,,0,1
+7053,17661,Second Class,4,2,,0,1
+58133,145468,Second Class,4,2,Shipping canceled,0,1
+,153759,Second Class,5,2,Shipping canceled,0,1
+2628,6595,Second Class,4,2,,0,1
+5135,,Second Class,6,2,Shipping canceled,0,1
+51742,129274,Second Class,3,2,,0,1
+,6597,Second Class,4,2,,0,1
+22528,56383,Second Class,4,2,Shipping canceled,0,1
+,71545,Second Class,3,2,,0,1
+24490,61295,Second Class,6,2,Shipping canceled,0,1
+28587,71544,Second Class,3,2,Shipping canceled,0,1
+22075,55224,Second Class,6,2,,0,1
+29580,74025,Second Class,6,2,,0,1
+25820,64634,Second Class,6,2,Shipping canceled,0,1
+,69601,Second Class,3,2,,0,1
+38689,96599,Second Class,5,2,,0,1
+39572,98772,Second Class,3,2,,0,1
+38689,-1,Second Class,5,2,Shipping canceled,0,1
+36524,91187,Second Class,5,2,Shipping canceled,0,1
+39644,98953,Second Class,5,2,,0,1
+39605,98855,Second Class,6,2,Shipping canceled,0,1
+,93015,Second Class,4,2,Shipping canceled,0,1
+48900,122268,Second Class,6,2,,0,1
+48900,122270,Second Class,6,2,,0,1
+66592,166446,Second Class,3,2,Shipping canceled,0,1
+15384,38471,Second Class,5,2,,0,1
+67315,168248,Second Class,6,2,Shipping canceled,0,1
+13088,32737,Second Class,4,2,,0,1
+62779,156959,Second Class,5,2,Shipping canceled,0,1
+62779,156958,Second Class,5,2,,0,1
+68412,171042,Second Class,3,2,,0,1
+3335,8278,Second Class,6,2,Shipping canceled,0,1
+7053,17659,Second Class,4,2,Shipping canceled,0,1
+8295,,Second Class,6,2,,0,1
+53697,134237,Second Class,3,2,Shipping canceled,0,1
+1002,2502,Second Class,3,2,Shipping canceled,0,1
+28587,71541,Second Class,3,2,,0,1
+25473,63810,Second Class,4,2,Shipping canceled,0,1
+27802,69599,Second Class,3,2,,0,1
+38689,96602,Second Class,5,2,Shipping canceled,0,1
+46359,115905,,5,4,,0,1
+-45979,114906,Standard Class,5,4,,0,1
+43890,109619,,6,4,,0,1
+41684,104057,Standard Class,5,4,Shipping canceled,0,1
+46184,115443,Standard Class,5,4,,0,1
+69895,,Standard Class,6,4,Shipping canceled,0,1
+41944,,Standard Class,5,4,,0,1
+63220,158066,Standard Class,6,4,,0,1
+13014,32555,,5,4,Shipping canceled,0,1
+-1,173694,Standard Class,5,4,,0,1
+1659000,41458,Standard Class,6,4,,0,1
+66764,-1,Standard Class,5,4,Shipping canceled,0,1
+9999,38895,Standard Class,5,4,,0,1
+45055,112496,Standard Class,6,4,,0,1
+,157879,Standard Class,6,4,Shipping canceled,0,1
+,164032,Standard Class,5,4,,0,1
+63155,157876,Standard Class,6,4,,0,1
+-1,,Standard Class,6,4,Shipping canceled,0,1
+,160680,Standard Class,5,4,,0,1
+16234,40534,Standard Class,5,4,,0,1
+64274,160677,Standard Class,5,4,Shipping canceled,0,1
+16590,41459,Standard Class,6,4,,0,1
+18125,45294,Standard Class,6,4,Shipping canceled,0,1
+18125,45293,,6,4,Shipping canceled,0,1
+65439,163538,Standard Class,5,4,Shipping canceled,0,1
+67334,168299,Standard Class,5,4,Shipping canceled,0,1
+19709,49275,Standard Class,5,4,Shipping canceled,0,1
+63825,159547,Standard Class,6,4,,0,1
+63825,,,6,4,Shipping canceled,0,1
+63220,,Standard Class,6,4,,0,1
+11629,29069,Standard Class,5,4,,0,1
+,,Standard Class,6,4,Shipping canceled,0,1
+18264,45647,Standard Class,5,4,,0,1
+,167603,Standard Class,5,4,,0,1
+18264,45645,Standard Class,5,4,Shipping canceled,0,1
+18264,45644,Standard Class,5,4,Shipping canceled,0,1
+14210,,Standard Class,6,4,,0,1
+67955,169887,Standard Class,6,4,,0,1
+65679,164138,Standard Class,5,4,Shipping canceled,0,1
+70420,173735,Standard Class,6,4,,0,1
+14675,36709,Standard Class,6,4,,0,1
+66870,167160,Standard Class,6,4,,0,1
+16075,40160,Standard Class,6,4,Shipping canceled,0,1
+11405,28510,Standard Class,6,4,,0,1
+11449,28640,Standard Class,5,4,Shipping canceled,0,1
+62419000,156023,Standard Class,5,4,,0,1
+9999,40618,Standard Class,5,4,Shipping canceled,0,1
+67955,169886,,6,4,Shipping canceled,0,1
+17104,,Standard Class,5,4,,0,1
+16264,40617,Standard Class,5,4,Shipping canceled,0,1
+18914,47307,Standard Class,5,4,,0,1
+10429,26116,Standard Class,5,4,Shipping canceled,0,1
+13394,33544,Standard Class,5,4,Shipping canceled,0,1
+17985,44933,Standard Class,6,4,Shipping canceled,0,1
+17985,44931,Standard Class,6,4,Shipping canceled,0,1
+66870,,Standard Class,6,4,Shipping canceled,0,1
+10429,26114,Standard Class,5,4,,0,1
+50,124,Standard Class,6,4,Shipping canceled,0,1
+9370,23386,Standard Class,6,4,Shipping canceled,0,1
+,141044,Standard Class,6,4,,0,1
+1169,2905,Standard Class,5,4,Shipping canceled,0,1
+53474,133621,Standard Class,5,4,Shipping canceled,0,1
+6750,16872,Standard Class,6,4,Shipping canceled,0,1
+9370,23389,Standard Class,6,4,,0,1
+53474,133619,Standard Class,5,4,,0,1
+55000,137549,Standard Class,6,4,,0,1
+57479,143793,Standard Class,5,4,Shipping canceled,0,1
+4205,10503,Standard Class,6,4,Shipping canceled,0,1
+9784,24428,Standard Class,5,4,Shipping canceled,0,1
+9925,24794,First Class,2,1,Shipping canceled,0,1
+,97725,First Class,2,1,Shipping canceled,0,1
+38702,96634,First Class,2,1,Shipping canceled,0,1
+38702,96632,First Class,2,1,,0,1
+62788,156981,First Class,2,1,Shipping canceled,0,1
+6482,16231,First Class,2,1,,0,1
+59360,148602,First Class,2,1,,0,1
+2144,5370,First Class,2,1,Shipping canceled,0,1
+58761,,First Class,2,1,,0,1
+5126,12807,First Class,2,1,Shipping canceled,0,1
+6521,16302,First Class,2,1,,0,1
+38702,96635,First Class,2,1,,0,1
+46493,116240,Same Day,1,0,,0,1
+64718,161769,Same Day,1,0,Shipping canceled,0,1
+64718,161771,Same Day,1,0,,0,1
+4018,9978,Same Day,1,0,Shipping canceled,0,1
+4018,9979,Same Day,1,0,Shipping canceled,0,1
+37261,93019,Same Day,1,0,,0,1
+46493,116241,Same Day,1,0,,0,1
+47306,118267,Same Day,1,0,Shipping canceled,0,1
+,9980,Same Day,1,0,,0,1
+28278,70731,Same Day,1,0,,0,1
+15604,39009,Second Class,5,2,,0,1
+70265,173580,Second Class,6,2,Shipping canceled,0,1
+68444,171124,,5,2,,0,1
+63614,159002,Second Class,5,2,Shipping canceled,0,1
+63918,159785,Second Class,4,2,Shipping canceled,0,1
+63614,159000,Second Class,5,2,Shipping canceled,0,1
+15017,37598,Second Class,3,2,,0,1
+15017,37601,Second Class,3,2,,0,1
+58780,147138,Second Class,6,2,Shipping canceled,0,1
+56374,141002,Second Class,5,2,Shipping canceled,0,1
+52067,130094,Second Class,3,2,,0,1
+8199,20480,Second Class,5,2,Shipping canceled,0,1
+54849,137184,Second Class,5,2,Shipping canceled,0,1
+52067,130093,Second Class,3,2,,0,1
+58780,147137,Second Class,6,2,Shipping canceled,0,1
+58780,147135,Second Class,6,2,Shipping canceled,0,1
+53064,,Second Class,5,2,,0,1
+53578,133906,Second Class,4,2,Shipping canceled,0,1
+2945,7346,Second Class,6,2,,0,1
+45782,114440,Second Class,3,2,Shipping canceled,0,1
+75640,178955,Second Class,6,2,,0,1
+73049,176364,Second Class,5,2,Shipping canceled,0,1
+75278,178593,Second Class,4,2,,0,1
+28384,71026,,5,2,,0,1
+27672,,Second Class,3,2,,0,1
+24653,61729,Second Class,4,2,,0,1
+269340,,Second Class,5,2,Shipping canceled,0,1
+27672,,Second Class,3,2,,0,1
+71872,175187,Second Class,3,2,Shipping canceled,0,1
+15137,37861,Second Class,3,2,,0,1
+54849,137185,Second Class,5,2,Shipping canceled,0,1
+28384,71027,Second Class,5,2,Shipping canceled,0,1
+27672,69267,Second Class,3,2,,0,1
+27672,69266,,3,2,Shipping canceled,0,1
+,76385,Second Class,3,2,,0,1
+40557,101191,Second Class,3,2,,0,1
+52067,,Second Class,3,2,,0,1
+8199,9999,Second Class,5,2,,0,1
+,91313,,5,2,,0,1
+68444,171122,Second Class,5,2,Shipping canceled,0,1
+54849,137186,Second Class,5,2,,0,1
+962,2394,Second Class,3,2,Shipping canceled,0,1
+9688,24200,Second Class,4,2,,0,1
+54849,137187,Second Class,5,2,Shipping canceled,0,1
+962,2393,Second Class,3,2,,0,1
+60508,151440,Second Class,4,2,Shipping canceled,0,1
+53578,133904,Second Class,4,2,,0,1
+43345,108284,Second Class,6,2,Shipping canceled,0,1
+28384,71025,Second Class,5,2,,0,1
+9999,67469,Second Class,5,2,Shipping canceled,0,1
+43345,108286,Second Class,6,2,Shipping canceled,0,1
+38238,95458,Second Class,4,2,Shipping canceled,0,1
+-1,141001,Second Class,5,2,Shipping canceled,0,1
+3364,8356,Second Class,5,2,Shipping canceled,0,1
+,,Second Class,5,2,Shipping canceled,0,1
+36584,91315,Second Class,5,2,Shipping canceled,0,1
+36584,91314,Second Class,5,2,Shipping canceled,0,1
+47314,118280,Standard Class,5,4,,0,1
+49724,124297,Standard Class,5,4,Shipping canceled,0,1
+47914,119819,Standard Class,5,4,,0,1
+62509,156222,Standard Class,5,4,Shipping canceled,0,1
+20225,50514,Standard Class,6,4,Shipping canceled,0,1
+13454,33706,Standard Class,5,4,,0,1
+13954,34917,Standard Class,5,4,,0,1
+,160250,Standard Class,5,4,,0,1
+14290,35751,,6,4,,0,1
+13954,34918,,5,4,Shipping canceled,0,1
+68059,,Standard Class,5,4,,0,1
+19594,48988,Standard Class,5,4,,0,1
+15895,39711,Standard Class,6,4,,0,1
+62509,,Standard Class,5,4,,0,1
+15895,39709,Standard Class,6,4,Shipping canceled,0,1
+,173794,Standard Class,5,4,Shipping canceled,0,1
+19630,,Standard Class,6,4,Shipping canceled,0,1
+,34387,Standard Class,6,4,,0,1
+10640,26651,Standard Class,6,4,,0,1
+14490,36236,Standard Class,6,4,Shipping canceled,0,1
+10640,,Standard Class,6,4,Shipping canceled,0,1
+15089,37756,Standard Class,5,4,,0,1
+68999,172314,,5,4,Shipping canceled,0,1
+69305,172620,Standard Class,6,4,,0,1
+58145,145499,Standard Class,6,4,Shipping canceled,0,1
+60315,150924,Standard Class,6,4,Shipping canceled,0,1
+52490,131187,Standard Class,6,4,Shipping canceled,0,1
+2974,7414,Standard Class,5,4,,0,1
+940,2350,Standard Class,6,4,Shipping canceled,0,1
+52490,131188,Standard Class,6,4,,0,1
+8235,20574,Standard Class,6,4,,0,1
+72295,175610,Standard Class,6,4,,0,1
+,180140,Standard Class,6,4,,0,1
+21524,53814,Standard Class,5,4,Shipping canceled,0,1
+42074,105033,Standard Class,5,4,,0,1
+23425,58594,Standard Class,6,4,Shipping canceled,0,1
+23425,58592,Standard Class,6,4,,0,1
+21524,53816,Standard Class,5,4,Shipping canceled,0,1
+73580,176895,Standard Class,6,4,Shipping canceled,0,1
+72569,175884,Standard Class,5,4,Shipping canceled,0,1
+75595,178910,Standard Class,6,4,Shipping canceled,0,1
+,175494,Standard Class,5,4,Shipping canceled,0,1
+40389,100794,Standard Class,5,4,Shipping canceled,0,1
+46889,117221,Standard Class,5,4,,0,1
+48464,121205,Standard Class,5,4,,0,1
+13954,,Standard Class,5,4,Shipping canceled,0,1
+14290,35750,Standard Class,6,4,Shipping canceled,0,1
+61839,154581,Standard Class,5,4,,0,1
+11734,29341,Standard Class,5,4,,0,1
+19594,48987,Standard Class,5,4,,0,1
+62029,155087,Standard Class,5,4,Shipping canceled,0,1
+,160248,Standard Class,5,4,,0,1
+14490,36237,Standard Class,6,4,Shipping canceled,0,1
+15200,38021,Standard Class,6,4,Shipping canceled,0,1
+940,2349,Standard Class,6,4,,0,1
+54239,135606,Standard Class,5,4,Shipping canceled,0,1
+8235,,Standard Class,6,4,,0,1
+22834,57149,Standard Class,5,4,Shipping canceled,0,1
+20774,51912,Standard Class,5,4,Shipping canceled,0,1
+48464,121203,Standard Class,5,4,Shipping canceled,0,1
+14290,35748,Standard Class,6,4,,0,1
+16359,40835,,5,4,,0,1
+31749,79353,Standard Class,5,4,Shipping canceled,0,1
+31526,78766,First Class,2,1,,0,1
+31433,78566,First Class,2,1,Shipping canceled,0,1
+31433,78563,First Class,2,1,,0,1
+31244,78094,First Class,2,1,Shipping canceled,0,1
+,76723,Second Class,6,2,,0,1
+30207,75480,First Class,2,1,,0,1
+30110,75269,Standard Class,6,4,,0,1
+29989,74993,Second Class,5,2,,0,1
+29655,74187,Standard Class,6,4,Shipping canceled,0,1
+28946,7243200,,2,1,Shipping canceled,0,1
+28875,72260,First Class,2,1,,0,1
+,72172,Second Class,5,2,,0,1
+28587,71542,Second Class,3,2,Shipping canceled,0,1
+27877,69784,Second Class,3,2,Shipping canceled,0,1
+,,Second Class,3,2,,0,1
+27867,69763,Second Class,3,2,Shipping canceled,0,1
+27711,69379,First Class,2,1,Shipping canceled,0,1
+27686,69315,First Class,2,1,,0,1
+27672,69269,Second Class,3,2,,0,1
+27535,68925,First Class,2,1,,0,1
+26780,67094,,2,1,Shipping canceled,0,1
+26060,65225000,Standard Class,6,4,Shipping canceled,0,1
+26014,65100,First Class,2,1,,0,1
+25880,64779,Standard Class,6,4,Shipping canceled,0,1
+25880,64777,Standard Class,6,4,,0,1
+25025,62711,Standard Class,6,4,Shipping canceled,0,1
+24637,61685,Second Class,3,2,,0,1
+23744,,First Class,2,1,,0,1
+,58894,Standard Class,5,4,Shipping canceled,0,1
+23415,58573,Standard Class,6,4,Shipping canceled,0,1
+23340,58420,Same Day,1,0,,0,1
+,55944,,5,4,Shipping canceled,0,1
+59325,148517,Standard Class,6,4,,0,1
+53439,133530,Standard Class,5,4,Shipping canceled,0,1
+9999,8210,Standard Class,5,4,Shipping canceled,0,1
+55334,138378,Standard Class,5,4,,0,1
+,137459,Standard Class,6,4,Shipping canceled,0,1
+60234,150704,Standard Class,5,4,,0,1
+3304,8212,,5,4,Shipping canceled,0,1
+3304,8211,Standard Class,5,4,,0,1
+8200,20483,Standard Class,6,4,Shipping canceled,0,1
+52124,130224,Standard Class,5,4,Shipping canceled,0,1
+57835,144708,Standard Class,6,4,Shipping canceled,0,1
+320,797,,6,4,Shipping canceled,0,1
+57994,145105,Standard Class,5,4,,0,1
+4304,-1,Standard Class,5,4,,0,1
+52990,132446,Standard Class,6,4,Shipping canceled,0,1
+51895,129671,Standard Class,6,4,Shipping canceled,0,1
+4304,10778,Standard Class,5,4,Shipping canceled,0,1
+8200,20484,Standard Class,6,4,,0,1
+9424,23524,Standard Class,5,4,Shipping canceled,0,1
+5160,12891,Standard Class,6,4,,0,1
+57339,143424,Standard Class,5,4,Shipping canceled,0,1
+57835,144710,Standard Class,6,4,Shipping canceled,0,1
+57835,144709,Standard Class,6,4,Shipping canceled,0,1
+7534,,Standard Class,5,4,,0,1
+74719,178034,,5,4,,0,1
+72905,176220,Standard Class,6,4,Shipping canceled,0,1
+72900,,Standard Class,6,4,Shipping canceled,0,1
+,62712,Standard Class,6,4,,0,1
+25025,62710,Standard Class,6,4,Shipping canceled,0,1
+30110,75268,Standard Class,6,4,Shipping canceled,0,1
+30110,75270,Standard Class,6,4,Shipping canceled,0,1
+20854,52113,Standard Class,5,4,Shipping canceled,0,1
+25599,64127,Standard Class,5,4,,0,1
+44069,110083,Standard Class,5,4,,0,1
+20395,50918,Standard Class,6,4,Shipping canceled,0,1
+,55948,Standard Class,5,4,Shipping canceled,0,1
+46079,115185,Standard Class,5,4,Shipping canceled,0,1
+74035,177350,Standard Class,6,4,,0,1
+,179889,Standard Class,5,4,Shipping canceled,0,1
+72949,176264,Standard Class,5,4,,0,1
+29655,74188,Standard Class,6,4,Shipping canceled,0,1
+28265,70695,Standard Class,6,4,Shipping canceled,0,1
+28265,70694,,6,4,,0,1
+77084,180399,Standard Class,5,4,Shipping canceled,0,1
+29655,74185,Standard Class,6,4,Shipping canceled,0,1
+74950,178265,Standard Class,6,4,Shipping canceled,0,1
+25725,64426,Standard Class,6,4,,0,1
+22034,551130,Standard Class,5,4,,0,1
+76225,179540,Standard Class,6,4,,0,1
+31749,79352,Standard Class,5,4,Shipping canceled,0,1
+34824,87000,Standard Class,5,4,Shipping canceled,0,1
+33625,83933,Standard Class,6,4,Shipping canceled,0,1
+37360,93266,Standard Class,6,4,,0,1
+37360,93265,Standard Class,6,4,,0,1
+33129,82820,Standard Class,5,4,,0,1
+33129,82818,Standard Class,5,4,,0,1
+40185,100285,Standard Class,6,4,,0,1
+37845,94449,Standard Class,6,4,,0,1
+,,Standard Class,6,4,Shipping canceled,0,1
+,78864,Standard Class,5,4,,0,1
+33120,82799,Standard Class,6,4,Shipping canceled,0,1
+,78862,Standard Class,5,4,,0,1
+33120,82797,Standard Class,6,4,Shipping canceled,0,1
+40495,101055,Standard Class,6,4,Shipping canceled,0,1
+37960,94765,Standard Class,6,4,,0,1
+37845,94447,Standard Class,6,4,Shipping canceled,0,1
+44170,110314,Standard Class,6,4,Shipping canceled,0,1
+9999,110316,Standard Class,6,4,Shipping canceled,0,1
+45555,113841,Standard Class,6,4,,0,1
+64274,160676,,5,4,,0,1
+17094,42747,Standard Class,5,4,Shipping canceled,0,1
+63285,,Standard Class,6,4,Shipping canceled,0,1
+,9999,Standard Class,5,4,Shipping canceled,0,1
+16075,40159,Standard Class,6,4,,0,1
+11449,28641,Standard Class,5,4,,0,1
+68555,171394,Standard Class,6,4,Shipping canceled,0,1
+16459,41105,Standard Class,5,4,Shipping canceled,0,1
+18914,47306,Standard Class,5,4,Shipping canceled,0,1
+68555,171393,Standard Class,6,4,Shipping canceled,0,1
+10429,26113,Standard Class,5,4,,0,1
+11405,28509,Standard Class,6,4,,0,1
+68555,171391,Standard Class,6,4,Shipping canceled,0,1
+17035,42596,Standard Class,6,4,,0,1
+56390,9999,Standard Class,6,4,,0,1
+6514,16285,Standard Class,5,4,Shipping canceled,0,1
+1169,2902,Standard Class,5,4,Shipping canceled,0,1
+,2903,Standard Class,5,4,,0,1
+53474,133622,Standard Class,5,4,Shipping canceled,0,1
+3304,8209,,5,4,,0,1
+57339,143422,Standard Class,5,4,Shipping canceled,0,1
+51895,129673,Standard Class,6,4,Shipping canceled,0,1
+52124,130225,Standard Class,5,4,Shipping canceled,0,1
+25025,62713,Standard Class,6,4,,0,1
+46549,116360,Standard Class,5,4,Shipping canceled,0,1
+49984,124961,Standard Class,5,4,Shipping canceled,0,1
+,58214,Standard Class,6,4,,0,1
+49984,124962,Standard Class,5,4,Shipping canceled,0,1
+24145,60413,Standard Class,6,4,Shipping canceled,0,1
+9999,78975,Standard Class,5,4,,0,1
+33120,82798,Standard Class,6,4,,0,1
+34745,86788,Standard Class,6,4,,0,1
+40495,101056,Standard Class,6,4,Shipping canceled,0,1
+-1,84873,Standard Class,6,4,,0,1
+40495,101053,Standard Class,6,4,,0,1
+31520,78759,Standard Class,6,4,Shipping canceled,0,1
+47840,119621,Standard Class,6,4,,0,1
+15559,38891,Standard Class,5,4,Shipping canceled,0,1
+63285,158222,Standard Class,6,4,,0,1
+62840,157123,Standard Class,6,4,,0,1
+9999,45295,Standard Class,6,4,Shipping canceled,0,1
+46864,117158,,5,4,Shipping canceled,0,1
+14210,35559,Standard Class,6,4,Shipping canceled,0,1
+66870000,,Standard Class,6,4,Shipping canceled,0,1
+-11449,,Standard Class,5,4,,0,1
+,,Standard Class,5,4,Shipping canceled,0,1
+19540,48842,Standard Class,6,4,Shipping canceled,0,1
+,7868,Standard Class,5,4,Shipping canceled,0,1
+59345,148570,,6,4,Shipping canceled,0,1
+59345,148567,Standard Class,6,4,,0,1
+,12890,Standard Class,6,4,Shipping canceled,0,1
+5934,,Standard Class,5,4,Shipping canceled,0,1
+56500,141338,Standard Class,6,4,Shipping canceled,0,1
+23250,58212,Standard Class,6,4,Shipping canceled,0,1
+42424,,Standard Class,5,4,,0,1
+64009,160032,Standard Class,5,4,Shipping canceled,0,1
+63978,159957,Same Day,1,0,,0,1
+63958,159888,Second Class,4,2,Shipping canceled,0,1
+63918,159783,Second Class,4,2,Shipping canceled,0,1
+63220,158068,Standard Class,6,4,Shipping canceled,0,1
+63199,158001,First Class,2,1,Shipping canceled,0,1
+62810,9999,Standard Class,6,4,Shipping canceled,0,1
+61952,154890,First Class,2,1,,0,1
+,154201,First Class,2,1,,0,1
+61484,153763,Second Class,5,2,Shipping canceled,0,1
+,153762,Second Class,5,2,,0,1
+61484,153761,Second Class,5,2,Shipping canceled,0,1
+61069,152770,Standard Class,5,4,Shipping canceled,0,1
+60600,151673,Standard Class,6,4,Shipping canceled,0,1
+60283,150829,First Class,2,1,,0,1
+60220,150666,Standard Class,6,4,Shipping canceled,0,1
+59806,149693,First Class,2,1,,0,1
+59798,149675,First Class,2,1,,0,1
+59726,149450,First Class,2,1,Shipping canceled,0,1
+,149112,First Class,2,1,Shipping canceled,0,1
+59310,148475,Standard Class,6,4,Shipping canceled,0,1
+59245,148284,,2,1,,0,1
+58893,147415,First Class,2,1,,0,1
+58761,147087,First Class,2,1,,0,1
+58512,146444,,3,2,Shipping canceled,0,1
+58414,146212,First Class,2,1,,0,1
+,145816,First Class,2,1,,0,1
+-1,143027,Second Class,6,2,,0,1
+,142540,Standard Class,5,4,Shipping canceled,0,1
+56812,142095,First Class,2,1,Shipping canceled,0,1
+56555,141460,Second Class,6,2,Shipping canceled,0,1
+56555,,Second Class,6,2,,0,1
+56542,141430,First Class,2,1,Shipping canceled,0,1
+56538,141414,Second Class,4,2,Shipping canceled,0,1
+56244,,Standard Class,5,4,,0,1
+-1,138921,First Class,2,1,,0,1
+55334,138381,Standard Class,5,4,,0,1
+54875,137243,First Class,2,1,,0,1
+54669,136717,Standard Class,5,4,,0,1
+54669,136716,Standard Class,5,4,,0,1
+54485,136266,Standard Class,6,4,,0,1
+54283,135727,First Class,2,1,Shipping canceled,0,1
+53976,134957,Same Day,1,0,Shipping canceled,0,1
+53727,134319,First Class,2,1,Shipping canceled,0,1
+53697,134239,Second Class,3,2,Shipping canceled,0,1
+53430,133507,Standard Class,6,4,Shipping canceled,0,1
+53219,132981,Standard Class,5,4,,0,1
+53092,132689,First Class,2,1,,0,1
+52990,132445,Standard Class,6,4,,0,1
+52715,131784,,6,4,Shipping canceled,0,1
+52567,131399,First Class,2,1,,0,1
+15200,38018,Standard Class,6,4,,0,1
+52260,130568,Standard Class,6,4,,0,1
+940,2351,Standard Class,6,4,Shipping canceled,0,1
+52260,130565,Standard Class,6,4,,0,1
+45259,113081,Standard Class,5,4,Shipping canceled,0,1
+42074,105032,Standard Class,5,4,,0,1
+62509,156224,Standard Class,5,4,,0,1
+67375,168401,Standard Class,6,4,Shipping canceled,0,1
+14509,36288,Standard Class,5,4,Shipping canceled,0,1
+68059,170151,Standard Class,5,4,Shipping canceled,0,1
+61935,154829,Standard Class,6,4,,0,1
+-1,,Standard Class,6,4,Shipping canceled,0,1
+,135607,Standard Class,5,4,Shipping canceled,0,1
+52715,13178500,Standard Class,6,4,,0,1
+8235,20576,Standard Class,6,4,,0,1
+,58596,,6,4,,0,1
+45259,113082,Standard Class,5,4,Shipping canceled,0,1
+22834,57150,Standard Class,5,4,Shipping canceled,0,1
+47955,,Standard Class,6,4,Shipping canceled,0,1
+46889,117218,Standard Class,5,4,,0,1
+49724,124298,Standard Class,5,4,,0,1
+61839,,Standard Class,5,4,,0,1
+4525,11337,Standard Class,6,4,Shipping canceled,0,1
+5579,,Standard Class,5,4,,0,1
+1635,4067,Standard Class,6,4,,0,1
+2974,7413,Standard Class,5,4,Shipping canceled,0,1
+35015,87459,Standard Class,6,4,,0,1
+33290,83163,Standard Class,6,4,,0,1
+21762,54439,Second Class,3,2,Shipping canceled,0,1
+21417,,First Class,2,1,,0,1
+21359,53410,Standard Class,5,4,Shipping canceled,0,1
+21359,53407,Standard Class,5,4,Shipping canceled,0,1
+,52807,Second Class,4,2,Shipping canceled,0,1
+21089,52729,Standard Class,5,4,Shipping canceled,0,1
+21089,52727,Standard Class,5,4,Shipping canceled,0,1
+20968,52410,First Class,2,1,,0,1
+20949,52350,Second Class,5,2,Shipping canceled,0,1
+209460,52337,First Class,2,1,,0,1
+20946,52336,First Class,2,1,Shipping canceled,0,1
+20521,51245,First Class,2,1,,0,1
+20154,,,5,4,Shipping canceled,0,1
+19959,49895,Second Class,5,2,Shipping canceled,0,1
+19709,49276,Standard Class,5,4,,0,1
+19625,49063,First Class,2,1,Shipping canceled,0,1
+19434,48569,First Class,2,1,,0,1
+19005,,Second Class,6,2,,0,1
+18869,47198,Standard Class,5,4,,0,1
+18712,46767,First Class,2,1,Shipping canceled,0,1
+18097,,Second Class,3,2,Shipping canceled,0,1
+18015,45017,Standard Class,6,4,Shipping canceled,0,1
+,44479,Same Day,1,0,Shipping canceled,0,1
+17423,43546,Second Class,4,2,Shipping canceled,0,1
+9999,43271,Standard Class,6,4,,0,1
+16500,41218,Standard Class,6,4,Shipping canceled,0,1
+16459,41104,Standard Class,5,4,Shipping canceled,0,1
+15604,39010,Second Class,5,2,Shipping canceled,0,1
+15559,-1,,5,4,Shipping canceled,0,1
+-15559,38893,Standard Class,5,4,Shipping canceled,0,1
+15200,38019,Standard Class,6,4,,0,1
+15137,37860,Second Class,3,2,,0,1
+,35893,Second Class,5,2,,0,1
+14290,35749,Standard Class,6,4,Shipping canceled,0,1
+13954,34916,Standard Class,5,4,,0,1
+13770,34484,Second Class,6,2,,0,1
+,34202,Standard Class,6,4,,0,1
+13398,33554,First Class,2,1,,0,1
+13394,33546,Standard Class,5,4,Shipping canceled,0,1
+13382,33523,Second Class,3,2,Shipping canceled,0,1
+,,Standard Class,5,4,Shipping canceled,0,1
+12534,313720,Second Class,5,2,,0,1
+12534,31371,Second Class,5,2,Shipping canceled,0,1
+12462,31183,Second Class,3,2,,0,1
+,31182,Second Class,3,2,Shipping canceled,0,1
+12061,30155,First Class,2,1,,0,1
+-1,30059,Same Day,1,0,,0,1
+11673,29195,First Class,2,1,,0,1
+51884,129639,Second Class,5,2,,0,1
+51742,129271,Second Class,3,2,,0,1
+51629,129012,First Class,2,1,Shipping canceled,0,1
+,127352,Same Day,1,0,Shipping canceled,0,1
+50740,126807,Standard Class,6,4,Shipping canceled,0,1
+,126467,Standard Class,6,4,,0,1
+49915,,Standard Class,6,4,Shipping canceled,0,1
+49810,124520,Standard Class,6,4,,0,1
+,124042,Standard Class,6,4,,0,1
+49010,122525,Standard Class,6,4,,0,1
+48860,122168,Standard Class,6,4,Shipping canceled,0,1
+,120596,Standard Class,6,4,Shipping canceled,0,1
+48091,120256,First Class,2,1,,0,1
+47922,119845,Second Class,3,2,,0,1
+46655,116641,First Class,2,1,Shipping canceled,0,1
+-1,116450,Second Class,5,2,,0,1
+46539,116346,Standard Class,5,4,Shipping canceled,0,1
+46420,116058,First Class,2,1,Shipping canceled,0,1
+46420,116056,First Class,2,1,,0,1
+46079,115184,Standard Class,5,4,,0,1
+45999,114968,,2,1,,0,1
+45979,114905,Standard Class,5,4,,0,1
+45255,113072,Second Class,6,2,,0,1
+44954,112271,,5,4,,0,1
+44715,111668,Second Class,6,2,,0,1
+43874,109578,Standard Class,5,4,Shipping canceled,0,1
+43715,109184,Second Class,6,2,,0,1
+42762,106730,First Class,2,1,Shipping canceled,0,1
+42657,106474,First Class,2,1,Shipping canceled,0,1
+42255,,Standard Class,6,4,,0,1
+42209,105402,,5,4,Shipping canceled,0,1
+41868,104511,First Class,2,1,,0,1
+,104480,Standard Class,6,4,,0,1
+40910,102102,First Class,2,1,Shipping canceled,0,1
+,100864,Standard Class,6,4,Shipping canceled,0,1
+39644,98952,Second Class,5,2,,0,1
+39158,-1,First Class,2,1,Shipping canceled,0,1
+38914,97150,,5,4,,0,1
+38305,95624,,6,4,Shipping canceled,0,1
+,936710,First Class,2,1,,0,1
+37120,92619,Second Class,6,2,,0,1
+,92102,Standard Class,6,4,Shipping canceled,0,1
+36584,91317,,5,2,,0,1
+36584,91316,Second Class,5,2,Shipping canceled,0,1
+36377,90823,Second Class,3,2,,0,1
+36344,90741,Standard Class,5,4,Shipping canceled,0,1
+35999,89894,Standard Class,5,4,Shipping canceled,0,1
+35754,,Second Class,5,2,Shipping canceled,0,1
+35434,88520,Standard Class,5,4,Shipping canceled,0,1
+35434,88519,Standard Class,5,4,Shipping canceled,0,1
+35282,88112,Second Class,3,2,,0,1
+34953,87331,Second Class,4,2,Shipping canceled,0,1
+34855,87075,Standard Class,6,4,Shipping canceled,0,1
+34745,86790,Standard Class,6,4,,0,1
+34625,86473,Standard Class,6,4,Shipping canceled,0,1
+34454,86062,First Class,2,1,,0,1
+34417,85981,First Class,2,1,Shipping canceled,0,1
+34354,85808,First Class,2,1,,0,1
+34354,85806,First Class,2,1,Shipping canceled,0,1
+34097,85108,First Class,2,1,,0,1
+33529,83699,Standard Class,5,4,Shipping canceled,0,1
+32830,82115,Standard Class,6,4,Shipping canceled,0,1
+32494,81262,Second Class,5,2,,0,1
+32494,81261,Second Class,5,2,,0,1
+32377,80971,Second Class,3,2,Shipping canceled,0,1
+,80844,Standard Class,5,4,,0,1
+32242,80637,First Class,2,1,Shipping canceled,0,1
+31526,78770,First Class,2,1,,0,1
+31526,9999,First Class,2,1,,0,1
+31475,78660,Standard Class,6,4,Shipping canceled,0,1
+30973,77415,First Class,2,1,Shipping canceled,0,1
+30880,77186,Standard Class,6,4,Shipping canceled,0,1
+29760,74468,Standard Class,6,4,Shipping canceled,0,1
+29630,74132,Second Class,6,2,Shipping canceled,0,1
+29499,73824,Standard Class,5,4,,0,1
+43701,109149,First Class,2,1,,0,1
+45722,114285,First Class,2,1,Shipping canceled,0,1
+48399,121052,First Class,2,1,,0,1
+48399,121051,First Class,2,1,Shipping canceled,0,1
+69434,172749,First Class,2,1,Shipping canceled,0,1
+62931,,First Class,2,1,,0,1
+42762,106731,,2,1,,0,1
+10637,26645,First Class,2,1,,0,1
+10637,26644,First Class,2,1,Shipping canceled,0,1
+62618,156548,First Class,2,1,,0,1
+62931,157384,First Class,2,1,,0,1
+13799,34564,First Class,2,1,,0,1
+,173271,First Class,2,1,,0,1
+70638,,First Class,2,1,Shipping canceled,0,1
+43307,108189,First Class,2,1,Shipping canceled,0,1
+,47304,First Class,2,1,Shipping canceled,0,1
+13280,33217,First Class,2,1,Shipping canceled,0,1
+9251,23093,First Class,2,1,,0,1
+-1,133824,First Class,2,1,,0,1
+-1,,First Class,2,1,Shipping canceled,0,1
+59738,149487,First Class,2,1,Shipping canceled,0,1
+,23095,First Class,2,1,,0,1
+9251,,First Class,2,1,,0,1
+8943,22303,First Class,2,1,Shipping canceled,0,1
+3268,8144,First Class,2,1,Shipping canceled,0,1
+584630,146329,First Class,2,1,Shipping canceled,0,1
+,144223,First Class,2,1,Shipping canceled,0,1
+58893,147417,First Class,2,1,,0,1
+3268,8141,First Class,2,1,Shipping canceled,0,1
+53325,133242,First Class,2,1,Shipping canceled,0,1
+24692,,First Class,2,1,Shipping canceled,0,1
+74406,177721,First Class,2,1,Shipping canceled,0,1
+23743,59413,First Class,2,1,Shipping canceled,0,1
+24692,61837,First Class,2,1,,0,1
+74949,178264,First Class,2,1,,0,1
+9999,61839,First Class,2,1,Shipping canceled,0,1
+22949,57451,First Class,2,1,Shipping canceled,0,1
+,52429,First Class,2,1,,0,1
+74333,177648,First Class,2,1,Shipping canceled,0,1
+20458,51056,First Class,2,1,Shipping canceled,0,1
+73750,177065,First Class,2,1,Shipping canceled,0,1
+,65150,First Class,2,1,Shipping canceled,0,1
+30515,76291,First Class,2,1,,0,1
+30515,76289,First Class,2,1,,0,1
+50730,126782,First Class,2,1,Shipping canceled,0,1
+45999,114965,First Class,2,1,Shipping canceled,0,1
+30971,77405,First Class,2,1,,0,1
+42657,106477,First Class,2,1,,0,1
+20458,51057,First Class,2,1,,0,1
+20521,51246,First Class,2,1,Shipping canceled,0,1
+72639,-175954,First Class,2,1,Shipping canceled,0,1
+39157,,First Class,2,1,Shipping canceled,0,1
+35855,89541,First Class,2,1,Shipping canceled,0,1
+37577,93786,First Class,2,1,,0,1
+38195,95353,First Class,2,1,Shipping canceled,0,1
+35800,89403,First Class,2,1,Shipping canceled,0,1
+375770,93787,First Class,2,1,Shipping canceled,0,1
+35340,88277,First Class,2,1,,0,1
+35340,88276,First Class,2,1,Shipping canceled,0,1
+67137,,First Class,2,1,,0,1
+15810,39519,First Class,2,1,Shipping canceled,0,1
+13280,33219,First Class,2,1,Shipping canceled,0,1
+62431,156045,First Class,2,1,,0,1
+47099,117718,First Class,2,1,,0,1
+8943,22305,First Class,2,1,,0,1
+,146968,First Class,2,1,Shipping canceled,0,1
+59546,149033,First Class,2,1,Shipping canceled,0,1
+,144221,First Class,2,1,Shipping canceled,0,1
+22949,57450,First Class,2,1,,0,1
+26112,65372,First Class,2,1,Shipping canceled,0,1
+45334,-1,First Class,2,1,Shipping canceled,0,1
+46420,,First Class,2,1,,0,1
+28344,70923,First Class,2,1,Shipping canceled,0,1
+25240,63250,First Class,2,1,Shipping canceled,0,1
+25240,63251,First Class,2,1,Shipping canceled,0,1
+49085,122729,First Class,2,1,Shipping canceled,0,1
+65323000,163262,First Class,2,1,,0,1
+67556,168897,First Class,2,1,Shipping canceled,0,1
+58715,,First Class,2,1,,0,1
+58715,146970,,2,1,Shipping canceled,0,1
+,149035,First Class,2,1,Shipping canceled,0,1
+58912,147472,First Class,2,1,,0,1
+28596,71570,First Class,2,1,,0,1
+45999,114966,,2,1,,0,1
+38195,95354,First Class,2,1,Shipping canceled,0,1
+43701,109147,First Class,2,1,,0,1
+19983,49952,First Class,2,1,,0,1
+65323,163264,First Class,2,1,,0,1
+68571,171439,First Class,2,1,,0,1
+62925,157358,,2,1,,0,1
+-1,,First Class,2,1,Shipping canceled,0,1
+7179,17978,First Class,2,1,Shipping canceled,0,1
+9131,22781,First Class,2,1,,0,1
+23744,59417,First Class,2,1,Shipping canceled,0,1
+35855,89539,First Class,2,1,,0,1
+47979,119989,First Class,2,1,Shipping canceled,0,1
+62931,157380,First Class,2,1,Shipping canceled,0,1
+62431,156046,First Class,2,1,,0,1
+47099,117714,First Class,2,1,Shipping canceled,0,1
+8943,9999,First Class,2,1,,0,1
+61552,153912,First Class,2,1,Shipping canceled,0,1
+,113268,First Class,2,1,,0,1
+45334,113265,First Class,2,1,Shipping canceled,0,1
+9999,,First Class,2,1,,0,1
+,111967,First Class,2,1,,0,1
+30971,77408,First Class,2,1,,0,1
+3097100,77406,First Class,2,1,,0,1
+44821,111968,First Class,2,1,Shipping canceled,0,1
+,124357,First Class,2,1,Shipping canceled,0,1
+36197,90393,First Class,2,1,Shipping canceled,0,1
+34417,85983,First Class,2,1,,0,1
+71026,174341,Same Day,1,0,Shipping canceled,0,1
+19291,48228,Same Day,1,0,Shipping canceled,0,1
+67608,169037,Same Day,1,0,,0,1
+17802,44476,Same Day,1,0,Shipping canceled,0,1
+-1,19630,Same Day,1,0,Shipping canceled,0,1
+,19629,Same Day,1,0,Shipping canceled,0,1
+67608,169036,Same Day,1,0,Shipping canceled,0,1
+19291,48229,,1,0,Shipping canceled,0,1
+17802,44478,Same Day,1,0,,0,1
+66785,166928,Same Day,1,0,,0,1
+51763,129318,Same Day,1,0,Shipping canceled,0,1
+,105063,Second Class,6,2,,0,1
+44145,110238,Second Class,6,2,,0,1
+70894,174209,Second Class,5,2,,0,1
+14114,35322,Second Class,5,2,,0,1
+69965,173280,Second Class,6,2,,0,1
+67258,168100,Second Class,4,2,Shipping canceled,0,1
+62624,156560,Second Class,5,2,,0,1
+71214,-1,Second Class,5,2,Shipping canceled,0,1
+,4662900,Second Class,6,2,Shipping canceled,0,1
+67258,168101,Second Class,4,2,Shipping canceled,0,1
+63974,159944,Second Class,5,2,Shipping canceled,0,1
+62024,155067,Second Class,5,2,Shipping canceled,0,1
+15640,39104,Second Class,6,2,,0,1
+156790,39207,Second Class,5,2,Shipping canceled,0,1
+10622,26606,Second Class,3,2,Shipping canceled,0,1
+54472,,Second Class,3,2,Shipping canceled,0,1
+51492,128683,Second Class,3,2,Shipping canceled,0,1
+4585,11490,Second Class,6,2,Shipping canceled,0,1
+53759,134397,Second Class,5,2,,0,1
+57954,144998,Second Class,5,2,,0,1
+4167,,Second Class,3,2,Shipping canceled,0,1
+51744,129279,Second Class,5,2,,0,1
+51744,129275,Second Class,5,2,,0,1
+1492,3728,Second Class,3,2,Shipping canceled,0,1
+,18246,Second Class,3,2,Shipping canceled,0,1
+,144997,Second Class,5,2,,0,1
+1492,3727,Second Class,3,2,Shipping canceled,0,1
+4167,10405,Second Class,3,2,Shipping canceled,0,1
+982,2446,Second Class,3,2,Shipping canceled,0,1
+24568,61510,Second Class,4,2,,0,1
+45255,113071,Second Class,6,2,,0,1
+,178745,Second Class,6,2,Shipping canceled,0,1
+76280,-1,Second Class,6,2,,0,1
+27952,69952,Second Class,3,2,Shipping canceled,0,1
+71998,175313,Second Class,4,2,,0,1
+23684,59254,Second Class,5,2,,0,1
+38965,97278,Second Class,6,2,Shipping canceled,0,1
+38965,97277,Second Class,6,2,Shipping canceled,0,1
+3516700,87835,,3,2,Shipping canceled,0,1
+36377,90822,Second Class,3,2,Shipping canceled,0,1
+9999,98433,Second Class,3,2,,0,1
+33347,83300,Second Class,3,2,Shipping canceled,0,1
+333470,83297,Second Class,3,2,,0,1
+39427,98434,Second Class,3,2,Shipping canceled,0,1
+9999,110240,Second Class,6,2,Shipping canceled,0,1
+16553,41340,Second Class,4,2,Shipping canceled,0,1
+16553,,Second Class,4,2,Shipping canceled,0,1
+63852,159614,Second Class,3,2,Shipping canceled,0,1
+53759,134395,Second Class,5,2,Shipping canceled,0,1
+4292,10746,Second Class,3,2,Shipping canceled,0,1
+21123,52805,Second Class,4,2,,0,1
+28352,70940,,3,2,Shipping canceled,0,1
+44377,110780,Second Class,3,2,Shipping canceled,0,1
+,97344,Second Class,6,2,Shipping canceled,0,1
+35754,89285,Second Class,5,2,,0,1
+38035,94956,Second Class,6,2,,0,1
+,94954,Second Class,6,2,Shipping canceled,0,1
+33347,83299,Second Class,3,2,Shipping canceled,0,1
+42085,105066,Second Class,6,2,,0,1
+,112674,Second Class,3,2,,0,1
+62842,,Second Class,3,2,Shipping canceled,0,1
+15640,39102,Second Class,6,2,Shipping canceled,0,1
+51492,128682,Second Class,3,2,,0,1
+9999,18168,Second Class,3,2,Shipping canceled,0,1
+61095,152822,Second Class,6,2,Shipping canceled,0,1
+587,1441,Second Class,3,2,Shipping canceled,0,1
+7287,18243,Second Class,3,2,,0,1
+24385,60999,Second Class,6,2,Shipping canceled,0,1
+36377,90824,Second Class,3,2,Shipping canceled,0,1
+36433,90974,Second Class,4,2,,0,1
+37202,92858,Second Class,3,2,Shipping canceled,0,1
+9999,103579,Second Class,3,2,,0,1
+,26055,Second Class,4,2,,0,1
+62024,155066,Second Class,5,2,Shipping canceled,0,1
+15268,38179,Second Class,4,2,Shipping canceled,0,1
+53759,134398,Second Class,5,2,Shipping canceled,0,1
+56538,141413,Second Class,4,2,Shipping canceled,0,1
+,110935,Second Class,3,2,Shipping canceled,0,1
+28352,,Second Class,3,2,Shipping canceled,0,1
+42085,105064,Second Class,6,2,,0,1
+42085,105062,,6,2,Shipping canceled,0,1
+45117,112676,Second Class,3,2,Shipping canceled,0,1
+66227,165561,Second Class,3,2,,0,1
+,26054,Second Class,4,2,Shipping canceled,0,1
+10622,26608,Second Class,3,2,Shipping canceled,0,1
+15679,39209,Second Class,5,2,,0,1
+15640,39100,Second Class,6,2,Shipping canceled,0,1
+62624,156561,Second Class,5,2,,0,1
+16553,41339,Second Class,4,2,,0,1
+,159946,Second Class,5,2,Shipping canceled,0,1
+45665,114140,Second Class,6,2,,0,1
+,114141,Second Class,6,2,Shipping canceled,0,1
+53759,,Second Class,5,2,,0,1
+51744,129277,Second Class,5,2,Shipping canceled,0,1
+29438,,Second Class,4,2,,0,1
+23684,59251,Second Class,5,2,,0,1
+35282,88111,Second Class,3,2,,0,1
+,102103,,3,2,,0,1
+35754,89286,Second Class,5,2,,0,1
+451140,112666,Standard Class,5,4,Shipping canceled,0,1
+44735,111732,Standard Class,6,4,Shipping canceled,0,1
+44735,111731,,6,4,,0,1
+50854,127107,Standard Class,5,4,Shipping canceled,0,1
+69599,172914,Standard Class,5,4,,0,1
+65880,164636,Standard Class,6,4,Shipping canceled,0,1
+65880,164638,Standard Class,6,4,Shipping canceled,0,1
+,122526,Standard Class,6,4,,0,1
+,33942,Standard Class,5,4,,0,1
+62955,157434,,6,4,Shipping canceled,0,1
+13549,33941,Standard Class,5,4,,0,1
+17090,42738,Standard Class,6,4,,0,1
+68994,172309,Standard Class,5,4,Shipping canceled,0,1
+70520,173835,Standard Class,6,4,Shipping canceled,0,1
+,121144,Standard Class,6,4,,0,1
+11184,-27941,Standard Class,5,4,,0,1
+64855,162115,Standard Class,6,4,,0,1
+9999,158127,,6,4,Shipping canceled,0,1
+70294,173609,Standard Class,5,4,,0,1
+17174,42949,Standard Class,5,4,Shipping canceled,0,1
+16289,,Standard Class,5,4,Shipping canceled,0,1
+,40669,Standard Class,5,4,Shipping canceled,0,1
+63555,158866,Standard Class,6,4,Shipping canceled,0,1
+48440,121146,Standard Class,6,4,Shipping canceled,0,1
+12794,32009,Standard Class,5,4,Shipping canceled,0,1
+71384,174699,Standard Class,5,4,,0,1
+57204,,Standard Class,5,4,,0,1
+55020,137606,Standard Class,6,4,,0,1
+9999,17776,Standard Class,6,4,Shipping canceled,0,1
+955,,Standard Class,6,4,,0,1
+4809,12025,Standard Class,5,4,Shipping canceled,0,1
+56904,142337,Standard Class,5,4,Shipping canceled,0,1
+9210,,Standard Class,6,4,,0,1
+53800,134498,Standard Class,6,4,,0,1
+53800,134500,Standard Class,6,4,,0,1
+59100,147919,Standard Class,6,4,Shipping canceled,0,1
+2150,5388,Standard Class,6,4,,0,1
+7019,17578,Standard Class,5,4,,0,1
+55020,137605,Standard Class,6,4,Shipping canceled,0,1
+57324,143387,,5,4,Shipping canceled,0,1
+5919,14725,Standard Class,5,4,Shipping canceled,0,1
+4250,10631,Standard Class,6,4,Shipping canceled,0,1
+60575,151617,Standard Class,6,4,,0,1
+58704,146931,Standard Class,5,4,,0,1
+56244,140675,Standard Class,5,4,Shipping canceled,0,1
+55534,138895,Standard Class,5,4,,0,1
+74684,177999,Standard Class,5,4,Shipping canceled,0,1
+74495,177810,Standard Class,6,4,Shipping canceled,0,1
+25749,64483,Standard Class,5,4,Shipping canceled,0,1
+74089,177404,Standard Class,5,4,,0,1
+23415,58571,Standard Class,6,4,Shipping canceled,0,1
+74914,178229,Standard Class,5,4,Shipping canceled,0,1
+-1,58572,Standard Class,6,4,,0,1
+75285,178600,Standard Class,6,4,Shipping canceled,0,1
+,53455,Standard Class,6,4,Shipping canceled,0,1
+,180404,Standard Class,5,4,,0,1
+26019,65120,Standard Class,5,4,,0,1
+23225,58156,Standard Class,6,4,Shipping canceled,0,1
+24650,61722,Standard Class,6,4,,0,1
+26019,65121,,5,4,,0,1
+24650,61718,Standard Class,6,4,,0,1
+25655,64246,Standard Class,6,4,Shipping canceled,0,1
+72635,175950,Standard Class,6,4,Shipping canceled,0,1
+75404,178719,Standard Class,5,4,,0,1
+,97152,Standard Class,5,4,Shipping canceled,0,1
+38954,97251,Standard Class,5,4,Shipping canceled,0,1
+38954,97250,Standard Class,5,4,Shipping canceled,0,1
+-1,97149,Standard Class,5,4,Shipping canceled,0,1
+34284,85617,Standard Class,5,4,Shipping canceled,0,1
+37939,94704,Standard Class,5,4,Shipping canceled,0,1
+32065,80177,Standard Class,6,4,,0,1
+-1,81520,Standard Class,5,4,,0,1
+34304,,Standard Class,5,4,Shipping canceled,0,1
+35144,87776,Standard Class,5,4,,0,1
+38105,95113,Standard Class,6,4,,0,1
+33619,83924,Standard Class,5,4,Shipping canceled,0,1
+31920,79772,Standard Class,6,4,Shipping canceled,0,1
+31920,79771,Standard Class,6,4,Shipping canceled,0,1
+38105,95114,Standard Class,6,4,Shipping canceled,0,1
+,83926,,5,4,Shipping canceled,0,1
+33619,83922,Standard Class,5,4,Shipping canceled,0,1
+42209,105398,Standard Class,5,4,Shipping canceled,0,1
+45084,112576,Standard Class,5,4,,0,1
+49209,123037,Standard Class,5,4,,0,1
+13549,33940,Standard Class,5,4,Shipping canceled,0,1
+64154,160416,Standard Class,5,4,Shipping canceled,0,1
+65880,164635,Standard Class,6,4,,0,1
+,29938,Standard Class,6,4,Shipping canceled,0,1
+62175,155455,Standard Class,6,4,,0,1
+63555,158867,Standard Class,6,4,,0,1
+17174,-42950,Standard Class,5,4,Shipping canceled,0,1
+-1,,Standard Class,5,4,Shipping canceled,0,1
+,17777,Standard Class,6,4,Shipping canceled,0,1
+9210,,Standard Class,6,4,Shipping canceled,0,1
+9999,5487,Standard Class,5,4,,0,1
+830,2069,Standard Class,6,4,Shipping canceled,0,1
+,151290,Standard Class,6,4,,0,1
+61419,153613,Standard Class,5,4,Shipping canceled,0,1
+580,1427,Standard Class,6,4,,0,1
+26480,66282,Standard Class,6,4,,0,1
+22925,57388,Standard Class,6,4,Shipping canceled,0,1
+36890,92062,,6,4,Shipping canceled,0,1
+38105,95116,Standard Class,6,4,,0,1
+36905,92101,Standard Class,6,4,Shipping canceled,0,1
+36905,,Standard Class,6,4,Shipping canceled,0,1
+38799,96875,Standard Class,5,4,Shipping canceled,0,1
+34304,85678,Standard Class,5,4,,0,1
+45084,112575,Standard Class,5,4,,0,1
+62175,155456,Standard Class,6,4,,0,1
+49010,,Standard Class,6,4,Shipping canceled,0,1
+64855,,Standard Class,6,4,,0,1
+64560,161372,Standard Class,6,4,,0,1
+7100,17780,Standard Class,6,4,Shipping canceled,0,1
+56904,142336,Standard Class,5,4,,0,1
+8899,22194,Standard Class,5,4,,0,1
+4000,9941,,6,4,,0,1
+60460,151293,Standard Class,6,4,Shipping canceled,0,1
+,2067,Standard Class,6,4,Shipping canceled,0,1
+29774,,,5,4,Shipping canceled,0,1
+50089,125226,Standard Class,5,4,Shipping canceled,0,1
+22925,57390,Standard Class,6,4,,0,1
+26019,9999,Standard Class,5,4,Shipping canceled,0,1
+51215,127978,Standard Class,6,4,Shipping canceled,0,1
+22575,56484,Standard Class,6,4,Shipping canceled,0,1
+26019,65117,Standard Class,5,4,,0,1
+32065,80180,Standard Class,6,4,,0,1
+44735,111730,Standard Class,6,4,,0,1
+,123035,Standard Class,5,4,,0,1
+45084,9999,Standard Class,5,4,,0,1
+17090,,Standard Class,6,4,Shipping canceled,0,1
+49010,122527,Standard Class,6,4,Shipping canceled,0,1
+-1,27811,Standard Class,5,4,Shipping canceled,0,1
+63679,-1,Standard Class,5,4,,0,1
+,-1,Standard Class,5,4,Shipping canceled,0,1
+55020,,,6,4,,0,1
+7100,17779,Standard Class,6,4,Shipping canceled,0,1
+,10383,Standard Class,5,4,Shipping canceled,0,1
+60575,,Standard Class,6,4,,0,1
+61419,153612,Standard Class,5,4,Shipping canceled,0,1
+4250,10632,Standard Class,6,4,,0,1
+4250,10633,Standard Class,6,4,Shipping canceled,0,1
+31145,77831,Standard Class,6,4,Shipping canceled,0,1
+-1,,Standard Class,5,4,Shipping canceled,0,1
+22925,,Standard Class,6,4,,0,1
+30570,76415,Standard Class,6,4,Shipping canceled,0,1
+-1,80178,Standard Class,6,4,,0,1
+48055,120163,First Class,2,1,Shipping canceled,0,1
+48055,120165,First Class,2,1,,0,1
+71392,174707,First Class,2,1,,0,1
+,122904,First Class,2,1,,0,1
+9440,23566,First Class,2,1,Shipping canceled,0,1
+917800,22917,First Class,2,1,,0,1
+,23567,First Class,2,1,Shipping canceled,0,1
+6548,16365,First Class,2,1,,0,1
+55454,138694,First Class,2,1,Shipping canceled,0,1
+7409,18560,First Class,2,1,,0,1
+8604,21470,First Class,2,1,,0,1
+7409000,18562,First Class,2,1,Shipping canceled,0,1
+55454,138695,First Class,2,1,Shipping canceled,0,1
+21976,54971,First Class,2,1,Shipping canceled,0,1
+,64228,First Class,2,1,,0,1
+25643,64230,First Class,2,1,,0,1
+-1,179651,First Class,2,1,,0,1
+25311,63405,First Class,2,1,Shipping canceled,0,1
+73626,176941,First Class,2,1,,0,1
+41634,103933,First Class,2,1,,0,1
+37637,93935,First Class,2,1,,0,1
+37755,94216,First Class,2,1,Shipping canceled,0,1
+6548,16368,First Class,2,1,Shipping canceled,0,1
+9178,22916,First Class,2,1,,0,1
+9419,23504,First Class,2,1,Shipping canceled,0,1
+55543,,First Class,2,1,Shipping canceled,0,1
+554540,138696,First Class,2,1,,0,1
+25643,64229,First Class,2,1,Shipping canceled,0,1
+25311,63402,First Class,2,1,Shipping canceled,0,1
+39585,98808,First Class,2,1,Shipping canceled,0,1
+41400,103330,First Class,2,1,Shipping canceled,0,1
+46655,116640,First Class,2,1,,0,1
+46655,116638,First Class,2,1,Shipping canceled,0,1
+,1665020,First Class,2,1,Shipping canceled,0,1
+1074,-1,First Class,2,1,,0,1
+29452,73680,First Class,2,1,,0,1
+21417,53569,First Class,2,1,Shipping canceled,0,1
+49458,,First Class,2,1,,0,1
+46422,116065,,2,1,,0,1
+46655,116639,First Class,2,1,,0,1
+-1,18563,First Class,2,1,Shipping canceled,0,1
+21417,53565,First Class,2,1,,0,1
+9999,123612,First Class,2,1,,0,1
+33755,84234,First Class,2,1,Shipping canceled,0,1
+9419,23505,First Class,2,1,Shipping canceled,0,1
+49793,124470,First Class,2,1,,0,1
+28481,71279,First Class,2,1,Shipping canceled,0,1
+31244,78096,First Class,2,1,,0,1
+51024,127518,,1,0,Shipping canceled,0,1
+46558,,Same Day,1,0,,0,1
+15957,39874,Same Day,1,0,Shipping canceled,0,1
+,148953,Same Day,1,0,,0,1
+-1,152778,Same Day,1,0,,0,1
+,6809,Same Day,1,0,,0,1
+2721,6812,Same Day,1,0,,0,1
+72679,175994,Same Day,1,0,Shipping canceled,0,1
+59512,148954,Same Day,1,0,Shipping canceled,0,1
+2721,6811,Same Day,1,0,Shipping canceled,0,1
+,127521,Same Day,1,0,Shipping canceled,0,1
+15957,9999,Same Day,1,0,,0,1
+61073,152776,Same Day,1,0,Shipping canceled,0,1
+15957,3987500,Same Day,1,0,Shipping canceled,0,1
+66967,167402,Second Class,3,2,,0,1
+18097,45223,Second Class,3,2,Shipping canceled,0,1
+18097,45221,Second Class,3,2,,0,1
+18097,45219,Second Class,3,2,,0,1
+,167404,Second Class,3,2,,0,1
+64464,161140,Second Class,5,2,Shipping canceled,0,1
+19005,47510,Second Class,6,2,,0,1
+63910000,159761,Second Class,6,2,Shipping canceled,0,1
+15252,38147,Second Class,3,2,Shipping canceled,0,1
+,173297,Second Class,3,2,Shipping canceled,0,1
+70377,173692,,3,2,Shipping canceled,0,1
+16532,41290,Second Class,3,2,Shipping canceled,0,1
+64508,161247,Second Class,4,2,Shipping canceled,0,1
+64508,161244,Second Class,4,2,,0,1
+8707,21735,Second Class,3,2,Shipping canceled,0,1
+56555000,141462,Second Class,6,2,,0,1
+6474,16211,Second Class,5,2,,0,1
+56933,142390,Second Class,4,2,,0,1
+72577,175892,Second Class,3,2,,0,1
+22677,56749,Second Class,3,2,,0,1
+,53280,Second Class,5,2,,0,1
+29989,9999,Second Class,5,2,Shipping canceled,0,1
+21304,53281,Second Class,5,2,,0,1
+47454,118624,Second Class,5,2,Shipping canceled,0,1
+47454,118625,Second Class,5,2,Shipping canceled,0,1
+44944,112247,Second Class,5,2,,0,1
+45018,112414,Second Class,4,2,,0,1
+66967,167401,Second Class,3,2,,0,1
+3954,9822,Second Class,5,2,Shipping canceled,0,1
+3954,,Second Class,5,2,Shipping canceled,0,1
+29989,74995,Second Class,5,2,Shipping canceled,0,1
+29989,74994,Second Class,5,2,Shipping canceled,0,1
+22919,57369,Second Class,5,2,,0,1
+22919,57368,Second Class,5,2,Shipping canceled,0,1
+63910,159760,Second Class,6,2,Shipping canceled,0,1
+63310,158288,,6,2,Shipping canceled,0,1
+6474,16212,Second Class,5,2,,0,1
+-56933,142391,Second Class,4,2,Shipping canceled,0,1
+3954,9823,Second Class,5,2,,0,1
+3954,9821,Second Class,5,2,,0,1
+28149,70393,Second Class,5,2,Shipping canceled,0,1
+28149,70396,Second Class,5,2,,0,1
+22677,56750,Second Class,3,2,Shipping canceled,0,1
+40288,100511,Second Class,4,2,,0,1
+39540,98707,Second Class,6,2,Shipping canceled,0,1
+45018,112413,Second Class,4,2,Shipping canceled,0,1
+65597,163942,Second Class,3,2,,0,1
+15252,38145,,3,2,Shipping canceled,0,1
+,,Second Class,6,2,,0,1
+64508,161246,,4,2,Shipping canceled,0,1
+8707,21734,Second Class,3,2,,0,1
+40787,101791,Second Class,3,2,Shipping canceled,0,1
+45018,112412,Second Class,4,2,Shipping canceled,0,1
+,45220,Second Class,3,2,,0,1
+64464,161138,Second Class,5,2,Shipping canceled,0,1
+19005,47511,Second Class,6,2,,0,1
+28149,70395,Second Class,5,2,,0,1
+40288,100512,Second Class,4,2,Shipping canceled,0,1
+41839,,Standard Class,5,4,Shipping canceled,0,1
+41855,104479,Standard Class,6,4,Shipping canceled,0,1
+46124,115315,Standard Class,5,4,Shipping canceled,0,1
+61629,154095,Standard Class,5,4,,0,1
+14554,36410,Standard Class,5,4,Shipping canceled,0,1
+11274,28186,Standard Class,5,4,,0,1
+14044,35144,,5,4,,0,1
+,28185,Standard Class,5,4,Shipping canceled,0,1
+17194,43000,,5,4,Shipping canceled,0,1
+62899,157287,Standard Class,5,4,,0,1
+15079,37739,Standard Class,5,4,Shipping canceled,0,1
+19734,49336,Standard Class,5,4,Shipping canceled,0,1
+56544,141438,Standard Class,5,4,Shipping canceled,0,1
+53235,133023,Standard Class,6,4,Shipping canceled,0,1
+9720,24274,Standard Class,6,4,,0,1
+53235,133025,Standard Class,6,4,,0,1
+53219,132982,Standard Class,5,4,Shipping canceled,0,1
+10065,-25141,Standard Class,6,4,,0,1
+4529,11348,Standard Class,5,4,,0,1
+7454,18688,Standard Class,5,4,Shipping canceled,0,1
+-1,25142,Standard Class,6,4,Shipping canceled,0,1
+55920,139822,Standard Class,6,4,,0,1
+532350,133024,Standard Class,6,4,Shipping canceled,0,1
+52259,130564,Standard Class,5,4,Shipping canceled,0,1
+6274,15702,Standard Class,5,4,Shipping canceled,0,1
+1685,4191,Standard Class,6,4,Shipping canceled,0,1
+5110,12772,Standard Class,6,4,,0,1
+56989,142539,Standard Class,5,4,Shipping canceled,0,1
+59310,148477,Standard Class,6,4,,0,1
+9534,23825,Standard Class,5,4,Shipping canceled,0,1
+5205,13002,Standard Class,6,4,Shipping canceled,0,1
+27430,68665,Standard Class,6,4,Shipping canceled,0,1
+26060,6522400,Standard Class,6,4,Shipping canceled,0,1
+21614,,Standard Class,5,4,,0,1
+21614,54045,Standard Class,5,4,,0,1
+27430,68666,Standard Class,6,4,Shipping canceled,0,1
+22899,57324,Standard Class,5,4,Shipping canceled,0,1
+21614,54046,Standard Class,5,4,Shipping canceled,0,1
+28570,71497,Standard Class,6,4,Shipping canceled,0,1
+30274,75639,Standard Class,5,4,,0,1
+74545,177860,Standard Class,6,4,,0,1
+21644,54117,Standard Class,5,4,Shipping canceled,0,1
+75034,-1,Standard Class,5,4,,0,1
+76295,179610,Standard Class,6,4,,0,1
+33184,82948,Standard Class,5,4,,0,1
+33184,82949,Standard Class,5,4,,0,1
+36869,92007,Standard Class,5,4,Shipping canceled,0,1
+38915,97155,Standard Class,6,4,Shipping canceled,0,1
+40904,102089,Standard Class,5,4,Shipping canceled,0,1
+41839,104438,Standard Class,5,4,Shipping canceled,0,1
+48809,122067,Standard Class,5,4,,0,1
+14499,,Standard Class,5,4,,0,1
+,36413,Standard Class,5,4,Shipping canceled,0,1
+68454,171151,Standard Class,5,4,,0,1
+5524,13788,Standard Class,5,4,,0,1
+10065,25140,Standard Class,6,4,,0,1
+2170,5426,Standard Class,6,4,,0,1
+55519,138851,Standard Class,5,4,,0,1
+27040,67750,Standard Class,6,4,Shipping canceled,0,1
+29499,,Standard Class,5,4,Shipping canceled,0,1
+,93973,,6,4,,0,1
+,9999,Standard Class,6,4,,0,1
+14554,36409,Standard Class,5,4,,0,1
+11274,28187,Standard Class,5,4,Shipping canceled,0,1
+11704,29268,Standard Class,5,4,Shipping canceled,0,1
+9720,24277,Standard Class,6,4,Shipping canceled,0,1
+10065,25144,Standard Class,6,4,Shipping canceled,0,1
+5524,13786,Standard Class,5,4,,0,1
+,142536,Standard Class,5,4,Shipping canceled,0,1
+52940,132344,Standard Class,6,4,,0,1
+27040,67749,Standard Class,6,4,Shipping canceled,0,1
+26060,65222,Standard Class,6,4,Shipping canceled,0,1
+36294,90622,Standard Class,5,4,,0,1
+46124,115312,Standard Class,5,4,Shipping canceled,0,1
+46124,115311,Standard Class,5,4,,0,1
+47679,119223,Standard Class,5,4,Shipping canceled,0,1
+,,Standard Class,6,4,,0,1
+5524,13790,Standard Class,5,4,Shipping canceled,0,1
+7930,19811,Standard Class,6,4,Shipping canceled,0,1
+5524,13787,Standard Class,5,4,,0,1
+51640,,Standard Class,6,4,,0,1
+52165,130338,Standard Class,6,4,,0,1
+53219,132980,Standard Class,5,4,Shipping canceled,0,1
+9720,24278,Standard Class,6,4,,0,1
+52259,130563,,5,4,,0,1
+9534,23826,Standard Class,5,4,Shipping canceled,0,1
+24570,61513,,6,4,Shipping canceled,0,1
+21614,54043,Standard Class,5,4,,0,1
+37650,93974,Standard Class,6,4,,0,1
+,93976,Standard Class,6,4,,0,1
+17194,43002,Standard Class,5,4,Shipping canceled,0,1
+2784,6990,Standard Class,5,4,Shipping canceled,0,1
+8820,22023,,6,4,Shipping canceled,0,1
+54019,135073,Standard Class,5,4,,0,1
+54019,135072,Standard Class,5,4,Shipping canceled,0,1
+,82950,Standard Class,5,4,,0,1
+38544,-1,Standard Class,5,4,Shipping canceled,0,1
+43310,108192,Second Class,6,2,Shipping canceled,0,1
+43139,107759,Second Class,5,2,Shipping canceled,0,1
+22700,56812,Standard Class,6,4,,0,1
+22034,55114,Standard Class,5,4,,0,1
+24145,60412,Standard Class,6,4,Shipping canceled,0,1
+30874,77167,Standard Class,5,4,Shipping canceled,0,1
+24880,62325,Standard Class,6,4,,0,1
+11308,28277,Second Class,4,2,Shipping canceled,0,1
+11135,27836,Standard Class,6,4,Shipping canceled,0,1
+10135,25319,,6,4,Shipping canceled,0,1
+10074,25157,,2,1,,0,1
+10036,25076,First Class,2,1,,0,1
+10014,25017,Standard Class,5,4,Shipping canceled,0,1
+8704,21733,,2,1,Shipping canceled,0,1
+8704,21732,First Class,2,1,,0,1
+8302,20738,First Class,2,1,,0,1
+8015,20030,Second Class,6,2,Shipping canceled,0,1
+7930,19812,Standard Class,6,4,,0,1
+7770,19425,Standard Class,6,4,,0,1
+7105,17792,Standard Class,6,4,,0,1
+9999,17642,Second Class,4,2,,0,1
+7035,17611,Standard Class,6,4,,0,1
+6819,,Same Day,1,0,,0,1
+6474,16210,Second Class,5,2,Shipping canceled,0,1
+33619,83923,Standard Class,5,4,Shipping canceled,0,1
+49990,124976,Standard Class,6,4,Shipping canceled,0,1
+50854,127109,Standard Class,5,4,Shipping canceled,0,1
+,34446,Standard Class,6,4,Shipping canceled,0,1
+13755,34444,Standard Class,6,4,Shipping canceled,0,1
+20289,50676,Standard Class,5,4,,0,1
+12794,32005,Standard Class,5,4,,0,1
+48440,121145,Standard Class,6,4,Shipping canceled,0,1
+-1,42947,Standard Class,5,4,Shipping canceled,0,1
+59100,147920,Standard Class,6,4,,0,1
+60235,150707,Standard Class,6,4,Shipping canceled,0,1
+54485,,Standard Class,6,4,Shipping canceled,0,1
+28352,70939,Second Class,3,2,,0,1
+28344,70922,First Class,2,1,Shipping canceled,0,1
+,69940,Standard Class,5,4,Shipping canceled,0,1
+27641,69200,First Class,2,1,Shipping canceled,0,1
+27334,68460,First Class,2,1,,0,1
+,67426,Standard Class,6,4,,0,1
+,67096,,2,1,,0,1
+26741,66982,First Class,2,1,,0,1

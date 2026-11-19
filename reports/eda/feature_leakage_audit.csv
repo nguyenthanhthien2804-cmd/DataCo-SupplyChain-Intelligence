@@ -1,0 +1,6 @@
+﻿Tên Biến,Thời Điểm Xuất Hiện,Tương Quan (r),Mức Độ Rủi Ro Leakage,Quyết Định Thiết Kế ML
+Days for shipping (real),Sau khi giao hàng thành công,0.36,NGHIÊM TRỌNG (Critical),LOẠI BỎ 100% KHỎI TẬP DỰ BÁO SỚM
+Delivery Status,Sau khi giao hàng thành công,Hoàn hảo (Target Leakage),NGHIÊM TRỌNG (Critical),LOẠI BỎ 100% KHỎI TẬP DỰ BÁO SỚM
+shipping date (DateOrders),Thời điểm xuất kho,Cao,CAO (Post-dispatch),LOẠI BỎ (Chỉ giữ Order Date)
+Days for shipment (scheduled),Tại thời điểm đặt hàng,-0.37,AN TOÀN (Pre-dispatch),ĐẶC TRƯNG TIỀN DỰ BÁO QUAN TRỌNG NHẤT
+Shipping Mode,Tại thời điểm đặt hàng,Cramérs V = 0.45,AN TOÀN (Pre-dispatch),ĐẶC TRƯNG TIỀN DỰ BÁO CỐT LÕI

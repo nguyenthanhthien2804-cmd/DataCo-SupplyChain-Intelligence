@@ -1,0 +1,9 @@
+﻿Tên Cột,Tổng Số Dòng,Số Nhóm Trước,Số Nhóm Sau,Độ Giảm (%),Số Lượng Khuyết/Nhiễu Trước,Số Lượng pd.NA Sau,Top 1 Trước,Top 1 Sau
+Customer City,180519,2811,566,79.86,38854,38854,"Caguas (24,822 dòng)","Caguas (52,382 dòng)"
+Order City,180519,14560,3556,75.58,66962,66962,"<NA> (41,900 dòng)","Santo Domingo (1,424 dòng)"
+Order Region,180519,115,23,80.0,41964,41964,"<NA> (26,258 dòng)","Central America (21,826 dòng)"
+Market,180519,26,5,80.77,28120,28120,"LATAM (36,778 dòng)","LATAM (43,687 dòng)"
+Customer Country,180519,12,2,83.33,23141,23141,"EE. UU. (50,689 dòng)","EE. UU. (96,939 dòng)"
+Customer State,180519,181,44,75.69,44037,44038,"PR (42,631 dòng)","PR (52,006 dòng)"
+Order Country,180519,746,164,78.02,64780,64780,"<NA> (40,423 dòng)","Estados Unidos (15,885 dòng)"
+Order State,180519,4729,1079,77.18,71848,71848,"<NA> (44,944 dòng)","Inglaterra (4,023 dòng)"

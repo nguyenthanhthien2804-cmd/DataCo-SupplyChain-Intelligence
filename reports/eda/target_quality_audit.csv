@@ -1,0 +1,5 @@
+﻿Nhóm Kiểm Toán,Số Lượng,Tỷ Lệ (%),Mô Tả Nghiệp Vụ
+1. Hợp lệ & Nhất quán logic,165051,91.43,Nhãn gốc khớp 100% với công thức Real > Scheduled
+2. Hợp lệ nhưng mâu thuẫn (Conflict),9166,5.08,Chủ yếu rơi vào trạng thái Shipping Canceled (đơn bị hủy)
+3. Nhãn thiếu (Missing),6302,3.49,"Thiếu nhãn trong OMS gốc, cần tách riêng khi huấn luyện"
+4. Không đủ dữ liệu đối chiếu,0,0.0,Thiếu một trong hai mốc thời gian giao vận

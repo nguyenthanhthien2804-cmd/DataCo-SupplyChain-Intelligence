@@ -1,0 +1,9 @@
+﻿Column_Name,Raw_Name,Cleaned_Name,Frequency,Method_Applied,Tỷ lệ trên tổng dữ liệu (%),Trạng thái xử lý
+Customer City,<MISSING_NA>,<UNRESOLVED_NA>,24323,Chuyển về pd.NA (Ký hiệu khuyết / Nhiễu ? / unknown / chưa rõ),13.474,Đưa về pd.NA (Loại trừ an toàn khi phân tích tỷ lệ theo thành phố)
+Customer City,chưa rõ,<UNRESOLVED_NA>,4880,Chuyển về pd.NA (Ký hiệu khuyết / Nhiễu ? / unknown / chưa rõ),2.703,Đưa về pd.NA (Loại trừ an toàn khi phân tích tỷ lệ theo thành phố)
+Customer City,unknown,<UNRESOLVED_NA>,4853,Chuyển về pd.NA (Ký hiệu khuyết / Nhiễu ? / unknown / chưa rõ),2.688,Đưa về pd.NA (Loại trừ an toàn khi phân tích tỷ lệ theo thành phố)
+Customer City,?,<UNRESOLVED_NA>,4798,Chuyển về pd.NA (Ký hiệu khuyết / Nhiễu ? / unknown / chưa rõ),2.658,Đưa về pd.NA (Loại trừ an toàn khi phân tích tỷ lệ theo thành phố)
+Order City,<MISSING_NA>,<UNRESOLVED_NA>,41900,Chuyển về pd.NA (Ký hiệu khuyết / Nhiễu ? / unknown / chưa rõ),23.211,Đưa về pd.NA (Loại trừ an toàn khi phân tích tỷ lệ theo thành phố)
+Order City,chưa rõ,<UNRESOLVED_NA>,8373,Chuyển về pd.NA (Ký hiệu khuyết / Nhiễu ? / unknown / chưa rõ),4.638,Đưa về pd.NA (Loại trừ an toàn khi phân tích tỷ lệ theo thành phố)
+Order City,unknown,<UNRESOLVED_NA>,8370,Chuyển về pd.NA (Ký hiệu khuyết / Nhiễu ? / unknown / chưa rõ),4.637,Đưa về pd.NA (Loại trừ an toàn khi phân tích tỷ lệ theo thành phố)
+Order City,?,<UNRESOLVED_NA>,8319,Chuyển về pd.NA (Ký hiệu khuyết / Nhiễu ? / unknown / chưa rõ),4.608,Đưa về pd.NA (Loại trừ an toàn khi phân tích tỷ lệ theo thành phố)

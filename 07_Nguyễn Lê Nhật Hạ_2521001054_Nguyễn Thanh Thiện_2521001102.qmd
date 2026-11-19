@@ -1,0 +1,569 @@
+# BÁO CÁO PHÂN TÍCH NGHIỆP VỤ & KIẾN TRÚC DỮ LIỆU
+**Tệp dữ liệu phân tích:** `7_PJ13_2521001054_Nguyễn Lê Nhật Hạ.csv`  
+**Đề tài:** PRJ-13 - Dự báo Rủi ro Giao hàng Chậm trễ trong Chuỗi Cung ứng Toàn cầu (*DataCo Big Supply Chain Delivery Delay*)  
+**Sinh viên thực hiện:**
+- Nguyễn Lê Nhật Hạ - MSSV: 2521001054
+- Nguyễn Thanh Thiện - MSSV: 2521001102  
+
+---
+
+# 1. Tổng Quan Hồ Sơ Dữ Liệu & Đơn Vị Quan Sát
+
+| Tiêu chí | Thông số kỹ thuật | Ý nghĩa nghiệp vụ |
+| :--- | :--- | :--- |
+| Quy mô mẫu | $180,519$ dòng $\times$ $53$ cột | Bộ dữ liệu giao dịch quy mô lớn (Big Tabular Data), phản ánh hoạt động bán lẻ đa kênh trong giai đoạn 2015 – 2018. |
+| Dung lượng tệp thô | $\approx 87.24\text{ MB}$ | Lưu trữ dưới định dạng CSV, mã hóa UTF-8. |
+| Bản chất dữ liệu | Personalized Synthetic Noisy Dataset | Tập dữ liệu được cá nhân hóa và cấy các dị thường thực tế (lỗi nhập liệu, đơn vị trôi nổi, giá trị khuyết) phục vụ học phần Khoa học Dữ liệu. |
+| Đơn vị quan sát (Granularity) | Mục hàng trong đơn (Line Item / Order Item) | Mỗi dòng đại diện cho một mặt hàng giao dịch cụ thể (Order Item Id), không phải là một đơn hàng tổng thể (Order Id). Một đơn hàng có thể có nhiều mục hàng với các sản phẩm, số lượng và lợi nhuận khác nhau. |
+| Biến mục tiêu (Target) | Late_delivery_risk | Cờ nhị phân: $1$ (Có nguy cơ trễ hạn giao hàng) và $0$ (Đúng hạn hoặc giao sớm). |
+
+---
+
+# 2. Bối Cảnh Kinh Doanh & Vòng Đời Đơn Hàng (Order Fulfillment Lifecycle)
+Bộ dữ liệu mô phỏng chuỗi cung ứng bán lẻ quốc tế của tập đoàn DataCo Global, vận hành theo mô hình bán lẻ đa kênh (Omnichannel Retail) phục vụ khách hàng trên 5 đại thị trường: LATAM ($24.2\%$), Europe ($23.4\%$), Pacific Asia ($19.3\%$), USCA ($14.3\%$), và Africa ($6.4\%$). Cung cấp đa dạng các ngành hàng (Thể thao, Đồ gia dụng, Thời trang, Điện tử, Thiết bị ngoài trời) đến khách hàng thuộc 3 phân khúc chính (*Consumer, Corporate, Home Office*).
+
+Chu trình phát sinh dữ liệu trải qua 4 giai đoạn liên phòng ban:
+
+```
+┌─────────────────────────┐      ┌─────────────────────────┐      ┌─────────────────────────┐      ┌─────────────────────────┐
+│ GIAI ĐOẠN 1: TẠO ĐƠN    │      │ GIAI ĐOẠN 2: THIẾT LẬP  │      │ GIAI ĐOẠN 3: XUẤT KHO   │      │ GIAI ĐOẠN 4: GIAO HÀNG  │
+│      & THANH TOÁN       │ ───> │      CAM KẾT SLA        │ ───> │      & ĐIỀU PHỐI 3PL    │ ───> │      & HẬU KIỂM OTIF    │
+├─────────────────────────┤      ├─────────────────────────┤      ├─────────────────────────┤      ├─────────────────────────┤
+│ • Khách hàng đặt mua    │      │ • Gắn Shipping Mode     │      │ • Xuất kho WMS          │      │ • 3PL quét mã giao hàng │
+│ • Cổng thanh toán ghi   │      │ • TMS ấn định ngày cam  │      │ • Bàn giao đơn vị vận   │      │ • Ghi nhận ngày thực tế │
+│   nhận phương thức & tiền│      │   kết: Scheduled Days   │      │   chuyển chặng cuối     │      │ • Đối soát cờ trễ hạn:  │
+│   (DEBIT, CASH, TRANSFER│      │   (0, 1, 2, 4 ngày)     │      │                         │   Late_delivery_risk    │
+└─────────────────────────┘      └─────────────────────────┘      └─────────────────────────┘      └─────────────────────────┘
+```
+
+1. **Khởi tạo đơn hàng & Thanh toán (Sales & Finance):** Khách hàng đặt hàng qua hệ thống OMS/CRM; phòng Tài chính - Kế toán ghi nhận qua cổng thanh toán (`Type`), tính toán giá trị thực thu (`Sales per customer`) và lợi nhuận (`Benefit per order`).
+2. **Thiết lập cam kết SLA (Logistics Planning):** Dựa vào gói dịch vụ vận chuyển mà khách chọn (`Shipping Mode`), hệ thống Quản lý Vận tải (TMS) gắn số ngày cam kết hoàn thành tối đa (`Days for shipment (scheduled)`).
+3. **Hoàn tất kho vận & Bốc xếp (Warehouse & Dispatch):** Hệ thống WMS điều phối đóng gói theo danh mục hàng hóa (`Category Name`, `Department Name`).
+4. **Giao vận chặng cuối & Hậu kiểm (3PL Last-mile Delivery):** Đối tác giao vận (3PL) cập nhật ngày giờ giao hàng thực tế (`shipping date`), số ngày thực tế (`Days for shipping (real)`), trạng thái giao (`Delivery Status`) và hệ thống tự động xác định rủi ro trễ hạn (`Late_delivery_risk`).
+
+---
+
+# 3. Phân Nhóm Nghiệp Vụ & Từ Điển Dữ Liệu Chi Tiết
+
+### 3.3. Từ Điển Dữ Liệu Chi Tiết 53 Thuộc Tính (Data Dictionary)
+
+Bảng từ điển dữ liệu được phân chia khoa học thành 6 nhóm nghiệp vụ chính:
+
+#### Nhóm 1: Vận Chuyển, Giao Nhận & Cam Kết Dịch Vụ SLA (Core Logistics)
+| STT | Tên Cột (Column Name) | Ý Nghĩa Thực Tế / Nghiệp Vụ | Kiểu Gốc | Kiểu Sạch | Ký Hiệu Dơ / Nhiễu Phát Hiện | Phương Pháp Xử Lý Pipeline Áp Dụng |
+| :---: | :--- | :--- | :---: | :---: | :--- | :--- |
+| 1 | `Shipping Mode` | Phương thức vận chuyển (Standard Class, Second Class, First Class, Same Day) | object | category | `?`, `unknown`, `chưa rõ`, khoảng trắng | Cắt khoảng trắng `.str.strip()`, điền nhãn phổ biến nhất `'Standard Class'`. |
+| 2 | `Days for shipment (scheduled)` | Số ngày vận chuyển cam kết theo hợp đồng SLA | object | int8 | `?`, `-`, `-1`, `9999` | Lọc số Regex `r"[^\d.-]"`, điền khuyết theo SLA chuẩn của `Shipping Mode`. |
+| 3 | `Days for shipping (real)` | Số ngày vận chuyển thực tế từ kho đến người nhận | object | int8 | `?`, `-`, `-1`, `9999` | Lọc số Regex, điền khuyết median theo nhóm `Shipping Mode`. *(Loại khỏi X - Rò rỉ)* |
+| 4 | `Delivery Status` | Trạng thái giao hàng thực tế (Late delivery, On time, Advance...) | object | category | `chÆ°a rÃµ`, `LATE DELIVERY` | Đưa về chữ thường `.str.lower()`, điền `'Unknown'`. *(Loại khỏi X - Rò rỉ dữ liệu)* |
+| 5 | `Late_delivery_risk` | Cờ báo rủi ro giao trễ (1: Trễ, 0: Đúng hạn/Sớm) | object | int8 | `0 %`, `1 kg`, `1 USD`, `?` | Lọc chuỗi dơ, tái tính toán logic: 1 nếu Days real > Days scheduled, ngược lại 0 (Target). |
+| 6 | `shipping date (DateOrders)` | Mốc thời gian hoàn tất giao kiện hàng đến khách | object | datetime64 | `?`, `-`, chuỗi không chuẩn | Ép kiểu `pd.to_datetime`, tính chéo qua `order date` + `Days real`. *(Loại khỏi X - Rò rỉ)* |
+
+#### Nhóm 2: Quản Lý Đơn Hàng & Phân Bổ Địa Lý (Orders & Geography)
+| STT | Tên Cột (Column Name) | Ý Nghĩa Thực Tế / Nghiệp Vụ | Kiểu Gốc | Kiểu Sạch | Ký Hiệu Dơ / Nhiễu Phát Hiện | Phương Pháp Xử Lý Pipeline Áp Dụng |
+| :---: | :--- | :--- | :---: | :---: | :--- | :--- |
+| 7 | `Order Id` | Mã định danh đơn hàng tổng thể | object | int32 | `?`, `-`, `9999` | Lọc số bằng Regex, ép kiểu `int32`. |
+| 8 | `order date (DateOrders)` | Mốc thời gian khách hàng chốt tạo đơn thành công | object | datetime64 | `?`, `-`, chuỗi không chuẩn | Ép kiểu `pd.to_datetime`, tính chéo qua `shipping date` - `Days real` nếu bị thiếu. |
+| 9 | `Type` | Phương thức thanh toán (DEBIT, CASH, TRANSFER, PAYMENT) | object | category | `?`, `chÆ°a rÃµ`, khoảng trắng | Cắt khoảng trắng, đổi mã lỗi thành `np.nan`, điền `'Unknown'`. |
+| 10 | `Order Status` | Trạng thái xử lý đơn (COMPLETE, PENDING, PROCESSING...) | object | category | `chÆ°a rÃµ`, `PENDING` | Chuẩn hóa chữ thường, cắt khoảng trắng, điền `'Unknown'`. |
+| 11 | `Market` | Thị trường địa lý vĩ mô (LATAM, Europe, Pacific Asia...) | object | category | `?`, `unknown` | Cắt khoảng trắng, điền `'Unknown'`. |
+| 12 | `Order Region` | Phân vùng hành chính nhận hàng (Western Europe, Central America...) | object | category | `?`, `chÆ°a rÃµ` | Cắt khoảng trắng, điền `'Unknown'`. |
+| 13 | `Order Country` | Quốc gia đích đến nhận hàng | object | category | `?`, lỗi UTF-8 | Chuẩn hóa font chữ, điền `'Unknown'`. |
+| 14 | `Order City` | Thành phố nhận hàng | object | category | `?`, `chÆ°a rÃµ` | Chuẩn hóa chuỗi văn bản, điền `'Unknown'`. |
+| 15 | `Order State` | Bang / Tỉnh nơi nhận hàng | object | category | `?`, `chÆ°a rÃµ` | Chuẩn hóa chuỗi văn bản, điền `'Unknown'`. |
+| 16 | `Order Zipcode` | Mã bưu chính khu vực giao hàng | object | category | Khuyết >79.3%, `?` | Lọc ký tự lạ, điền khuyết bằng nhãn `'Unknown'`. |
+
+#### Nhóm 3: Kinh Tế Đơn Vị & Tài Chính (Unit Economics & Finance)
+| STT | Tên Cột (Column Name) | Ý Nghĩa Thực Tế / Nghiệp Vụ | Kiểu Gốc | Kiểu Sạch | Ký Hiệu Dơ / Nhiễu Phát Hiện | Phương Pháp Xử Lý Pipeline Áp Dụng |
+| :---: | :--- | :--- | :---: | :---: | :--- | :--- |
+| 17 | `Sales per customer` | Doanh thu thực nhận sau chiết khấu | object | float32 | `278.58 VND`, `?`, `9999` | Lọc bỏ chữ VND/USD bằng Regex, thay `,` thành `.`, điền median theo nhóm. |
+| 18 | `Benefit per order` | Lợi nhuận ròng thu về trên mỗi đơn hàng | object | float32 | `VND`, `USD`, `9999`, `-1` | Khử đơn vị bằng Regex, chuyển mã lỗi thành `np.nan`, điền median theo `Category Name`. |
+| 19 | `Sales` | Doanh số gộp ước tính trước chiết khấu | object | float32 | `USD`, `%`, `9999` | Lọc số bằng Regex, điền median. |
+| 20 | `Order Item Quantity` | Số lượng sản phẩm của mục hàng trong đơn | object | int32 | `?`, `-1`, `kg`, `đ` | Khử đơn vị kg/đ bằng Regex, điền median. |
+| 21 | `Order Item Discount` | Giá trị chiết khấu bằng tiền cho mục hàng | object | float32 | `USD`, `VND`, `-1`, `9999` | Lọc số bằng Regex, điền median theo nhóm. |
+| 22 | `Order Item Discount Rate` | Tỷ lệ chiết khấu áp dụng (0 - 1) | object | float32 | `%`, `?`, `-1` | Lọc bỏ ký tự `%`, chuẩn hóa số thập phân $12,34 \rightarrow 12.34$, điền median. |
+| 23 | `Order Item Product Price` | Đơn giá niêm yết tại thời điểm tạo đơn | object | float32 | `USD`, `VND`, `?` | Lọc đơn vị tiền tệ bằng Regex, điền median. |
+| 24 | `Order Item Profit Ratio` | Tỷ suất lợi nhuận của mục hàng | object | float32 | `%`, `?`, `-1` | Khử ký tự `%`, điền median. |
+| 25 | `Order Item Total` | Tổng tiền thanh toán thực tế của mục hàng | object | float32 | `USD`, `VND`, `9999` | Lọc số bằng Regex, điền median. |
+| 26 | `Order Profit Per Order` | Lợi nhuận ghi nhận trên mỗi đơn hàng | object | float32 | `USD`, `VND`, `9999` | Lọc số bằng Regex, điền median. |
+
+#### Nhóm 4: Phân Khúc Khách Hàng & Địa Lý Cư Trú (Customer Demographics)
+| STT | Tên Cột (Column Name) | Ý Nghĩa Thực Tế / Nghiệp Vụ | Kiểu Gốc | Kiểu Sạch | Ký Hiệu Dơ / Nhiễu Phát Hiện | Phương Pháp Xử Lý Pipeline Áp Dụng |
+| :---: | :--- | :--- | :---: | :---: | :--- | :--- |
+| 27 | `Customer Id` | Mã định danh khách hàng trên hệ thống CRM | object | int32 | `?`, `-`, `9999` | Lọc số bằng Regex, ép kiểu `int32`. |
+| 28 | `Customer Segment` | Phân khúc khách hàng (Consumer, Corporate, Home Office) | object | category | `?`, `chÆ°a rÃµ` | Chuẩn hóa chuỗi văn bản, điền `'Unknown'`. |
+| 29 | `Customer City` | Thành phố cư trú của khách hàng | object | category | `?`, `chÆ°a rÃµ` | Chuẩn hóa font UTF-8, điền `'Unknown'`. |
+| 30 | `Customer State` | Bang / Tỉnh cư trú của khách hàng | object | category | `?`, `chÆ°a rÃµ` | Chuẩn hóa chuỗi văn bản, điền `'Unknown'`. |
+| 31 | `Customer Country` | Quốc gia cư trú của khách hàng | object | category | `?`, `chÆ°a rÃµ` | Chuẩn hóa chuỗi văn bản, điền `'Unknown'`. |
+| 32 | `Customer Zipcode` | Mã bưu chính địa chỉ gửi hàng | int64 | category | Ô khuyết trống | Ép kiểu category, điền `'Unknown'`. |
+| 33 | `Latitude` | Tọa độ Vĩ độ địa chỉ khách hàng/kho | object | float32 | `?`, `9999` | Lọc số thực bằng Regex, điền median tổng thể. |
+| 34 | `Longitude` | Tọa độ Kinh độ địa chỉ khách hàng/kho | object | float32 | `?`, `9999` | Lọc số thực bằng Regex, điền median tổng thể. |
+| 35 | `Customer Fname` | Tên của khách hàng | object | string | `?`, `chÆ°a rÃµ` | Cắt khoảng trắng, điền `'Unknown'` (Ẩn danh hóa). |
+| 36 | `Customer Lname` | Họ và tên đệm của khách hàng | object | string | `?`, `chÆ°a rÃµ` | Cắt khoảng trắng, điền `'Unknown'` (Ẩn danh hóa). |
+| 37 | `Customer Street` | Tên đường và số nhà cư trú | object | string | `?`, `chÆ°a rÃµ` | Cắt khoảng trắng, điền `'Unknown'` (Ẩn danh hóa). |
+| 38 | `Order Customer Id` | Mã liên kết khách hàng trong đơn | object | int32 | `?`, `-` | Trùng lặp Customer Id, lọc số ép kiểu `int32`. |
+
+#### Nhóm 5: Danh Mục Sản Phẩm & Kho Bãi (Product Catalog & Warehouse)
+| STT | Tên Cột (Column Name) | Ý Nghĩa Thực Tế / Nghiệp Vụ | Kiểu Gốc | Kiểu Sạch | Ký Hiệu Dơ / Nhiễu Phát Hiện | Phương Pháp Xử Lý Pipeline Áp Dụng |
+| :---: | :--- | :--- | :---: | :---: | :--- | :--- |
+| 39 | `Order Item Id` | Mã định danh duy nhất của mục hàng | object | int32 | `?`, `-` | Primary Key, lọc số ép kiểu `int32`. |
+| 40 | `Order Item Cardprod Id` | Mã sản phẩm gắn với mục hàng | object | int32 | `?`, `-` | Lọc số bằng Regex, ép kiểu `int32`. |
+| 41 | `Product Card Id` | Mã nhận diện sản phẩm trong kho | object | int32 | `?`, `-` | Lọc số bằng Regex, ép kiểu `int32`. |
+| 42 | `Product Name` | Tên thương mại của sản phẩm | object | category | `?`, khoảng trắng | Cắt khoảng trắng đầu cuối, điền `'Unknown'`. |
+| 43 | `Product Price` | Giá bán lẻ niêm yết của sản phẩm | object | float32 | `USD`, `VND`, `?` | Lọc sạch đơn vị tiền tệ bằng Regex, điền median. |
+| 44 | `Product Status` | Tình trạng sản phẩm trong kho (0: Thường) | object | int8 | `?`, `-1` | Lọc số bằng Regex, điền 0. |
+| 45 | `Category Id` | Mã danh mục sản phẩm | object | int32 | `73 VND`, `?` | Khử chữ VND bằng Regex, ép kiểu `int32`. |
+| 46 | `Category Name` | Tên nhóm danh mục (Cleats, Apparel...) | object | category | `chÆ°a rÃµ`, `  Trade-In` | Cắt khoảng trắng thừa, quy đổi lỗi font về `'Unknown'`. |
+| 47 | `Department Id` | Mã phòng ban quản lý ngành hàng | object | int32 | `?`, `-1` | Lọc số bằng Regex, ép kiểu `int32`. |
+| 48 | `Department Name` | Tên phòng ban (Fitness, Apparel...) | object | category | `?`, `chÆ°a rÃµ` | Cắt khoảng trắng thừa, điền `'Unknown'`. |
+| 49 | `Product Category Id` | Mã liên kết danh mục sản phẩm | object | int32 | `?`, `-1` | Trùng lặp Category Id, lọc số ép kiểu `int32`. |
+| 50 | `Product Description` | Mô tả kỹ thuật chi tiết của sản phẩm | object | category | Khuyết >83.5%, `?` | Điền khuyết bằng nhãn `'Unknown'`. |
+| 51 | `Product Image` | URL hình ảnh hiển thị sản phẩm | object | category | Đường dẫn chuỗi | Giữ nguyên dạng chuỗi/category làm thuộc tính phụ. |
+
+#### Nhóm 6: Quản Trị Dữ Liệu & Thông Tin Nhạy Cảm (PII & Data Governance)
+| STT | Tên Cột (Column Name) | Ý Nghĩa Thực Tế / Nghiệp Vụ | Kiểu Gốc | Kiểu Sạch | Ký Hiệu Dơ / Nhiễu Phát Hiện | Phương Pháp Xử Lý Pipeline Áp Dụng |
+| :---: | :--- | :--- | :---: | :---: | :--- | :--- |
+| 52 | `Customer Email` | Địa chỉ thư điện tử của khách hàng | object | **ĐÃ XÓA** | Chứa PII nhạy cảm | Loại bỏ hoàn toàn (Dropped) để tuân thủ Data Governance & GDPR. |
+| 53 | `Customer Password` | Mật khẩu truy cập tài khoản cá nhân | object | **ĐÃ XÓA** | Chứa PII nhạy cảm | Loại bỏ hoàn toàn (Dropped) để tuân thủ Data Governance & Security. |
+
+---
+
+# 4. Kiểm Toán Độ Sạch Ban Đầu Của Dữ Liệu (Initial Data Quality Audit)
+
+Qua rà soát chuyên sâu $180,519$ dòng dữ liệu thô nhóm ghi nhận các vấn đề chất lượng dữ liệu nghiêm trọng cần giải quyết:
+
+### 4.1. Kiểm Toán Mức Độ Khuyết Thiếu (Missing Value Audit)
+Dữ liệu thô bị khuyết thiếu ở toàn bộ $53$ cột với nhiều mức độ khác nhau:
+1. **Nhóm khuyết thiếu cực cao (>70%):**
+   - `Product Description`: Thiếu $150,661$ dòng ($83.46\%$).
+   - `Order Zipcode`: Thiếu $143,152$ dòng ($79.30\%$).
+   - *Giải pháp:* Không dùng làm biến đặc trưng số học; điền nhãn `'Unknown'` / $0$ khi bảo toàn cấu trúc bảng.
+2. **Nhóm khuyết thiếu trung bình (15% - 25%):**
+   - `Order State` ($24.90\%$), `Category Name` ($24.56\%$), `Order City` ($23.21\%$), `Delivery Status` ($22.41\%$), `Order Country` ($22.39\%$), `Customer Street` ($21.13\%$), `Type` ($20.67\%$), `Days for shipment (scheduled)` ($17.26\%$).
+3. **Nhóm khuyết thiếu then chốt đối với bài toán (4% - 15%):**
+   - `Days for shipping (real)`: Thiếu $13,544$ dòng ($7.50\%$).
+   - `Late_delivery_risk`: Thiếu $8,378$ dòng ($4.64\%$).
+   - `Shipping Mode`: Thiếu $5,859$ dòng ($3.25\%$).
+
+### 4.2. Lỗi Dị Thường Nhập Liệu & Nhiễu Chuỗi (String & Ingestion Noise)
+1. **Nhiễu đơn vị tiền tệ/khối lượng trong cột số:**
+   - Trong biến mục tiêu `Late_delivery_risk` và các cột số tài chính xuất hiện các chuỗi chứa đơn vị: `'1 VND'`, `'1 USD'`, `'1 kg'`, `'1 %'`, `'1 đ'`, `'0 VND'`, `'0 kg'`, `'0 USD'`, `'0 đ'`, `'0 %'`.
+2. **Ký hiệu khuyết không chuẩn:**
+   - Nhiều trường thay vì để trống hoặc `NaN` lại chứa các ký tự mã hóa lỗi: `'?'`, `'-'`, `'-1'`, `'-1.0'`, `'9999'`, `'chưa rõ'`, `'unknown'`, `'null'`.
+3. **Dấu phẩy thập phân kiểu châu Âu:**
+   - Hàng loạt cột số thực (`Sales per customer`, `Benefit per order`, `Latitude`, `Longitude`, `Product Price`...) sử dụng dấu phẩy `,` ngăn cách phần thập phân (ví dụ: `12,34` thay vì `12.34`), nếu ép kiểu trực tiếp bằng `pd.to_numeric` sẽ bị biến thành `NaN`.
+4. **Lỗi font chữ tiếng Việt và khoảng trắng bất thường:**
+   - Xuất hiện chuỗi lỗi bảng mã UTF-8: `'chÆ°a rÃµ'`, `'chæ°a rãµ'`, và lỗi thừa khoảng trắng: `'  Standard Cla'`, `'  Second Class'`.
+
+### 4.3. Kiểm Toán Giá Trị Ngoại Lai (Outlier Audit)
+- Biến tài chính (`Benefit per order`, `Order Profit Per Order`): Xuất hiện các giá trị âm sâu (tối đa âm $-425.58\text{ USD}$), phản ánh các đơn hàng doanh nghiệp chịu lỗ nặng do chính sách chiết khấu quá mức hoặc đổi trả hàng. Ngược lại, có những đơn bán sỉ đạt lợi nhuận cực lớn ($>900\text{ USD}$).
+- Biến thời gian (`Days for shipping (real)`): Có những trường hợp thời gian giao thực tế kéo dài $6$ ngày (trong khi cam kết tối đa của Standard Class chỉ là $4$ ngày), là nguyên nhân trực tiếp dẫn tới vi phạm SLA.
+
+### 4.4. Cảnh Báo Rò Rỉ Dữ Liệu Nghiêm Trọng (Critical Data Leakage Warning)
+- Ba biến số: `Days for shipping (real)`, `Delivery Status`, và `shipping date (DateOrders)` là **những thông tin chỉ được ghi nhận sau khi đơn hàng đã xuất kho và vận chuyển thành công**.
+- **Cảnh báo học thuật:** Nếu người xây dựng mô hình đưa 3 biến này vào tập đặc trưng đầu vào ($X$) để dự báo rủi ro trễ hạn tại thời điểm đặt hàng, mô hình sẽ bị rò rỉ dữ liệu 100%, đạt độ chính xác ảo tuyệt đối ($100\%$) nhưng hoàn toàn vô dụng trên thực tế vận hành. Do đó, 3 biến này **bắt buộc phải bị loại khỏi tập biến đầu vào của mô hình Machine Learning**.
+
+---
+
+# 5. Xử Lý Dữ Liệu 
+
+### 5.1. Chuẩn Hóa Định Dạng Số Học & Tiền Tệ
+- **Loại bỏ đơn vị & ký tự nhiễu (Regex Vectorized):** Sử dụng hàm `clean_numeric_regex` áp dụng biểu thức chính quy `(?i)\s*(vnd|usd|kg|%|đ|\bđ\b)` để khử sạch ký tự đơn vị. Đồng thời, chuyển các mã lỗi/khuyết không chuẩn (`?`, `-`, `-1`, `9999`, `null`, `chưa rõ`) về dạng chuẩn `np.nan`.
+- **Chuẩn hóa dấu thập phân:** Thay thế dấu phẩy `,` giữa các chữ số thành dấu chấm `.` (`str.replace(r'(\d+),(\d+)', r'\1.\2')`).
+- **Ép kiểu định lượng:** Chuyển đổi dữ liệu bằng `pd.to_numeric(s, errors='coerce')`. Ép kiểu tiết kiệm dung lượng RAM: số thực về `float32`, số nguyên và các cờ nhị phân về `int32` / `int8`.
+
+### 5.2. Chuẩn Hóa Chuỗi & Bảo Vệ Quyền Riêng Tư (Data Privacy)
+- **Xử lý chuỗi văn bản:** Hàm `clean_string_series` tự động cắt khoảng trắng thừa `.str.strip()`, lọc bỏ các mã nhiễu lỗi font UTF-8 (`chÆ°a rÃµ`, `chæ°a rõ`) về `np.nan` và gán nhãn an toàn `'Unknown'`.
+- **Bảo mật PII:** Loại bỏ hoàn toàn hai cột thông tin định danh cá nhân nhạy cảm (`Customer Email`, `Customer Password`) trước khi đưa dữ liệu vào pipeline xử lý sâu.
+
+### 5.3. Xử Lý Giá Trị Khuyết Hoàn Chỉnh (Complete Imputation)
+- **Điền khuyết biến số:** Sử dụng `groupby('Category Name')` hoặc `groupby('Shipping Mode')` để điền giá trị trung vị (`median`). Nếu nhóm vẫn khuyết, hệ thống tự động điền giá trị `median` tổng thể để bảo toàn thông tin.
+- **Khôi phục chuỗi thời gian:** Ép kiểu `pd.to_datetime` cho ngày đặt (`order date`) và ngày giao (`shipping date`). Nếu khuyết 1 trong 2 ngày, hệ thống tự động tính chéo thông qua khoảng thời gian giao hàng thực tế (`pd.to_timedelta(Days real, unit='D')`).
+- **Điền khuyết biến phân loại:** Tất cả ô trống ở các trường chuỗi được điền đồng nhất bằng nhãn `'Unknown'`.
+
+### 5.4. Tái Tính Toán Biến Mục Tiêu & Loại Bỏ Rò Rỉ Dữ Liệu (Data Leakage)
+- **Tái tính toán logic `Late_delivery_risk`:** Thiết lập lại cờ nhị phân chuẩn nghiệp vụ SCM:
+$$\text{Late\_delivery\_risk} = \begin{cases} 1 & \text{nếu } \text{Days shipping (real)} > \text{Days shipment (scheduled)} \\ 0 & \text{ngược lại} \end{cases}$$
+- **Tách tập đặc trưng ($X$) triệt để:** Loại bỏ các biến chứa kết quả thực tế của tương lai (`Days for shipping (real)`, `Delivery Status`, `shipping date (DateOrders)`) khỏi tập đặc trưng đầu vào ($X$) nhằm triệt tiêu hoàn toàn nguy cơ rò rỉ dữ liệu khi huấn luyện mô hình Machine Learning.
+
+Được xử lý với đoạn code Python chuẩn hóa sau:
+
+```python
+import os
+import sys
+import time
+import warnings
+import numpy as np
+import pandas as pd
+
+# Cấu hình UTF-8 cho console Windows
+if sys.platform == "win32" and hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
+# Bỏ qua các cảnh báo không ảnh hưởng kết quả
+warnings.filterwarnings("ignore")
+
+
+def get_memory_usage_mb(df: pd.DataFrame) -> float:
+    """Tính toán dung lượng bộ nhớ RAM (MB) của DataFrame."""
+    return df.memory_usage(deep=True).sum() / (1024 ** 2)
+
+
+def clean_numeric_regex(series: pd.Series) -> pd.Series:
+    """
+    Sử dụng Vectorized Regex để loại bỏ các ký tự đơn vị tiền tệ/khối lượng/phần trăm
+    (VND, USD, kg, %, đ) và quy đổi các ký tự khuyết thiếu không chuẩn về np.nan.
+    Hỗ trợ chuẩn hóa dấu phẩy thập phân (,) sang dấu chấm (.).
+    """
+    s = series.astype(str).str.strip()
+    
+    # Loại bỏ đơn vị tiền tệ, khối lượng, tỷ lệ phần trăm
+    unit_pattern = r"(?i)\s*(vnd|usd|kg|%|đ|\bđ\b)"
+    s = s.str.replace(unit_pattern, "", regex=True).str.strip()
+    
+    # Quy đổi các ký tự khuyết thiếu / mã lỗi không chuẩn về NaN
+    invalid_markers = [
+        "?", "-", "-1", "-1.0", "9999", "9999.0",
+        "nan", "none", "null", "unknown", "chưa rõ", "chæ°a rã", "chæ°a rõ", ""
+    ]
+    s = s.replace(invalid_markers, np.nan)
+    
+    # Chuẩn hóa dấu phẩy thập phân giữa các chữ số thành dấu chấm (ví dụ: 12,34 -> 12.34)
+    s = s.str.replace(r"(\d+),(\d+)", r"\1.\2", regex=True)
+    
+    return pd.to_numeric(s, errors="coerce")
+
+
+def clean_string_series(series: pd.Series, fill_value: str = "Unknown") -> pd.Series:
+    """
+    Làm sạch chuỗi văn bản: cắt khoảng trắng thừa, quy đổi các nhãn nhiễu/lỗi font
+    về np.nan và điền khuyết bằng nhãn chỉ định (mặc định 'Unknown').
+    """
+    s = series.astype(str).str.strip()
+    noise_markers = [
+        "?", "-", "nan", "none", "null", "unknown",
+        "chưa rõ", "chæ°a rã", "chæ°a rõ", "chæ°a rãµ", "chæ°a rãμ", ""
+    ]
+    s = s.replace(noise_markers, np.nan)
+    return s.fillna(fill_value)
+
+
+def apply_data_governance_and_privacy(df: pd.DataFrame, drop_pii_cols: bool = True) -> pd.DataFrame:
+    """
+    Bước 1: Quản trị Dữ liệu (Data Governance) & Bảo vệ Quyền riêng tư (Data Privacy).
+    - Loại bỏ / ẩn danh hóa thông tin định danh nhạy cảm (PII: Customer Email, Customer Password).
+      + Nếu drop_pii_cols = True: Loại bỏ hoàn toàn 2 cột này trước khi đưa dữ liệu vào xử lý sâu (Data Lake Pipeline).
+      + Nếu drop_pii_cols = False: Ẩn danh hóa toàn bộ giá trị thành 'XXXXXXXXX'.
+    - Chuẩn hóa trường cờ nhị phân Late_delivery_risk khỏi các ký tự tiền tệ/nhiễu nhập liệu.
+    """
+    pii_columns = ["Customer Email", "Customer Password"]
+    if drop_pii_cols:
+        existing_pii = [c for c in pii_columns if c in df.columns]
+        df = df.drop(columns=existing_pii)
+        print(f"[Bước 1] Quản trị Dữ liệu: Đã loại bỏ {len(existing_pii)} cột PII nhạy cảm: {existing_pii}")
+    else:
+        for c in pii_columns:
+            if c in df.columns:
+                df[c] = "XXXXXXXXX"
+        print("[Bước 1] Quản trị Dữ liệu: Đã ẩn danh hóa PII (Customer Email, Customer Password) thành 'XXXXXXXXX'.")
+
+    # Schema Validation cho Late_delivery_risk nếu có sẵn trong dữ liệu
+    if "Late_delivery_risk" in df.columns:
+        cleaned_risk = clean_numeric_regex(df["Late_delivery_risk"])
+        # Chuyển về cờ nhị phân 0 hoặc 1 (nếu khuyết sẽ được tái tính toán logic ở bước sau)
+        df["Late_delivery_risk"] = cleaned_risk
+
+    return df
+
+
+def clean_and_impute_shipping_and_target(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Bước 3 & 4 & 5.1: Chuẩn hóa Phương thức Vận chuyển, Thời gian giao hàng và Tái tính toán Biến Mục Tiêu.
+    - Chuẩn hóa Shipping Mode về các nhãn chuẩn: 'Standard Class', 'Second Class', 'First Class', 'Same Day'.
+    - Điền khuyết Days for shipment (scheduled) và Days for shipping (real) bằng median theo Shipping Mode.
+    - Tái tính toán biến mục tiêu Late_delivery_risk theo quy tắc logic nghiệp vụ SCM vàng:
+      Late_delivery_risk = 1 nếu Days for shipping (real) > Days for shipment (scheduled), ngược lại 0.
+    """
+    # 1. Chuẩn hóa Shipping Mode
+    if "Shipping Mode" in df.columns:
+        s_mode = df["Shipping Mode"].astype(str).str.strip().str.lower()
+        mode_mapping = {
+            "standard class": "Standard Class",
+            "standard cla": "Standard Class",
+            "second class": "Second Class",
+            "first class": "First Class",
+            "same day": "Same Day",
+        }
+        # Các nhãn nhiễu quy về NaN
+        noise_modes = ["?", "unknown", "chưa rõ", "none", "-", "nan", "null", ""]
+        s_mode = s_mode.replace(noise_modes, np.nan)
+        s_mode = s_mode.map(mode_mapping)
+        # Điền khuyết Shipping Mode bằng phương thức phổ biến nhất ('Standard Class')
+        df["Shipping Mode"] = s_mode.fillna("Standard Class")
+
+    # 2. Làm sạch số ngày vận chuyển
+    real_col = "Days for shipping (real)"
+    sched_col = "Days for shipment (scheduled)"
+
+    if real_col in df.columns:
+        df[real_col] = clean_numeric_regex(df[real_col])
+    if sched_col in df.columns:
+        df[sched_col] = clean_numeric_regex(df[sched_col])
+
+    # Điền khuyết theo median của từng nhóm Shipping Mode
+    # Nghiệp vụ DataCo chuẩn: Standard Class (4 ngày), Second Class (2 ngày), First Class (1 ngày), Same Day (0 ngày)
+    scheduled_mode_map = {
+        "Standard Class": 4.0,
+        "Second Class": 2.0,
+        "First Class": 1.0,
+        "Same Day": 0.0,
+    }
+    if sched_col in df.columns:
+        df[sched_col] = df[sched_col].fillna(df["Shipping Mode"].map(scheduled_mode_map))
+        df[sched_col] = df[sched_col].fillna(4.0).round().astype(np.int8)
+
+    if real_col in df.columns:
+        df[real_col] = df.groupby("Shipping Mode")[real_col].transform(lambda g: g.fillna(g.median()))
+        df[real_col] = df[real_col].fillna(df[real_col].median()).round().astype(np.int8)
+
+    # 3. Tái tính toán biến mục tiêu Late_delivery_risk chuẩn logic Logistics
+    if real_col in df.columns and sched_col in df.columns:
+        df["Late_delivery_risk"] = (df[real_col] > df[sched_col]).astype(np.int8)
+        late_ratio = df["Late_delivery_risk"].mean()
+        print(
+            f"[Bước 4] Tái tính toán logic Late_delivery_risk hoàn tất! "
+            f"Tỷ lệ trễ hạn (1): {late_ratio*100:.2f}% | Đúng hạn/sớm (0): {(1-late_ratio)*100:.2f}%"
+        )
+
+    return df
+
+
+def clean_and_impute_all_features(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Bước 3 & 5: Làm sạch Regex, Ép kiểu định lượng và Điền khuyết hoàn chỉnh (Complete Imputation).
+    - Biến định lượng: Làm sạch đơn vị/nhiễu, điền khuyết bằng median theo Category Name hoặc Shipping Mode.
+    - Biến chuỗi/phân loại: Điền khuyết nhãn 'Unknown'.
+    - Biến thời gian: Chuyển đổi pd.to_datetime, đối chiếu chéo tự động giữa order date và shipping date.
+    """
+    # 1. Danh sách các cột định lượng liên quan đến tài chính, đo lường và định danh số
+    continuous_numeric_cols = [
+        "Benefit per order",
+        "Sales per customer",
+        "Order Item Discount",
+        "Order Item Discount Rate",
+        "Order Item Product Price",
+        "Order Item Profit Ratio",
+        "Sales",
+        "Order Item Total",
+        "Order Profit Per Order",
+        "Product Price",
+        "Latitude",
+        "Longitude",
+    ]
+
+    integer_numeric_cols = [
+        "Order Item Quantity",
+        "Category Id",
+        "Department Id",
+        "Customer Id",
+        "Order Customer Id",
+        "Order Id",
+        "Order Item Cardprod Id",
+        "Order Item Id",
+        "Product Card Id",
+        "Product Category Id",
+        "Product Status",
+    ]
+
+    # Chuẩn hóa cột Category Name trước để phục vụ gom nhóm imputation
+    if "Category Name" in df.columns:
+        df["Category Name"] = clean_string_series(df["Category Name"], fill_value="Unknown")
+
+    # Làm sạch regex cho tất cả các cột số liên tục
+    for col in continuous_numeric_cols:
+        if col in df.columns:
+            df[col] = clean_numeric_regex(df[col])
+            # Điền median theo Category Name
+            df[col] = df.groupby("Category Name")[col].transform(lambda g: g.fillna(g.median()))
+            # Nếu nhóm Category Name toàn bộ là NaN, điền tiếp bằng median tổng thể
+            overall_median = df[col].median()
+            df[col] = df[col].fillna(0.0 if pd.isna(overall_median) else overall_median).astype(np.float32)
+
+    # Làm sạch regex cho các cột số nguyên/định danh số
+    for col in integer_numeric_cols:
+        if col in df.columns:
+            df[col] = clean_numeric_regex(df[col])
+            # Điền median theo nhóm hoặc median tổng thể
+            overall_median = df[col].median()
+            med_val = 0 if pd.isna(overall_median) else int(round(overall_median))
+            df[col] = df[col].fillna(med_val).round().astype(np.int32)
+
+    # 2. Xử lý các cột chuỗi thời gian (pd.to_datetime)
+    date_cols = ["order date (DateOrders)", "shipping date (DateOrders)"]
+    for dcol in date_cols:
+        if dcol in df.columns:
+            s = df[dcol].astype(str).str.strip()
+            s = s.replace(["?", "-", "nan", "none", "null", "unknown", "chưa rõ", ""], np.nan)
+            df[dcol] = pd.to_datetime(s, errors="coerce")
+
+    # Đối chiếu chéo khôi phục thời gian bằng Days for shipping (real)
+    if "order date (DateOrders)" in df.columns and "shipping date (DateOrders)" in df.columns:
+        real_days = pd.to_timedelta(df["Days for shipping (real)"], unit="D")
+        
+        # Nếu khuyết ngày giao: shipping date = order date + real_days
+        missing_ship = df["shipping date (DateOrders)"].isnull() & df["order date (DateOrders)"].notnull()
+        df.loc[missing_ship, "shipping date (DateOrders)"] = df.loc[missing_ship, "order date (DateOrders)"] + real_days[missing_ship]
+        
+        # Nếu khuyết ngày đặt: order date = shipping date - real_days
+        missing_order = df["order date (DateOrders)"].isnull() & df["shipping date (DateOrders)"].notnull()
+        df.loc[missing_order, "order date (DateOrders)"] = df.loc[missing_order, "shipping date (DateOrders)"] - real_days[missing_order]
+
+        # Trường hợp cả hai ngày cùng bị khuyết: Điền bằng ngày median của tập dữ liệu
+        med_order_date = df["order date (DateOrders)"].dropna().median()
+        if pd.isna(med_order_date):
+            med_order_date = pd.Timestamp("2016-01-01 00:00:00")
+        df["order date (DateOrders)"] = df["order date (DateOrders)"].fillna(med_order_date)
+        df["shipping date (DateOrders)"] = df["shipping date (DateOrders)"].fillna(
+            df["order date (DateOrders)"] + real_days
+        )
+
+    # 3. Điền khuyết và chuẩn hóa các cột phân loại/chuỗi còn lại
+    exclude_cols = set(continuous_numeric_cols + integer_numeric_cols + date_cols + [
+        "Days for shipping (real)", "Days for shipment (scheduled)", "Late_delivery_risk"
+    ])
+    
+    for col in df.columns:
+        if col not in exclude_cols:
+            df[col] = clean_string_series(df[col], fill_value="Unknown")
+
+    print("[Bước 5] Điền khuyết hoàn chỉnh (Complete Imputation) thành công 100% cho toàn bộ các biến!")
+    return df
+
+
+def optimize_memory_and_types(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Bước 6: Tối ưu bộ nhớ RAM:
+    - Chuyển các cột dạng chuỗi có tính lặp lại sang kiểu 'category'.
+    - Tối ưu kiểu số: float32, int32, int8.
+    """
+    # 1. Tối ưu số thực
+    for col in df.select_dtypes(include=["float64"]).columns:
+        df[col] = df[col].astype(np.float32)
+
+    # 2. Tối ưu cột nhị phân & ngày giao về int8
+    for col in ["Late_delivery_risk", "Days for shipping (real)", "Days for shipment (scheduled)"]:
+        if col in df.columns:
+            df[col] = df[col].astype(np.int8)
+
+    # 3. Chuyển đổi các cột chuỗi (object) sang category để tiết kiệm RAM tối đa
+    object_cols = df.select_dtypes(include=["object"]).columns
+    for col in object_cols:
+        df[col] = df[col].astype("category")
+
+    print("[Bước 6] Tối ưu hóa bộ nhớ RAM hoàn tất: Chuyển đổi sang 'category' và ép kiểu số gọn nhẹ.")
+    return df
+
+
+def run_full_cleaning_pipeline(
+    input_path: str = "7_PJ13_2521001054_Nguyễn Lê Nhật Hạ.csv",
+    output_csv: str = "DataCo_Cleaned_Full.csv",
+    output_parquet: str = "DataCo_Cleaned_Full.parquet",
+    drop_pii_cols: bool = True,
+) -> pd.DataFrame:
+    """
+    Hàm thực thi toàn bộ luồng xử lý theo chuẩn đặc tả yêu cầu:
+    - Loại bỏ PII (Customer Email, Customer Password) trước khi đưa vào pipeline.
+    - Loại bỏ các dòng trùng lặp hoàn toàn (.drop_duplicates()).
+    - Xuất song song DataCo_Cleaned_Full.csv và DataCo_Cleaned_Full.parquet.
+    """
+    start_total_time = time.time()
+    print("=" * 80)
+    print("QUY TRÌNH LÀM SẠCH DỮ LIỆU CHUỖI CUNG ỨNG - ĐỀ TÀI PRJ-13")
+    print("=" * 80)
+    print(f"File nguồn dữ liệu thô: {input_path}")
+    print(f"Cấu hình PII: {'Loại bỏ 2 cột PII' if drop_pii_cols else 'Ẩn danh hóa (Bảo lưu 53 cột)'}")
+
+    if not os.path.exists(input_path):
+        raise FileNotFoundError(f"Không tìm thấy file nguồn: {input_path}")
+
+    # Đọc dữ liệu thô
+    df = pd.read_csv(input_path, encoding="utf-8-sig", low_memory=False)
+    initial_shape = df.shape
+    initial_ram = get_memory_usage_mb(df)
+    print(f"-> Kích thước ban đầu: {initial_shape[0]:,} dòng x {initial_shape[1]} cột")
+    print(f"-> Dung lượng RAM ban đầu: {initial_ram:.2f} MB")
+    print("-" * 80)
+
+    # 1. Bảo vệ quyền riêng tư (Loại bỏ PII) & Schema Validation
+    df = apply_data_governance_and_privacy(df, drop_pii_cols=drop_pii_cols)
+
+    # 2. Xử lý phương thức vận chuyển và tái tính toán biến mục tiêu
+    df = clean_and_impute_shipping_and_target(df)
+
+    # 3. Làm sạch regex, điền khuyết toàn diện các biến số, chuỗi và thời gian
+    df = clean_and_impute_all_features(df)
+
+    # 4. Tối ưu bộ nhớ RAM
+    df = optimize_memory_and_types(df)
+
+    # 5. Loại bỏ các dòng trùng lặp hoàn toàn (.drop_duplicates())
+    rows_before_dedup = len(df)
+    df = df.drop_duplicates()
+    dropped_dups = rows_before_dedup - len(df)
+    print(f"[Bước 7] Đã thực hiện loại bỏ trùng lặp (.drop_duplicates()): {dropped_dups} dòng bị loại bỏ. Còn lại: {len(df):,} dòng.")
+
+    final_shape = df.shape
+    final_ram = get_memory_usage_mb(df)
+    saved_ram = initial_ram - final_ram
+    pct_saved = (saved_ram / initial_ram) * 100
+
+    print("-" * 80)
+    print("KẾT QUẢ KIỂM SOÁT CHẤT LƯỢNG DỮ LIỆU (DATA QUALITY REPORT):")
+    print(f"- Quy mô dữ liệu: {final_shape[0]:,} dòng x {final_shape[1]} cột")
+    print(f"- Dung lượng RAM: {initial_ram:.2f} MB -> {final_ram:.2f} MB (Tiết kiệm {pct_saved:.1f}%)")
+    
+    # Xác nhận kiểm tra giá trị NaN
+    remaining_nulls = df.isnull().sum()
+    null_cols = remaining_nulls[remaining_nulls > 0]
+    if len(null_cols) == 0:
+        print("- Kiểm tra giá trị khuyết (NaN): HOÀN TOÀN SẠCH 100% (0 giá trị NaN trên tất cả các cột)!")
+    else:
+        print(f"- Cảnh báo: Còn các cột có NaN: {dict(null_cols)}")
+
+    print(f"- Phân phối nhãn mục tiêu Late_delivery_risk:\n{df['Late_delivery_risk'].value_counts(normalize=True).to_string()}")
+    print("-" * 80)
+
+    # 6. Xuất file đầu ra
+    print(f"Đang xuất file CSV: {output_csv}...")
+    df.to_csv(output_csv, index=False, encoding="utf-8-sig")
+    csv_size_mb = os.path.getsize(output_csv) / (1024 ** 2)
+    print(f"-> Xuất CSV hoàn tất! Dung lượng trên đĩa: {csv_size_mb:.2f} MB")
+
+    print(f"Đang xuất file Parquet: {output_parquet}...")
+    df.to_parquet(output_parquet, engine="pyarrow", index=False)
+    parquet_size_mb = os.path.getsize(output_parquet) / (1024 ** 2)
+    print(f"-> Xuất Parquet hoàn tất! Dung lượng trên đĩa: {parquet_size_mb:.2f} MB")
+
+    total_elapsed = time.time() - start_total_time
+    print(f"TỔNG THỜI GIAN XỬ LÝ PIPELINE: {total_elapsed:.2f} giây")
+    print("=" * 80)
+
+    return df
+
+
+if __name__ == "__main__":
+    # Tệp dữ liệu thô của sinh viên
+    input_file = "7_PJ13_2521001054_Nguyễn Lê Nhật Hạ.csv"
+    
+    # Tên tệp đầu ra sạch chuẩn hóa
+    output_csv_file = "DataCo_Cleaned_Full.csv"
+    output_parquet_file = "DataCo_Cleaned_Full.parquet"
+
+    # Thực thi toàn bộ pipeline với loại bỏ PII và drop_duplicates
+    df_clean = run_full_cleaning_pipeline(
+        input_path=input_file,
+        output_csv=output_csv_file,
+        output_parquet=output_parquet_file,
+        drop_pii_cols=True,  # Loại bỏ các thông tin định danh cá nhân nhạy cảm (Customer Email, Customer Password)
+    )
+```
